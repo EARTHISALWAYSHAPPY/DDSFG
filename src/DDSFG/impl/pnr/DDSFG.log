@@ -1,0 +1,28 @@
+Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+Processing netlist completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1132) :  'CLK' was determined to be a clock but was not created.
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.power.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.pin.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
+Sun Jul  6 02:25:30 2025
+

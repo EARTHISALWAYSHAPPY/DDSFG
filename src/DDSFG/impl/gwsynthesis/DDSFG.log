@@ -1,8 +1,12 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\top.v'
-Compiling module 'blink'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\top.v":1)
-NOTE  (EX0101) : Current top module is "blink"
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\DDS_Top.v'
+Undeclared symbol 'PLL_Reset', assumed default net type 'wire'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\DDS_Top.v":7)
+Undeclared symbol 'PLL_Clock', assumed default net type 'wire'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\DDS_Top.v":8)
+Undeclared symbol 'PLL_Lock', assumed default net type 'wire'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\DDS_Top.v":9)
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\gowin_rpll\PLL_Top.v'
+Compiling module 'PLL_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\src\gowin_rpll\PLL_Top.v":10)
+NOTE  (EX0101) : Current top module is "PLL_Top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed

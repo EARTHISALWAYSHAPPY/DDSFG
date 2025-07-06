@@ -78,7 +78,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sun Jul  6 02:25:30 2025
+<td>Sun Jul  6 21:32:48 2025
 </td>
 </tr>
 <tr>
@@ -109,45 +109,64 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td><b>BankVccio</b></td>
 </tr>
 <tr>
-<td class="label">CLK</td>
+<td class="label">reset</td>
+<td>-</td>
+<td>3/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOT2[A]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">clkin</td>
+<td>-</td>
+<td>4/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOL5[A]</td>
+<td>JTAGSEL_N/LPLL_T_in</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">clkout</td>
 <td>-</td>
 <td>10/3</td>
 <td>N</td>
-<td>in</td>
+<td>out</td>
 <td>IOL15[A]</td>
 <td>GCLKT_6</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">RESETn</td>
-<td>-</td>
-<td>85/3</td>
-<td>N</td>
-<td>in</td>
-<td>IOT8[B]</td>
-<td>-</td>
-<td>LVCMOS18</td>
-<td>NA</td>
-<td>UP</td>
-<td>ON</td>
-<td>NONE</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>1.8</td>
-</tr>
-<tr>
-<td class="label">oLED</td>
+<td class="label">lock</td>
 <td>-</td>
 <td>86/3</td>
 <td>N</td>
@@ -188,7 +207,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">3/3</td>
-<td>-</td>
+<td>reset</td>
 <td>in</td>
 <td>IOT2[A]</td>
 <td>-</td>
@@ -199,7 +218,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -239,7 +258,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">86/3</td>
-<td>oLED</td>
+<td>lock</td>
 <td>out</td>
 <td>IOT8[A]</td>
 <td>-</td>
@@ -256,7 +275,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">85/3</td>
-<td>RESETn</td>
+<td>-</td>
 <td>in</td>
 <td>IOT8[B]</td>
 <td>-</td>
@@ -267,7 +286,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>OFF</td>
+<td>NA</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -1021,7 +1040,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">4/3</td>
-<td>-</td>
+<td>clkin</td>
 <td>in</td>
 <td>IOL5[A]</td>
 <td>JTAGSEL_N/LPLL_T_in</td>
@@ -1032,7 +1051,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -1208,16 +1227,16 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">10/3</td>
-<td>CLK</td>
-<td>in</td>
+<td>clkout</td>
+<td>out</td>
 <td>IOL15[A]</td>
 <td>GCLKT_6</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>

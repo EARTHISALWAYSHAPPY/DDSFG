@@ -2,7 +2,11 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/top.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/DDS_Top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v",
    "Type" : "verilog"
   }
  ],

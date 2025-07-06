@@ -5,7 +5,6 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1132) :  'CLK' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -24,5 +23,5 @@ Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\imp
 Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
 Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
 Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
-Sun Jul  6 02:25:30 2025
+Sun Jul  6 21:32:48 2025
 

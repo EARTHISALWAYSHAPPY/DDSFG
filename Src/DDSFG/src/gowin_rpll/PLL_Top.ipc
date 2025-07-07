@@ -1,7 +1,7 @@
 [General]
 ipc_version=4
-file=PLL_Top
-module=PLL_Top
+file=Pll_Top
+module=Pll_Top
 target_device=gw1nr9c-006
 type=clock_rpll
 version=1.0

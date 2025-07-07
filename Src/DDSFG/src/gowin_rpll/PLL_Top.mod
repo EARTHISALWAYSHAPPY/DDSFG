@@ -5,8 +5,8 @@
 -part_number GW1NR-UV9QN88PC6/I5
 
 
--mod_name PLL_Top
--file_name PLL_Top
+-mod_name Pll_Top
+-file_name Pll_Top
 -path D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/gowin_rpll/
 -type PLL
 -rPll true

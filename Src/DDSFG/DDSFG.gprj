@@ -7,6 +7,6 @@
     <FileList>
         <File path="src/Clk_div.v" type="file.verilog" enable="1"/>
         <File path="src/DDS_Top.v" type="file.verilog" enable="1"/>
-        <File path="src/gowin_rpll/PLL_Top.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_rpll/Pll_Top.v" type="file.verilog" enable="1"/>
     </FileList>
 </Project>

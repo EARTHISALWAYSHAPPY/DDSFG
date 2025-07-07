@@ -15,7 +15,7 @@ module RCC (
 
   initial begin : u_rExt_Clk
     rExt_Clk <= 1'd0;
-    repeat (2000) begin // repeat 2000 round
+    forever begin // repeat forever
       //#15.625 // # same delay in slimu. (32 hz)
       #18.5185  // from freq of clk tang 9k : 27 Mhz ( 1/27 MHz)  
       rExt_Clk <= ~rExt_Clk;

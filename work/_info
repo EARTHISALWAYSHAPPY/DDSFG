@@ -9,13 +9,13 @@ z2
 cModel Technology
 dD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation
 vDDS_Top
-Z0 !s110 1751881136
+Z0 !s110 1751883153
 !i10b 1
-!s100 M_mOCD:1`>RhJ>hgd453d3
-IlaIP;z:<^]0?ij7Z56BVD3
+!s100 Q<<9oRV4`O4mXU;Md7G0T2
+IGOmDNegC=Iem[WLkkI;kd3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dD:/Work/ElecEng/Y3/T1/Proj._DDSFG
-w1751880600
+w1751882569
 8D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v
 FD:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v
 L0 1
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1751881136.000000
+Z4 !s108 1751883153.000000
 !s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v|
 !i113 1
@@ -31,23 +31,23 @@ Z5 o-work work
 Z6 tCvgOpt 0
 n@d@d@s_@top
 vDDS_Top_tb
-!s110 1751880139
+R0
 !i10b 1
 !s100 DVNE1nViih;UGT7ljCLo32
-IeRezTKO0Uid6=KGA`_dfI3
+IzOm?^ZC5Zc2^Ok=CB;AeU0
 R1
 R2
-w1751880109
-Z7 8D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v
-Z8 FD:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v
+w1751882491
+8D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v
+FD:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v
 L0 3
 R3
 r1
 !s85 0
 31
-!s108 1751880139.000000
-Z9 !s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v|
-Z10 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v|
+R4
+!s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v|
 !i113 1
 R5
 R6
@@ -75,24 +75,46 @@ R5
 R6
 n@p@l@l_@top
 vRCC
-!s110 1751880609
+!s110 1751882245
 !i10b 1
 !s100 ifmj6I=B7CZFaPgnkHABM3
 IJ:KH`YPX;bXzao07`i_aP2
 R1
 R2
 w1751880339
-R7
-R8
+8D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v
+FD:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v
 L0 3
 R3
 r1
 !s85 0
 31
-!s108 1751880609.000000
-R9
-R10
+!s108 1751882245.000000
+!s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/RCC.v|
 !i113 1
 R5
 R6
 n@r@c@c
+vrPLL
+R0
+!i10b 1
+!s100 jghARO384RcQbSYGgaa3h0
+I8=HGcd?l2gbLL`m0@lILa3
+R1
+R2
+w1751883122
+8D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v
+FD:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v|
+!i113 1
+R5
+R6
+nr@p@l@l

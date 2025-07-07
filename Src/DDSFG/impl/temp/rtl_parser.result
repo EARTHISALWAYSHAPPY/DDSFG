@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 5,
+    "InstLine" : 7,
     "InstName" : "m_pll",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v",
     "ModuleLine" : 10,

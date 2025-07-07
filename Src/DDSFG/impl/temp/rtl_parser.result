@@ -1,10 +1,20 @@
 [
  {
-  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v",
-  "InstLine" : 10,
-  "InstName" : "PLL_Top",
-  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v",
-  "ModuleLine" : 10,
-  "ModuleName" : "PLL_Top"
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
+  "InstLine" : 1,
+  "InstName" : "DDS_Top",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "DDS_Top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstLine" : 5,
+    "InstName" : "m_pll",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "PLL_Top"
+   }
+  ]
  }
 ]

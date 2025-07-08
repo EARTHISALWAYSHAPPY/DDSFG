@@ -16,7 +16,6 @@ module Testbench ();
     #240;
     rRESETn = 1'b1;
     #440;
-
     rExtBtn = 1'b1;
     #2400000;
     rExtBtn = 1'b0;
@@ -35,14 +34,21 @@ module Testbench ();
     #5000;
     rExtBtn = 1'b1;
     #24000;
-
   end
 
-  RCC m_rcc (.Ext_Clk(wExt_Clk));
+  RCC m_rcc (.Ext_Clk(wExt_Clk));  // for sim only
+
+  // ResetGen_Module m_resetgen (
+  //     .CLK(wExt_Clk),
+  //     .ExtRESETn(rRESETn),
+  //     .PllLocked(wPll_Lock),
+  //     .PllRESETn(wPll_RESET),
+  //     .FgRESETn(wFg_RESETn)
+  // );
 
   Pll_Top m_pll (
       .clkin (wExt_Clk),
-      .reset (~rRESETn),
+      .reset (1'b0),
       .clkout(wPll_Clk),
       .lock  (wPll_Lock)
   );

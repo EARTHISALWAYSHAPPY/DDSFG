@@ -1,28 +1,44 @@
 [
  {
-  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/DDS_Top.v",
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
   "InstLine" : 11,
   "InstName" : "DDS_Top",
-  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/DDS_Top.v",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
   "ModuleLine" : 11,
   "ModuleName" : "DDS_Top",
   "SubInsts" : [
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 24,
     "InstName" : "m_pll",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
     "ModuleLine" : 10,
     "ModuleName" : "Pll_Top"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 31,
     "InstName" : "m_clk_div",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/Clk_div.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Clk_div.v",
     "ModuleLine" : 10,
     "ModuleName" : "Clk_Div"
    }
   ]
+ },
+ {
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/ResetGen_Module.v",
+  "InstLine" : 12,
+  "InstName" : "ResetGen_Module",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/ResetGen_Module.v",
+  "ModuleLine" : 12,
+  "ModuleName" : "ResetGen_Module"
+ },
+ {
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Btn_Interface.v",
+  "InstLine" : 10,
+  "InstName" : "Btn_Interface",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Btn_Interface.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "Btn_Interface"
  }
 ]

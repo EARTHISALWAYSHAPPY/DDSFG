@@ -50,7 +50,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
+<td>D:\Work\ElecEng\Y3\T1\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
@@ -62,7 +62,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Tool Version</td>
-<td>V1.9.11.02 (64-bit)</td>
+<td>V1.9.11.01 (64-bit)</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -78,7 +78,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sun Jul  6 21:32:48 2025
+<td>Tue Jul  8 15:42:31 2025
 </td>
 </tr>
 <tr>
@@ -109,12 +109,31 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td><b>BankVccio</b></td>
 </tr>
 <tr>
-<td class="label">reset</td>
+<td class="label">CLK</td>
 <td>-</td>
-<td>3/3</td>
+<td>10/3</td>
 <td>N</td>
 <td>in</td>
-<td>IOT2[A]</td>
+<td>IOL15[A]</td>
+<td>GCLKT_6</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">ExtRESETn</td>
+<td>-</td>
+<td>85/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOT8[B]</td>
 <td>-</td>
 <td>LVCMOS18</td>
 <td>NA</td>
@@ -128,7 +147,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">clkin</td>
+<td class="label">PllLocked</td>
 <td>-</td>
 <td>4/3</td>
 <td>N</td>
@@ -147,13 +166,13 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">clkout</td>
+<td class="label">PllRESETn</td>
 <td>-</td>
-<td>10/3</td>
+<td>86/3</td>
 <td>N</td>
 <td>out</td>
-<td>IOL15[A]</td>
-<td>GCLKT_6</td>
+<td>IOT8[A]</td>
+<td>-</td>
 <td>LVCMOS18</td>
 <td>8</td>
 <td>UP</td>
@@ -166,12 +185,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">lock</td>
+<td class="label">FgRESETn</td>
 <td>-</td>
-<td>86/3</td>
+<td>3/3</td>
 <td>N</td>
 <td>out</td>
-<td>IOT8[A]</td>
+<td>IOT2[A]</td>
 <td>-</td>
 <td>LVCMOS18</td>
 <td>8</td>
@@ -207,16 +226,16 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">3/3</td>
-<td>reset</td>
-<td>in</td>
+<td>FgRESETn</td>
+<td>out</td>
 <td>IOT2[A]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -258,7 +277,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">86/3</td>
-<td>lock</td>
+<td>PllRESETn</td>
 <td>out</td>
 <td>IOT8[A]</td>
 <td>-</td>
@@ -275,7 +294,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">85/3</td>
-<td>-</td>
+<td>ExtRESETn</td>
 <td>in</td>
 <td>IOT8[B]</td>
 <td>-</td>
@@ -286,7 +305,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -1040,7 +1059,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">4/3</td>
-<td>clkin</td>
+<td>PllLocked</td>
 <td>in</td>
 <td>IOL5[A]</td>
 <td>JTAGSEL_N/LPLL_T_in</td>
@@ -1227,16 +1246,16 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">10/3</td>
-<td>clkout</td>
-<td>out</td>
+<td>CLK</td>
+<td>in</td>
 <td>IOL15[A]</td>
 <td>GCLKT_6</td>
 <td>LVCMOS18</td>
-<td>8</td>
+<td>NA</td>
 <td>UP</td>
+<td>ON</td>
+<td>NONE</td>
 <td>NA</td>
-<td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>

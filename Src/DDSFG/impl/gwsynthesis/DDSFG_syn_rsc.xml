@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="PLL_Top"/>
+<Module name="ResetGen_Module" Register="33" Lut="58" T_Register="33(33)" T_Lut="58(58)"/>

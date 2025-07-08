@@ -1,28 +1,51 @@
 `timescale 1ns / 1ps
-module Testbench (
-    output wire wFg_Clk,
-    output wire wDac_Clk
-);
-
+module Testbench ();
 
   wire wExt_Clk;
   wire wPll_Clk;
   wire wPll_Lock;
+  wire wFg_Clk;
+  wire wDac_Clk;
+  wire wIntBtn;
 
-
-  reg  rRESETn;
+  reg  rRESETn;  //wRESETn
+  reg  rExtBtn;
 
   initial begin
     rRESETn = 1'b0;
     #100;
     rRESETn = 1'b1;
+    #500;
+
+    rExtBtn = 1'b1;
+    #416666;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #500;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #500;
+
+    rExtBtn = 1'b1;
+    #416666;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #500;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #500;
+
   end
 
   RCC m_rcc (.Ext_Clk(wExt_Clk));
 
   Pll_Top m_pll (
       .clkin (wExt_Clk),
-      .reset (1'b0),
+      .reset (~rRESETn),
       .clkout(wPll_Clk),
       .lock  (wPll_Lock)
   );
@@ -33,5 +56,14 @@ module Testbench (
       .Fg_Clk (wFg_Clk),
       .Dac_Clk(wDac_Clk)
   );
+
+  Btn_Interface m_btn_interface (
+      .Fg_CLK(wFg_Clk),
+      .RESETn(rRESETn),
+      .ExtBtn(rExtBtn),
+      .IntBtn(wIntBtn)
+  );
+
+
 
 endmodule

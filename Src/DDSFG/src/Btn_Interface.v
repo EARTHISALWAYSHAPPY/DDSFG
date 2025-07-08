@@ -14,7 +14,7 @@ module Btn_Interface (
     output wire IntBtn
 );
 
-  localparam delay = 25'd24000 - 1;
+  localparam delay = 25'd2400 - 1;
 
   wire wIntBtn;
 
@@ -24,11 +24,17 @@ module Btn_Interface (
   assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
   assign IntBtn  = wIntBtn;
 
-  //   always @(posedge Fg_CLK or negedge RESETn) begin : u_rCnt
-  //     if (!RESETn) rCnt <= 25'd0;
-  //     else if (rCnt != 25'd0) rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
-  //     else if (rDout[2] == 1'b1 && rDout[1] == 1'b0) rCnt <= 25'd1;
-  //   end
+  always @(posedge Fg_CLK or negedge RESETn) begin : u_rCnt
+    if (!RESETn) begin
+      rCnt <= 25'd0;
+    end else begin
+      if (rCnt == 25'd0) begin
+        rCnt <= (wIntBtn == 1'b1) ? 25'd1 : 25'd0;
+      end else begin
+        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
+      end
+    end
+  end
 
   always @(posedge Fg_CLK or negedge RESETn) begin : u_rDout
     if (RESETn == 1'd0) begin
@@ -39,3 +45,15 @@ module Btn_Interface (
   end
 
 endmodule
+
+
+// temp
+// if (rCnt != 25'd0 && wIntBtn == 1'd0) begin
+//   rCnt <= rCnt + 25'd1;
+// end
+// if (rCnt == delay) begin
+//   rCnt <= 25'd0;
+// end
+// if (rCnt == 25'd0 && wIntBtn == 1'd1) begin
+//   rCnt <= 25'd1;
+// end

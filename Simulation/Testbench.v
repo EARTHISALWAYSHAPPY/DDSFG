@@ -13,31 +13,28 @@ module Testbench ();
 
   initial begin
     rRESETn = 1'b0;
-    #100;
+    #240;
     rRESETn = 1'b1;
-    #500;
+    #440;
 
     rExtBtn = 1'b1;
-    #416666;
+    #2400000;
     rExtBtn = 1'b0;
-    #500;
+    #5000;
     rExtBtn = 1'b1;
-    #500;
+    #24000;
     rExtBtn = 1'b0;
-    #500;
+    #5000;
     rExtBtn = 1'b1;
-    #500;
-
-    rExtBtn = 1'b1;
-    #416666;
+    #24000;
     rExtBtn = 1'b0;
-    #500;
+    #5000;
     rExtBtn = 1'b1;
-    #500;
+  #240000;
     rExtBtn = 1'b0;
-    #500;
+    #5000;
     rExtBtn = 1'b1;
-    #500;
+    #24000;
 
   end
 
@@ -63,7 +60,5 @@ module Testbench ();
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
   );
-
-
 
 endmodule

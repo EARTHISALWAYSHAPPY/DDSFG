@@ -20,13 +20,13 @@ module DDS_Top (
   wire wFg_Clk;
   wire wDac_Clk;
 
-//   ResetGen_Module m_resetgen (
-//       .CLK(Ext_Clk),
-//       .ExtRESETn(Ext_RESETn),
-//       .PllLocked(wPll_Lock),
-//       .PllRESETn(wPll_RESET),
-//       .FgRESETn(wFg_RESETn)
-//   );
+  ResetGen_Module m_resetgen (
+      .CLK(Ext_Clk),
+      .ExtRESETn(Ext_RESETn),
+      .PllLocked(wPll_Lock),
+      .PllRESETn(wPll_RESET),
+      .FgRESETn(wFg_RESETn)
+  );
 
   Pll_Top m_pll (
       .clkin (Ext_Clk),
@@ -44,7 +44,7 @@ module DDS_Top (
 
   Btn_Interface m_btn_interface (
       .Fg_CLK(wFg_Clk),
-      .RESETn(Ext_RESETn),  // ???? i dont know
+      .RESETn(Ext_RESETn),  
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
   );

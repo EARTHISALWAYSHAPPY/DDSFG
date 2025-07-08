@@ -2,67 +2,69 @@
 module Testbench ();
 
   wire wExt_Clk;
-  wire wPll_Clk;
+  wire wPll_RESETn;
+  wire wFg_RESETn;
   wire wPll_Lock;
+  wire wPll_Clk;
   wire wFg_Clk;
   wire wDac_Clk;
   wire wIntBtn;
 
-  reg  rRESETn;  //wRESETn
+  reg  Ext_RESETn;  //wRESETn
   reg  rExtBtn;
 
   initial begin
-    rRESETn = 1'b0;
+    Ext_RESETn = 1'b0;
     #240;
-    rRESETn = 1'b1;
+    Ext_RESETn = 1'b1;
     #440;
     rExtBtn = 1'b1;
-    #2400000;
+    #240000;
     rExtBtn = 1'b0;
-    #5000;
+    #500;
     rExtBtn = 1'b1;
     #24000;
     rExtBtn = 1'b0;
-    #5000;
+    #500;
     rExtBtn = 1'b1;
-    #24000;
+    #2400;
     rExtBtn = 1'b0;
-    #5000;
+    #500;
     rExtBtn = 1'b1;
-  #240000;
+  #100000;
     rExtBtn = 1'b0;
-    #5000;
+    #500;
     rExtBtn = 1'b1;
     #24000;
   end
 
-  RCC m_rcc (.Ext_Clk(wExt_Clk));  // for sim only
+  RCC m_rcc (.Ext_Clk(wExt_Clk));  // for sim only gen CLK
 
-  // ResetGen_Module m_resetgen (
-  //     .CLK(wExt_Clk),
-  //     .ExtRESETn(rRESETn),
-  //     .PllLocked(wPll_Lock),
-  //     .PllRESETn(wPll_RESET),
-  //     .FgRESETn(wFg_RESETn)
-  // );
+  ResetGen_Module m_resetgen (
+      .CLK(wExt_Clk),
+      .ExtRESETn(Ext_RESETn),
+      .PllLocked(wPll_Lock),
+      .PllRESETn(wPll_RESETn),
+      .FgRESETn(wFg_RESETn)
+  );
 
   Pll_Top m_pll (
       .clkin (wExt_Clk),
-      .reset (1'b0),
+      .reset (~wPll_RESETn),
       .clkout(wPll_Clk),
       .lock  (wPll_Lock)
   );
 
   Clk_Div m_clk_div (
       .Pll_Clk(wPll_Clk),
-      .RESETn (rRESETn),
+      .RESETn (wFg_RESETn),
       .Fg_Clk (wFg_Clk),
       .Dac_Clk(wDac_Clk)
   );
 
   Btn_Interface m_btn_interface (
       .Fg_CLK(wFg_Clk),
-      .RESETn(rRESETn),
+      .RESETn(Ext_RESETn),
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
   );

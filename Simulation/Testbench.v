@@ -9,11 +9,16 @@ module Testbench ();
   wire wFg_Clk;
   wire wDac_Clk;
   wire wIntBtn;
+  wire wReady;
+  wire wEnable;
+  wire wMode;
 
   reg  Ext_RESETn;  //wRESETn
   reg  rExtBtn;
 
   initial begin
+    Ext_RESETn = 1'b1;
+    #440000;
     Ext_RESETn = 1'b0;
     #240;
     Ext_RESETn = 1'b1;
@@ -31,7 +36,7 @@ module Testbench ();
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
-  #100000;
+    #100000;
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
@@ -67,6 +72,14 @@ module Testbench ();
       .RESETn(Ext_RESETn),
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
+  );
+  SampCtrl m_sampctrl (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .IntBtn(wIntBtn),
+      .Ready (wReady),
+      .Enable(wEnable),
+      .Mode  (wMode)
   );
 
 endmodule

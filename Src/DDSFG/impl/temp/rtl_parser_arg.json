@@ -2,6 +2,10 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Btn_Interface.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Clk_div.v",
    "Type" : "verilog"
   },
@@ -10,15 +14,15 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/ResetGen_Module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Btn_Interface.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/SampCtrl.v",
    "Type" : "verilog"
   }
  ],

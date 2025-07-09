@@ -30,7 +30,7 @@ module DDS_Top (
 
   Pll_Top m_pll (
       .clkin (Ext_Clk),
-      .reset (wFg_RESETn),  // Active High if use for sim 1'b0
+      .reset (~wPll_RESETn),  // Active High if use for sim 1'b0
       .clkout(wPll_Clk),
       .lock  (wPll_Lock)
   );
@@ -44,7 +44,7 @@ module DDS_Top (
 
   Btn_Interface m_btn_interface (
       .Fg_CLK(wFg_Clk),
-      .RESETn(Ext_RESETn),  
+      .RESETn(wFg_RESETn),
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
   );

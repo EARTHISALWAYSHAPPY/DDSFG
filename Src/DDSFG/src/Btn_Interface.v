@@ -37,7 +37,7 @@ module Btn_Interface (
   end
 
   always @(posedge Fg_CLK or negedge RESETn) begin : u_rDout
-    if (RESETn == 1'd0) begin
+    if (!RESETn) begin
       rDout <= 3'b111;
     end else begin
       rDout <= {rDout[1], rDout[0], ExtBtn};

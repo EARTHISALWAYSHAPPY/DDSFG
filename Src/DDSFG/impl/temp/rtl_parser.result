@@ -40,13 +40,5 @@
     "ModuleName" : "Btn_Interface"
    }
   ]
- },
- {
-  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/SampCtrl.v",
-  "InstLine" : 11,
-  "InstName" : "SampCtrl",
-  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/SampCtrl.v",
-  "ModuleLine" : 11,
-  "ModuleName" : "SampCtrl"
  }
 ]

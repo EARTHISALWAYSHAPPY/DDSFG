@@ -16,13 +16,14 @@ module Testbench ();
   reg  Ext_RESETn;  //wRESETn
   reg  rExtBtn;
 
-  initial begin
+  initial begin  // มั่วค่ามาเอาไวเทส only
     Ext_RESETn = 1'b1;
-    #440000;
+    #10;
     Ext_RESETn = 1'b0;
-    #240;
+    #50;
     Ext_RESETn = 1'b1;
-    #440;
+    #10;
+
     rExtBtn = 1'b1;
     #240000;
     rExtBtn = 1'b0;
@@ -41,6 +42,45 @@ module Testbench ();
     #500;
     rExtBtn = 1'b1;
     #24000;
+
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #24000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #100000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #24000;
+
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #24000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #100000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #24000;
+
   end
 
   RCC m_rcc (.Ext_Clk(wExt_Clk));  // for sim only gen CLK

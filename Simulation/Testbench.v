@@ -24,60 +24,87 @@ module Testbench ();
     Ext_RESETn = 1'b1;
     #10;
 
+    //toggle 1
     rExtBtn = 1'b1;
     #240000;
     rExtBtn = 1'b0;
     #500;
+
+    //toggle 2
     rExtBtn = 1'b1;
     #24000;
     rExtBtn = 1'b0;
     #500;
+
+    //toggle 3
     rExtBtn = 1'b1;
     #2400;
     rExtBtn = 1'b0;
     #500;
+
+    // toggle 3
     rExtBtn = 1'b1;
     #100000;
     rExtBtn = 1'b0;
     #500;
+
+    //toggle 4
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b0;
+    #500;
+
+    //toggle 5
     rExtBtn = 1'b1;
     #24000;
+    rExtBtn = 1'b0;
+    #500;
+
+    //toggle 6
+    rExtBtn = 1'b1;
+    #2400;
+    rExtBtn = 1'b0;
+    #500;
+
+    //toggle 7
+    rExtBtn = 1'b1;
+    #100000;
+    rExtBtn = 1'b0;
+    #500;
+
+    //toggle 8
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b1;
+    #240000;
+    rExtBtn = 1'b0;
+    #500;
 
     rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
     #24000;
     rExtBtn = 1'b0;
     #500;
-    rExtBtn = 1'b1;
-    #2400;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
-    #100000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
-    #24000;
 
     rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
-    #24000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
     #2400;
     rExtBtn = 1'b0;
     #500;
+
     rExtBtn = 1'b1;
-    #100000;
+    #10000;
     rExtBtn = 1'b0;
     #500;
+
     rExtBtn = 1'b1;
     #24000;
 

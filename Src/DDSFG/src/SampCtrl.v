@@ -23,12 +23,13 @@ module SampCtrl (
 
   reg [2:0] rMode;
 
-  reg [13:0] rGen_Enb_sig;
+  reg [13:0] rGen_signal;
+  reg [13:0] rCnt_Enable;
+  reg rEnable;
 
-  assign Ready = rReady;
-
-  assign Mode  = rMode;
-
+  assign Ready  = rReady;
+  assign Mode   = rMode;
+  assign Enable = rEnable;
   always @(posedge Fg_Clk or negedge RESETn) begin : u_Begin_Ready
     if (!RESETn) begin  // RESETn toggle --> Begin_Ready == 1 always
       Begin_Ready = 1'b1;
@@ -68,18 +69,34 @@ module SampCtrl (
     end
   end
 
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_Enb_sig
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
     if (!RESETn) begin
-      rGen_Enb_sig <= 14'd1;
+      rGen_signal <= 14'd1;
     end else begin
       case (rMode)
-        3'd0: rGen_Enb_sig <= 14'd1;
-        3'd1: rGen_Enb_sig <= 14'd10;
-        3'd2: rGen_Enb_sig <= 14'd100;
-        3'd3: rGen_Enb_sig <= 14'd1000;
-        3'd4: rGen_Enb_sig <= 14'd10000;
-        default: rGen_Enb_sig <= 14'd1;
+        3'd0: rGen_signal <= 14'd1 - 1;
+        3'd1: rGen_signal <= 14'd10 - 1;
+        3'd2: rGen_signal <= 14'd100 - 1;
+        3'd3: rGen_signal <= 14'd1000 - 1;
+        3'd4: rGen_signal <= 14'd10000 - 1;
+        default: rGen_signal <= 14'd1;
       endcase
+    end
+  end
+
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Enable
+    if (!RESETn) begin
+      rCnt_Enable <= 14'd0;
+    end else begin
+      rCnt_Enable <= (rCnt_Enable < rGen_signal) ? rCnt_Enable + 14'd1 : 14'd0;
+    end
+  end
+
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rEnable
+    if (!RESETn) begin
+      rEnable <= 1'd0;
+    end else begin
+      rEnable <= (rCnt_Enable == rGen_signal) ? 1'b1 : 1'b0;
     end
   end
 

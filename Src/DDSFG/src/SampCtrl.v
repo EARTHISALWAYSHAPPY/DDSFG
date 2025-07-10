@@ -43,7 +43,7 @@ module SampCtrl (
   // Process Declaration
   //----------------------------------------//
 
-  // Initial Ready Process Triggered by Reset
+  // Initial Ready Process 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rBegin_Ready
     if (!RESETn) Begin_Ready <= 1'b1;
     else Begin_Ready <= Begin_Ready;
@@ -55,7 +55,7 @@ module SampCtrl (
     else if (Begin_Ready) rCnt_Ready <= (rCnt_Ready == 7'd79) ? 7'd0 : rCnt_Ready + 7'd1;
   end
 
-  // Ready Signal Control
+  // Ready Signal
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rReady
     if (!RESETn) rReady <= 1'b0;
     else if (rCnt_Ready == 7'd79) begin
@@ -64,14 +64,14 @@ module SampCtrl (
     end else rReady <= 1'b0;
   end
 
-  // Mode Control by Button
+  // Mode
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode
     if (!RESETn) rMode <= 3'd0;
     else if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0))
       rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
   end
 
-  // Signal Generator Threshold by Mode
+  // Signal Generator
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
     if (!RESETn) rGen_signal <= 14'd0;
     else begin
@@ -86,19 +86,19 @@ module SampCtrl (
     end
   end
 
-  // Counter for Enable timing
+  // Counter for Enable
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Enable
     if (!RESETn) rCnt_Enable <= 14'd0;
     else rCnt_Enable <= (rCnt_Enable < rGen_signal) ? rCnt_Enable + 14'd1 : 14'd0;
   end
 
-  // Enable Signal when Counter matches threshold
+  // Enable Signal 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rEnable
     if (!RESETn) rEnable <= 1'b0;
     else rEnable <= (rCnt_Enable == rGen_signal) ? 1'b1 : 1'b0;
   end
 
-  // Pulse Generator from Button
+  // Pulse from Button
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rPulse_in
     if (!RESETn) rPulse_in <= 1'b0;
     else if (rEnable) rPulse_in <= 1'b0;

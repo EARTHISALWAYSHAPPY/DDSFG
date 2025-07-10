@@ -31,7 +31,7 @@ Z4 o-work work
 Z5 tCvgOpt 0
 n@btn_@i@f
 vBtn_Interface
-Z6 !s110 1752172402
+Z6 !s110 1752175961
 !i10b 1
 !s100 TC_>VamVWgI;A`]z0f8392
 IC;XDXQDmacEm?=6dfdeYD0
@@ -45,7 +45,7 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1752172402.000000
+Z9 !s108 1752175961.000000
 !s107 D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v|
 !i113 1
@@ -231,11 +231,11 @@ nr@p@l@l
 vSampCtrl
 R6
 !i10b 1
-!s100 P?4Zk=UhT46cAh4z90]I@3
-IVcn`?jST4BSiB43P;kT=40
+!s100 ^I5CCF5K]zP^8iT0J_6aC3
+I_Tc5n=>aEm`KjTo?7O2U52
 R0
 R7
-w1752172384
+w1752173698
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v
 R10
@@ -253,11 +253,11 @@ n@samp@ctrl
 vTestbench
 R6
 !i10b 1
-!s100 hOEzGL7QUH?NY;6=mMo]i1
-IezkIao[7]0P>2]a?J=nkl1
+!s100 2IY=L>T@mAV?gbTd10bGE1
+I0VY6Kc2_c^RlT;Pa^F;I92
 R0
 R7
-w1752172126
+w1752175247
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Testbench.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Testbench.v
 L0 2

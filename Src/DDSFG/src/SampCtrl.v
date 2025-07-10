@@ -33,16 +33,14 @@ module SampCtrl (
   assign Mode   = rMode;
   assign Enable = rEnable;
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rBegin_Ready
     if (!RESETn) begin  // RESETn toggle --> Begin_Ready == 1 always
-      Begin_Ready = 1'b1;
+      Begin_Ready <= 1'b1;
     end else begin
-      Begin_Ready = 1'b0;
+      Begin_Ready <= Begin_Ready;
     end
   end
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Ready
     if (!RESETn) begin
       rCnt_Ready <= 7'd0;
@@ -53,7 +51,6 @@ module SampCtrl (
     end
   end
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rReady
     if (!RESETn) begin
       rReady <= 1'b0;
@@ -66,7 +63,6 @@ module SampCtrl (
       end
     end
   end
-
 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode
     if (!RESETn) begin
@@ -81,7 +77,6 @@ module SampCtrl (
     end
   end
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
     if (!RESETn) begin
       rGen_signal <= 14'd1;
@@ -92,12 +87,11 @@ module SampCtrl (
         3'd2: rGen_signal <= 14'd100 - 1;
         3'd3: rGen_signal <= 14'd1000 - 1;
         3'd4: rGen_signal <= 14'd10000 - 1;
-        default: rGen_signal <= 14'd1;
+        default: rGen_signal <= 14'd1 - 1;
       endcase
     end
   end
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Enable
     if (!RESETn) begin
       rCnt_Enable <= 14'd0;
@@ -106,7 +100,6 @@ module SampCtrl (
     end
   end
 
-  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rEnable
     if (!RESETn) begin
       rEnable <= 1'd0;
@@ -117,13 +110,15 @@ module SampCtrl (
 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rPulse_in
     if (!RESETn) begin
-      rPulse_in <= 1'b0;
+        rPulse_in <= 1'b0;
     end else if (rEnable) begin
-      rPulse_in <= 1'b0;
+        rPulse_in <= 1'b0;
     end else if (IntBtn) begin
-      rPulse_in <= 1'b1;
+        rPulse_in <= 1'b1;
+    end else begin
+        rPulse_in <= rPulse_in; 
     end
-  end
+end
 
 
 endmodule

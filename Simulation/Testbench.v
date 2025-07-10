@@ -57,11 +57,11 @@ module Testbench ();
 
   initial begin  // มั่วค่ามาเอาไวเทส only
     Ext_RESETn = 1'b1;
-    #10;
+    #10000;
     Ext_RESETn = 1'b0;
-    #50;
+    #5;
     Ext_RESETn = 1'b1;
-    #10;
+    #1000;
 
     rExtBtn = 1'b1;
     #2400000;
@@ -76,21 +76,12 @@ module Testbench ();
     #500;
     rExtBtn = 1'b1;
     #2400000;
-    
-    rExtBtn = 1'b1;
-    #2400000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
-    #2400000;
 
-    rExtBtn = 1'b1;
-    #2400000;
-    rExtBtn = 1'b0;
-    #500;
-    rExtBtn = 1'b1;
-    #2400000;
-    
+    Ext_RESETn = 1'b0;
+    #5;
+    Ext_RESETn = 1'b1;
+    #10000;
+
     rExtBtn = 1'b1;
     #2400000;
     rExtBtn = 1'b0;
@@ -105,21 +96,35 @@ module Testbench ();
     rExtBtn = 1'b1;
     #2400000;
 
-     rExtBtn = 1'b1;
+    rExtBtn = 1'b1;
     #2400000;
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
     #2400000;
 
-     rExtBtn = 1'b1;
+    rExtBtn = 1'b1;
     #2400000;
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
     #2400000;
 
-     rExtBtn = 1'b1;
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+    rExtBtn = 1'b1;
     #2400000;
     rExtBtn = 1'b0;
     #500;

@@ -18,7 +18,7 @@ module Btn_Interface (
   //----------------------------------------//
   // Constant Declaration
   //----------------------------------------//
-  localparam delay = 25'd2400 - 1;
+  localparam delay = 25'd24000 - 1;
 
   //----------------------------------------//
   // Signal Declaration

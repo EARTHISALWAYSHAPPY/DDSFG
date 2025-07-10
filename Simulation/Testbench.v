@@ -108,14 +108,11 @@ module Testbench ();
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
-    #2400000;
-
-    rExtBtn = 1'b1;
-    #2400000;
+    #2400;
     rExtBtn = 1'b0;
     #500;
     rExtBtn = 1'b1;
-    #2400000;
+    #2400;
 
     rExtBtn = 1'b1;
     #2400000;

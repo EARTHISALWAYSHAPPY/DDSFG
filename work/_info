@@ -31,21 +31,21 @@ Z4 o-work work
 Z5 tCvgOpt 0
 n@btn_@i@f
 vBtn_Interface
-Z6 !s110 1752175961
+Z6 !s110 1752185436
 !i10b 1
-!s100 TC_>VamVWgI;A`]z0f8392
-IC;XDXQDmacEm?=6dfdeYD0
+!s100 :NknzmJ>PmQY:[NZid]A02
+I`RPXR2^lH05RZYUD82kZi2
 R0
 Z7 dD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG
-Z8 w1752077510
+w1752185431
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v
-R2
+Z8 L0 12
 R3
 r1
 !s85 0
 31
-Z9 !s108 1752175961.000000
+Z9 !s108 1752185436.000000
 !s107 D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v|
 !i113 1
@@ -55,14 +55,14 @@ n@btn_@interface
 vClk_Div
 R6
 !i10b 1
-!s100 cHT<@Nl8bBTCE>ZzG_lMf3
-IJ0HLC;kTMnd1d8QY?BZTV0
+!s100 jlJ<8TNjK=M:Ha6e<JbzK1
+I]m07Kia2Bhc^0b2SW=zYn0
 R0
 R7
-w1751910510
+w1752184863
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_Div.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_Div.v
-R2
+R8
 R3
 r1
 !s85 0
@@ -77,14 +77,14 @@ n@clk_@div
 vDDS_Top
 R6
 !i10b 1
-!s100 YgXLXgeHlNN]?7W1F7i;Z3
-IIWEAfKIQ3H`D4HmcRg>4H2
+!s100 4DdhMlAQm`ePU3R4=YEPe1
+IEZYg]QK53gXDCFNY3Jg^P0
 R0
 R7
-R8
+w1752184654
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v
-Z10 L0 11
+R8
 R3
 r1
 !s85 0
@@ -97,7 +97,7 @@ R4
 R5
 n@d@d@s_@top
 vDDS_Top_tb
-Z11 !s110 1751883153
+Z10 !s110 1751883153
 !i10b 1
 !s100 DVNE1nViih;UGT7ljCLo32
 IzOm?^ZC5Zc2^Ok=CB;AeU0
@@ -111,7 +111,7 @@ R3
 r1
 !s85 0
 31
-Z12 !s108 1751883153.000000
+Z11 !s108 1751883153.000000
 !s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/DDS_Top_tb.v|
 !i113 1
@@ -194,7 +194,7 @@ R7
 w1751986086
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/ResetGen_Module.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/ResetGen_Module.v
-L0 12
+R8
 R3
 r1
 !s85 0
@@ -207,7 +207,7 @@ R4
 R5
 n@reset@gen_@module
 vrPLL
-R11
+R10
 !i10b 1
 !s100 jghARO384RcQbSYGgaa3h0
 I8=HGcd?l2gbLL`m0@lILa3
@@ -221,7 +221,7 @@ R3
 r1
 !s85 0
 31
-R12
+R11
 !s107 D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Work/ElecEng/Y3/T1/Proj._DDSFG/Simulation/rPLL_stub.v|
 !i113 1
@@ -231,14 +231,14 @@ nr@p@l@l
 vSampCtrl
 R6
 !i10b 1
-!s100 ^I5CCF5K]zP^8iT0J_6aC3
-I_Tc5n=>aEm`KjTo?7O2U52
+!s100 FRJ4>QJ:oeLkfUFXGH5Hh1
+I8JOMc@ZL7MC@L;KkBme^X2
 R0
 R7
-w1752173698
+w1752184788
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v
-R10
+R8
 R3
 r1
 !s85 0
@@ -253,11 +253,11 @@ n@samp@ctrl
 vTestbench
 R6
 !i10b 1
-!s100 2IY=L>T@mAV?gbTd10bGE1
-I0VY6Kc2_c^RlT;Pa^F;I92
+!s100 HOEPhzC5Fic`XL[P7PgV=1
+IA7mVYTmGgXHFiNZ<b8:gT2
 R0
 R7
-w1752175247
+w1752185361
 8D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Testbench.v
 FD:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Testbench.v
 L0 2

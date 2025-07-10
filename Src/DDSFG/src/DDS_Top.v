@@ -19,6 +19,10 @@ module DDS_Top (
   wire wFg_RESETn;
   wire wFg_Clk;
   wire wDac_Clk;
+  wire wIntBtn;
+  wire wReady;
+  wire wEnable;
+  wire [2:0] wMode;
 
   ResetGen_Module m_resetgen (
       .CLK(Ext_Clk),
@@ -47,5 +51,14 @@ module DDS_Top (
       .RESETn(wFg_RESETn),
       .ExtBtn(rExtBtn),
       .IntBtn(wIntBtn)
+  );
+
+  RampCtrl m_rampctrl (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .IntBtn(wIntBtn),
+      .Ready (wReady),
+      .Enable(wEnable),
+      .Mode  (wMode)
   );
 endmodule

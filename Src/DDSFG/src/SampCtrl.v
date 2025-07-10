@@ -9,12 +9,12 @@
 //Remark : Creation File
 //------------------- 
 module SampCtrl (
-    input  wire Fg_Clk,
-    input  wire RESETn,
-    input  wire IntBtn,
+    input wire Fg_Clk,
+    input wire RESETn,
+    input wire IntBtn,
     output wire Ready,
     output wire Enable,
-    output wire Mode
+    output wire [2:0] Mode
 );
 
   reg Begin_Ready;

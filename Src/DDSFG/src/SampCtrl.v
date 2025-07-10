@@ -27,25 +27,33 @@ module SampCtrl (
   reg [13:0] rCnt_Enable;
   reg rEnable;
 
+  reg rPulse_in;
+
   assign Ready  = rReady;
   assign Mode   = rMode;
   assign Enable = rEnable;
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_Begin_Ready
+
+  //
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rBegin_Ready
     if (!RESETn) begin  // RESETn toggle --> Begin_Ready == 1 always
       Begin_Ready = 1'b1;
+    end else begin
+      Begin_Ready = 1'b0;
     end
   end
 
+  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Ready
     if (!RESETn) begin
       rCnt_Ready <= 7'd0;
     end else begin
       if (Begin_Ready == 1'b1) begin
-        rCnt_Ready <= (rCnt_Ready == 7'd79) ? rCnt_Ready <= 7'd0 : rCnt_Ready + 7'd1;
+        rCnt_Ready <= (rCnt_Ready == 7'd79) ? 7'd0 : rCnt_Ready + 7'd1;
       end
     end
   end
 
+  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rReady
     if (!RESETn) begin
       rReady <= 1'b0;
@@ -59,16 +67,21 @@ module SampCtrl (
     end
   end
 
+
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode
     if (!RESETn) begin
       rMode <= 3'd0;
     end else begin
-      if (IntBtn == 1'd1) begin
+      // if (IntBtn == 1'd1) begin
+      //   rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
+      // end
+      if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0)) begin
         rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
       end
     end
   end
 
+  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
     if (!RESETn) begin
       rGen_signal <= 14'd1;
@@ -84,6 +97,7 @@ module SampCtrl (
     end
   end
 
+  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Enable
     if (!RESETn) begin
       rCnt_Enable <= 14'd0;
@@ -92,6 +106,7 @@ module SampCtrl (
     end
   end
 
+  //
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rEnable
     if (!RESETn) begin
       rEnable <= 1'd0;
@@ -100,7 +115,15 @@ module SampCtrl (
     end
   end
 
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rPulse_in
+    if (!RESETn) begin
+      rPulse_in <= 1'b0;
+    end else if (rEnable) begin
+      rPulse_in <= 1'b0;
+    end else if (IntBtn) begin
+      rPulse_in <= 1'b1;
+    end
+  end
+
+
 endmodule
-
-
-

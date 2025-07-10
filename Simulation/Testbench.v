@@ -11,104 +11,10 @@ module Testbench ();
   wire wIntBtn;
   wire wReady;
   wire wEnable;
-  wire wMode;
+  wire [2:0] wMode;
 
-  reg  Ext_RESETn;  //wRESETn
-  reg  rExtBtn;
-
-  initial begin  // มั่วค่ามาเอาไวเทส only
-    Ext_RESETn = 1'b1;
-    #10;
-    Ext_RESETn = 1'b0;
-    #50;
-    Ext_RESETn = 1'b1;
-    #10;
-
-    //toggle 1
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 2
-    rExtBtn = 1'b1;
-    #24000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 3
-    rExtBtn = 1'b1;
-    #2400;
-    rExtBtn = 1'b0;
-    #500;
-
-    // toggle 3
-    rExtBtn = 1'b1;
-    #100000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 4
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 5
-    rExtBtn = 1'b1;
-    #24000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 6
-    rExtBtn = 1'b1;
-    #2400;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 7
-    rExtBtn = 1'b1;
-    #100000;
-    rExtBtn = 1'b0;
-    #500;
-
-    //toggle 8
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b1;
-    #240000;
-    rExtBtn = 1'b0;
-    #500;
-
-    rExtBtn = 1'b1;
-    #24000;
-    rExtBtn = 1'b0;
-    #500;
-
-    rExtBtn = 1'b1;
-    #2400;
-    rExtBtn = 1'b0;
-    #500;
-
-    rExtBtn = 1'b1;
-    #10000;
-    rExtBtn = 1'b0;
-    #500;
-
-    rExtBtn = 1'b1;
-    #24000;
-
-  end
+  reg Ext_RESETn;  //wRESETn
+  reg rExtBtn;
 
   RCC m_rcc (.Ext_Clk(wExt_Clk));  // for sim only gen CLK
 
@@ -148,5 +54,78 @@ module Testbench ();
       .Enable(wEnable),
       .Mode  (wMode)
   );
+
+  initial begin  // มั่วค่ามาเอาไวเทส only
+    Ext_RESETn = 1'b1;
+    #10;
+    Ext_RESETn = 1'b0;
+    #50;
+    Ext_RESETn = 1'b1;
+    #10;
+
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+    
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+    
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+    rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+     rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+     rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+
+     rExtBtn = 1'b1;
+    #2400000;
+    rExtBtn = 1'b0;
+    #500;
+    rExtBtn = 1'b1;
+    #2400000;
+  end
+
 
 endmodule

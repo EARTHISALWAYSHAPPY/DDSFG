@@ -1,28 +1,41 @@
-//File name : Btn_Interface.v
-//Description : Btn_Interface module for DDSFG.
-//Company : KMITL
-//Project : DDSFG
-//------------------- 
-//Version : 00.01              
-//Date :  08.07.2025         
-//Author : Kunanon Wanyen                
-//Remark : Creation File
+//----------------------------------------//
+// Filename     : Btn_Interface.v
+// Description  : Btn_Interface module for DDSFG.
+// Company      : KMITL
+// Project      : DDSFG
+//----------------------------------------//
+// Version      : 00.01
+// Date         : 08.07.2025
+// Author       : Kunanon Wanyen
+// Remark       : Creation File
+//----------------------------------------//
 module Btn_Interface (
     input  wire Fg_CLK,
     input  wire RESETn,
     input  wire ExtBtn,
     output wire IntBtn
 );
-
+  //----------------------------------------//
+  // Constant Declaration
+  //----------------------------------------//
   localparam delay = 25'd2400 - 1;
 
+  //----------------------------------------//
+  // Signal Declaration
+  //----------------------------------------//
   wire wIntBtn;
-
   reg [24:0] rCnt;
   reg [2:0] rDout;
 
+  //----------------------------------------//
+  // Output Declaration
+  //----------------------------------------//
   assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
   assign IntBtn  = wIntBtn;
+
+  //----------------------------------------//
+  // Process Declaration
+  //----------------------------------------//
 
   always @(posedge Fg_CLK or negedge RESETn) begin : u_rCnt
     if (!RESETn) begin
@@ -44,16 +57,5 @@ module Btn_Interface (
     end
   end
 
+  //----------------------------------------//
 endmodule
-
-
-// temp
-// if (rCnt != 25'd0 && wIntBtn == 1'd0) begin
-//   rCnt <= rCnt + 25'd1;
-// end
-// if (rCnt == delay) begin
-//   rCnt <= 25'd0;
-// end
-// if (rCnt == 25'd0 && wIntBtn == 1'd1) begin
-//   rCnt <= 25'd1;
-// end

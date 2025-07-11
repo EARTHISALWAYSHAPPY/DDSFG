@@ -43,38 +43,56 @@ module SampCtrl (
   // Process Declaration
   //----------------------------------------//
 
-  // Initial Ready Process 
+  // Initial Ready Process
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rBegin_Ready
-    if (!RESETn) Begin_Ready <= 1'b1;
-    else Begin_Ready <= Begin_Ready;
+    if (!RESETn) begin
+      Begin_Ready <= 1'b1;
+    end else begin
+      Begin_Ready <= Begin_Ready;
+    end
   end
 
-  // Ready Counter (0 → 79)
+  // Ready Counter (0 -> 79)
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Ready
-    if (!RESETn) rCnt_Ready <= 7'd0;
-    else if (Begin_Ready) rCnt_Ready <= (rCnt_Ready == 7'd79) ? 7'd0 : rCnt_Ready + 7'd1;
+    if (!RESETn) begin
+      rCnt_Ready <= 7'd0;
+    end else begin
+      if (Begin_Ready == 1'b1) begin
+        rCnt_Ready <= (rCnt_Ready == 7'd79) ? 7'd0 : rCnt_Ready + 7'd1;
+      end
+    end
   end
 
-  // Ready Signal
+  // Ready Signal 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rReady
-    if (!RESETn) rReady <= 1'b0;
-    else if (rCnt_Ready == 7'd79) begin
-      rReady <= 1'b1;
-      Begin_Ready <= 1'b0;
-    end else rReady <= 1'b0;
+    if (!RESETn) begin
+      rReady <= 1'b0;
+    end else begin
+      if (rCnt_Ready == 7'd79) begin
+        rReady <= 1'b1;
+        Begin_Ready <= 1'b0;
+      end else begin
+        rReady <= 1'b0;
+      end
+    end
   end
 
-  // Mode
+  // Mode Ctrl
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode
-    if (!RESETn) rMode <= 3'd0;
-    else if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0))
-      rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
+    if (!RESETn) begin
+      rMode <= 3'd0;
+    end else begin
+      if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0)) begin
+        rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
+      end
+    end
   end
 
-  // Signal Generator
+  // Signal Generator Mode
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
-    if (!RESETn) rGen_signal <= 14'd0;
-    else begin
+    if (!RESETn) begin
+      rGen_signal <= 14'd1;
+    end else begin
       case (rMode)
         3'd0: rGen_signal <= 14'd1 - 1;
         3'd1: rGen_signal <= 14'd10 - 1;
@@ -88,22 +106,33 @@ module SampCtrl (
 
   // Counter for Enable
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Enable
-    if (!RESETn) rCnt_Enable <= 14'd0;
-    else rCnt_Enable <= (rCnt_Enable < rGen_signal) ? rCnt_Enable + 14'd1 : 14'd0;
+    if (!RESETn) begin
+      rCnt_Enable <= 14'd0;
+    end else begin
+      rCnt_Enable <= (rCnt_Enable < rGen_signal) ? rCnt_Enable + 14'd1 : 14'd0;
+    end
   end
 
-  // Enable Signal 
+  // Enable Signal
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rEnable
-    if (!RESETn) rEnable <= 1'b0;
-    else rEnable <= (rCnt_Enable == rGen_signal) ? 1'b1 : 1'b0;
+    if (!RESETn) begin
+      rEnable <= 1'b0;
+    end else begin
+      rEnable <= (rCnt_Enable == rGen_signal) ? 1'b1 : 1'b0;
+    end
   end
 
-  // Pulse from Button
+  // Pulse Gen from Button
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rPulse_in
-    if (!RESETn) rPulse_in <= 1'b0;
-    else if (rEnable) rPulse_in <= 1'b0;
-    else if (IntBtn) rPulse_in <= 1'b1;
-    else rPulse_in <= rPulse_in;
+    if (!RESETn) begin
+      rPulse_in <= 1'b0;
+    end else if (rEnable) begin
+      rPulse_in <= 1'b0;
+    end else if (IntBtn) begin
+      rPulse_in <= 1'b1;
+    end else begin
+      rPulse_in <= rPulse_in;
+    end
   end
 
   //----------------------------------------//

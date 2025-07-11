@@ -33,14 +33,20 @@ module Clk_Div (
 
   // Toggle Fg_Clk (rising edge of Pll_Clk)
   always @(posedge Pll_Clk or negedge RESETn) begin : u_rFg_Clk
-    if (!RESETn) rFg_Clk <= 1'd0;
-    else rFg_Clk <= ~rFg_Clk;
+    if (!RESETn) begin
+      rFg_Clk <= 1'd0;
+    end else begin
+      rFg_Clk <= ~rFg_Clk;
+    end
   end
 
   // Toggle Dac_Clk (falling edge of Pll_Clk)
   always @(negedge Pll_Clk or negedge RESETn) begin : u_rDac_Clk
-    if (!RESETn) rDac_Clk <= 1'd0;
-    else rDac_Clk <= ~rDac_Clk;
+    if (!RESETn) begin
+      rDac_Clk <= 1'd0;
+    end else begin
+      rDac_Clk <= ~rDac_Clk;
+    end
   end
 
   //----------------------------------------//

@@ -59,7 +59,7 @@ module DDS_Top (
 
     // Button Interface Module
     Btn_Interface m_btn_interface (
-        .Fg_CLK  (wFg_Clk),
+        .Fg_Clk  (wFg_Clk),
         .RESETn  (wFg_RESETn),
         .ExtBtn  (ExtBtn),
         .IntBtn  (wIntBtn)

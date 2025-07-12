@@ -10,7 +10,7 @@
 // Remark       : Creation File
 //----------------------------------------//
 module Btn_Interface (
-    input  wire Fg_CLK,
+    input  wire Fg_Clk,
     input  wire RESETn,
     input  wire ExtBtn,
     output wire IntBtn

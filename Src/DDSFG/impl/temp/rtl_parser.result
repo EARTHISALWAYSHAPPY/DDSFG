@@ -1,44 +1,10 @@
 [
  {
-  "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-  "InstLine" : 11,
-  "InstName" : "DDS_Top",
-  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-  "ModuleLine" : 11,
-  "ModuleName" : "DDS_Top",
-  "SubInsts" : [
-   {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 23,
-    "InstName" : "m_resetgen",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/ResetGen_Module.v",
-    "ModuleLine" : 12,
-    "ModuleName" : "ResetGen_Module"
-   },
-   {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 31,
-    "InstName" : "m_pll",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "Pll_Top"
-   },
-   {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 38,
-    "InstName" : "m_clk_div",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Clk_div.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "Clk_Div"
-   },
-   {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 45,
-    "InstName" : "m_btn_interface",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Proj._DDSFG/src/DDSFG/src/Btn_Interface.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "Btn_Interface"
-   }
-  ]
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
+  "InstLine" : 12,
+  "InstName" : "Osc_Top",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
+  "ModuleLine" : 12,
+  "ModuleName" : "Osc_Top"
  }
 ]

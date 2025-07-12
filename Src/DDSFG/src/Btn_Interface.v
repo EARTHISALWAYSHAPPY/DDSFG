@@ -37,7 +37,7 @@ module Btn_Interface (
   // Process Declaration
   //----------------------------------------//
 
-  always @(posedge Fg_CLK or negedge RESETn) begin : u_rCnt
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
     if (!RESETn) begin
       rCnt <= 25'd0;
     end else begin
@@ -49,7 +49,7 @@ module Btn_Interface (
     end
   end
 
-  always @(posedge Fg_CLK or negedge RESETn) begin : u_rDout
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDout
     if (!RESETn) begin
       rDout <= 3'b111;
     end else begin

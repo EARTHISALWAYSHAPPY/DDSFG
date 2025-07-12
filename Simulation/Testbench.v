@@ -15,7 +15,7 @@ module Testbench ();
     .ExtBtn     (ExtBtn)
   );
 
-  initial begin
+  initial begin // มั่วค่ามา test only!!!!
     Ext_RESETn = 1;
     ExtBtn     = 1;
 

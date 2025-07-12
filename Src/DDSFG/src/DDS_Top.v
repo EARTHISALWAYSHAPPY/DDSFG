@@ -17,7 +17,7 @@ module DDS_Top (
 //----------------------------------------//
 // Signal Declaration
 //----------------------------------------//
-    wire wPll_RESET;
+    wire wPll_RESETn;
     wire wPll_Clk;
     wire wPll_Lock;
     wire wFg_RESETn;
@@ -37,7 +37,7 @@ module DDS_Top (
         .CLK       (Ext_Clk),
         .ExtRESETn (Ext_RESETn),
         .PllLocked (wPll_Lock),
-        .PllRESETn (wPll_RESET),
+        .PllRESETn (wPll_RESETn),
         .FgRESETn  (wFg_RESETn)
     );
 
@@ -66,7 +66,7 @@ module DDS_Top (
     );
 
     // Ramp Control Module
-    RampCtrl m_rampctrl (
+    SampCtrl m_sampctrl (
         .Fg_Clk  (wFg_Clk),
         .RESETn  (wFg_RESETn),
         .IntBtn  (wIntBtn),

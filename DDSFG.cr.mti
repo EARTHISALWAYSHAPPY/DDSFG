@@ -33,12 +33,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	Testbench
 
+} {} {}} D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Osc_Top
+
+Top level modules:
+	Osc_Top
+
 } {} {}} D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/RCC.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/RCC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module RCC
 
 Top level modules:
 	RCC
+
+} {} {}} D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Btn_Interface
+
+Top level modules:
+	Btn_Interface
 
 } {} {}} D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_Div.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_Div.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

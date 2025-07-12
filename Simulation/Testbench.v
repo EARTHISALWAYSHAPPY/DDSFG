@@ -38,7 +38,6 @@ module Testbench ();
     #500;
     ExtBtn = 1;
     #2400000;
-
     Ext_RESETn = 0;
     #5;
     Ext_RESETn = 1;
@@ -76,12 +75,12 @@ module Testbench ();
     ExtBtn = 1;
     #2400000;
 
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
+    // ExtBtn = 1;
+    // #2400000;
+    // ExtBtn = 0;
+    // #500;
+    // ExtBtn = 1;
+    // #2400000;
 
     $finish;
   end

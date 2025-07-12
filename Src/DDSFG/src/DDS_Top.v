@@ -14,66 +14,82 @@ module DDS_Top (
     input wire Ext_RESETn,
     input wire ExtBtn
 );
-//----------------------------------------//
-// Signal Declaration
-//----------------------------------------//
-    wire wPll_RESETn;
-    wire wPll_Clk;
-    wire wPll_Lock;
-    wire wFg_RESETn;
-    wire wFg_Clk;
-    wire wDac_Clk;
-    wire wIntBtn;
-    wire wReady;
-    wire wEnable;
-    wire [2:0] wMode;
+  //----------------------------------------//
+  // Signal Declaration
+  //----------------------------------------//
+  wire wPll_RESETn;
+  wire wPll_Clk;
+  wire wPll_Lock;
+  wire wFg_RESETn;
+  wire wFg_Clk;
+  wire wDac_Clk;
+  wire wIntBtn;
+  wire wReady;
+  wire wEnable;
+  wire [2:0] wMode;
+  wire [31:0] wInit1;
+  wire [31:0] wInit2;
+  wire [31:0] wOut1;
+  wire [31:0] wOut2;
 
-//----------------------------------------//
-// Module Instantiation
-//----------------------------------------//
+  //----------------------------------------//
+  // Module Instantiation
+  //----------------------------------------//
 
-    // Reset Generator Module
-    ResetGen_Module m_resetgen (
-        .CLK       (Ext_Clk),
-        .ExtRESETn (Ext_RESETn),
-        .PllLocked (wPll_Lock),
-        .PllRESETn (wPll_RESETn),
-        .FgRESETn  (wFg_RESETn)
-    );
+  // Reset Generator Module
+  ResetGen_Module m_resetgen (
+      .CLK      (Ext_Clk),
+      .ExtRESETn(Ext_RESETn),
+      .PllLocked(wPll_Lock),
+      .PllRESETn(wPll_RESETn),
+      .FgRESETn (wFg_RESETn)
+  );
 
-    // PLL Module
-    Pll_Top m_pll (
-        .clkin  (Ext_Clk),
-        .reset  (~wPll_RESETn),  // Active High if use for sim 1'b0
-        .clkout (wPll_Clk),
-        .lock   (wPll_Lock)
-    );
+  // PLL Module
+  Pll_Top m_pll (
+      .clkin (Ext_Clk),
+      .reset (~wPll_RESETn),  // Active High if use for sim 1'b0
+      .clkout(wPll_Clk),
+      .lock  (wPll_Lock)
+  );
 
-    // Clock Divider Module
-    Clk_Div m_clk_div (
-        .Pll_Clk (wPll_Clk),
-        .RESETn  (wFg_RESETn),
-        .Fg_Clk  (wFg_Clk),
-        .Dac_Clk (wDac_Clk)
-    );
+  // Clock Divider Module
+  Clk_Div m_clk_div (
+      .Pll_Clk(wPll_Clk),
+      .RESETn (wFg_RESETn),
+      .Fg_Clk (wFg_Clk),
+      .Dac_Clk(wDac_Clk)
+  );
 
-    // Button Interface Module
-    Btn_Interface m_btn_interface (
-        .Fg_Clk  (wFg_Clk),
-        .RESETn  (wFg_RESETn),
-        .ExtBtn  (ExtBtn),
-        .IntBtn  (wIntBtn)
-    );
+  // Button Interface Module
+  Btn_Interface m_btn_interface (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .ExtBtn(ExtBtn),
+      .IntBtn(wIntBtn)
+  );
 
-    // Ramp Control Module
-    SampCtrl m_sampctrl (
-        .Fg_Clk  (wFg_Clk),
-        .RESETn  (wFg_RESETn),
-        .IntBtn  (wIntBtn),
-        .Ready   (wReady),
-        .Enable  (wEnable),
-        .Mode    (wMode)
-    );
+  // Ramp Control Module
+  SampCtrl m_sampctrl (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .IntBtn(wIntBtn),
+      .Ready (wReady),
+      .Enable(wEnable),
+      .Mode  (wMode)
+  );
 
-//----------------------------------------//
+  //Oscillator Module
+  Osc_Top m_osc_top (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .Enable(wEnable),
+      .Ready (wReady),
+      .Init1 (32'd96878045),    //wait interpolator
+      .Init2 (32'd1054193702),
+      .Out1  (wOut1),
+      .Out2  (wOut2)
+  );
+
+  //----------------------------------------//
 endmodule

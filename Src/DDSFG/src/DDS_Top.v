@@ -12,7 +12,9 @@
 module DDS_Top (
     input wire Ext_Clk,
     input wire Ext_RESETn,
-    input wire ExtBtn
+    input wire ExtBtn,
+    output wire Dac_Clk,
+    output wire [11:0] InterpOut
 );
   //----------------------------------------//
   // Signal Declaration
@@ -22,7 +24,6 @@ module DDS_Top (
   wire wPll_Lock;
   wire wFg_RESETn;
   wire wFg_Clk;
-  wire wDac_Clk;
   wire wIntBtn;
   wire wReady;
   wire wEnable;
@@ -58,7 +59,7 @@ module DDS_Top (
       .Pll_Clk(wPll_Clk),
       .RESETn (wFg_RESETn),
       .Fg_Clk (wFg_Clk),
-      .Dac_Clk(wDac_Clk)
+      .Dac_Clk(Dac_Clk)
   );
 
   // Button Interface Module
@@ -79,7 +80,7 @@ module DDS_Top (
       .Mode  (wMode)
   );
 
-  //Oscillator Module
+  // Oscillator Module
   Osc_Top m_osc_top (
       .Fg_Clk(wFg_Clk),
       .RESETn(wFg_RESETn),
@@ -91,5 +92,15 @@ module DDS_Top (
       .Out2  (wOut2)
   );
 
+  // Interpolator Module 
+  Interpolator m_interpolator (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .Out1(wOut1),
+      .Out2(wOut2),
+      .Mode(wMode),
+      .Enable(wEnable),
+      .InterpOut(InterpOut)
+  );
   //----------------------------------------//
 endmodule

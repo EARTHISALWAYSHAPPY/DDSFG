@@ -61,7 +61,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>D:\Work\ElecEng\Y3\T1\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
+<td>D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
@@ -73,7 +73,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Tool Version</td>
-<td>V1.9.11.01 (64-bit)</td>
+<td>V1.9.11.02 (64-bit)</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -89,7 +89,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Tue Jul  8 15:42:31 2025
+<td>Mon Jul 14 23:59:26 2025
 </td>
 </tr>
 <tr>
@@ -161,15 +161,15 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>38.838</td>
+<td>54.306</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
-<td>38.330</td>
+<td>38.535</td>
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>0.508</td>
+<td>15.772</td>
 </tr>
 <tr>
 <td class="label">Psram Power (mW)</td>
@@ -180,7 +180,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>26.418</td>
+<td>26.753</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -188,7 +188,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>83.582</td>
+<td>83.247</td>
 </tr>
 </table>
 <h2><a name="Supply_Summary">Supply Information:</a></h2>
@@ -203,23 +203,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>3.300</td>
-<td>0.067</td>
+<td>4.611</td>
 <td>8.400</td>
-<td>27.940</td>
+<td>42.935</td>
 </tr>
 <tr>
 <td>VCCX</td>
 <td>3.300</td>
-<td>0.057</td>
+<td>0.109</td>
 <td>3.200</td>
-<td>10.747</td>
+<td>10.921</td>
 </tr>
 <tr>
 <td>VCCIO18</td>
 <td>1.800</td>
-<td>0.056</td>
-<td>0.028</td>
-<td>0.151</td>
+<td>0.109</td>
+<td>0.141</td>
+<td>0.451</td>
 </tr>
 </table>
 <h1><a name="Detail">Power Details</a></h1>
@@ -233,15 +233,27 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.027</td>
+<td>0.395</td>
 <td>NA</td>
-<td>6.250</td>
+<td>5.898</td>
 </tr>
 <tr>
 <td>IO</td>
-<td>0.713
-<td>0.238
-<td>15.000
+<td>2.109
+<td>1.192
+<td>7.352
+</tr>
+<tr>
+<td>PLL</td>
+<td>3.682
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DSP</td>
+<td>10.766
+<td>NA</td>
+<td>1.196
 </tr>
 </table>
 <h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
@@ -252,9 +264,37 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Block Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>ResetGen_Module</td>
-<td>0.027</td>
-<td>0.027(0.000)</td>
+<td>DDS_Top</td>
+<td>14.843</td>
+<td>14.843(14.843)</td>
+<tr>
+<td>DDS_Top/m_btn_interface/</td>
+<td>0.017</td>
+<td>0.017(0.000)</td>
+<tr>
+<td>DDS_Top/m_clk_div/</td>
+<td>0.003</td>
+<td>0.003(0.000)</td>
+<tr>
+<td>DDS_Top/m_interpolator/</td>
+<td>0.199</td>
+<td>0.199(0.000)</td>
+<tr>
+<td>DDS_Top/m_osc_top/</td>
+<td>10.893</td>
+<td>10.893(0.000)</td>
+<tr>
+<td>DDS_Top/m_pll/</td>
+<td>3.682</td>
+<td>3.682(0.000)</td>
+<tr>
+<td>DDS_Top/m_resetgen/</td>
+<td>0.015</td>
+<td>0.015(0.000)</td>
+<tr>
+<td>DDS_Top/m_sampctrl/</td>
+<td>0.035</td>
+<td>0.035(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -264,9 +304,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>CLK</td>
+<td>Ext_Clk</td>
+<td>27.000</td>
+<td>3.699</td>
+</tr>
+<tr>
+<td>wFg_Clk</td>
 <td>50.000</td>
-<td>0.032</td>
+<td>11.153</td>
+</tr>
+<tr>
+<td>m_pll/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>48.000</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
 </tr>
 </table>
 </div><!-- content -->

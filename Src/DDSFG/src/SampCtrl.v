@@ -48,7 +48,7 @@ module SampCtrl (
     if (!RESETn) begin
       Begin_Ready <= 1'b1;
     end else begin
-      Begin_Ready <= Begin_Ready;
+      Begin_Ready <= (rCnt_Ready == 7'd79) ? 1'b0 : Begin_Ready;
     end
   end
 
@@ -70,7 +70,6 @@ module SampCtrl (
     end else begin
       if (rCnt_Ready == 7'd79) begin
         rReady <= 1'b1;
-        Begin_Ready <= 1'b0;
       end else begin
         rReady <= 1'b0;
       end

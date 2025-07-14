@@ -2,6 +2,10 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/Osc_top.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/src/DDSFG/src/Btn_Interface.v",
    "Type" : "verilog"
   },
@@ -26,7 +30,7 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Interpolator.v",
    "Type" : "verilog"
   }
  ],

@@ -5,10 +5,11 @@
     <Version>5</Version>
     <Device name="GW1NR-9C" pn="GW1NR-UV9QN88PC6/I5">gw1nr9c-006</Device>
     <FileList>
-        <File path="src/Osc_top.v" type="file.verilog" enable="1"/>
+        <File path="src/Interpolator.v" type="file.verilog" enable="1"/>
         <File path="src/Btn_Interface.v" type="file.verilog" enable="1"/>
         <File path="src/Clk_div.v" type="file.verilog" enable="1"/>
         <File path="src/DDS_Top.v" type="file.verilog" enable="1"/>
+        <File path="src/Osc_top.v" type="file.verilog" enable="1"/>
         <File path="src/ResetGen_Module.v" type="file.verilog" enable="1"/>
         <File path="src/SampCtrl.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/Pll_Top.v" type="file.verilog" enable="1"/>

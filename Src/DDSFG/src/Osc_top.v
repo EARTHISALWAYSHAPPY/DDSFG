@@ -54,6 +54,15 @@ module Osc_Top (
     Out <= Out1_a - Out2;
   end
 
+  // a = 2cos(B)
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_a
+    if (!RESETn) begin
+      a <= 31'd0;
+    end else if (Ready) begin
+      a <= Init2;
+    end
+  end
+
   // for Out1
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rOut1
     if (!RESETn) begin
@@ -73,15 +82,6 @@ module Osc_Top (
       rOut2 <= 32'd0;
     end else if (Enable) begin
       rOut2 <= Out1;
-    end
-  end
-
-  // a = 2cos(B)
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_a
-    if (!RESETn) begin
-      a <= 31'd0;
-    end else if (Ready) begin
-      a <= Init2;
     end
   end
 

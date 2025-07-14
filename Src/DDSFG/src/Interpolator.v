@@ -73,9 +73,9 @@ module Interpolator (
   end
 
   // Delta cal , interpolation output
-  always @(*) begin : u_InterpComb
-    delta      = (Out1 - Out2) * Const;
-    rInterpOut = Output[29:18];
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_InterpComb
+    delta      <= (Out1 - Out2) * Const;
+    rInterpOut <= Output[29:18];
   end
 
   //----------------------------------------//

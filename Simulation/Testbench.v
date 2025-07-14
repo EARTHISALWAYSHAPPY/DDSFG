@@ -68,12 +68,12 @@ module Testbench ();
     ExtBtn = 1;
     #2400;
 
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
 
     // ExtBtn = 1;
     // #2400000;

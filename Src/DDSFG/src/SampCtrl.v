@@ -90,7 +90,7 @@ module SampCtrl (
   // Signal Generator Mode
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rGen_signal
     if (!RESETn) begin
-      rGen_signal <= 14'd1;
+      rGen_signal <= 14'd1 - 1;
     end else begin
       case (rMode)
         3'd0: rGen_signal <= 14'd1 - 1;

@@ -13,9 +13,13 @@ module DDS_Top (
     input wire Ext_Clk,
     input wire Ext_RESETn,
     input wire ExtBtn,
+    input wire Ext_Rot_A,
+    input wire Ext_Rot_B,
+    input wire Ext_Btn_Rot_C,
     output wire Dac_Clk,
     output wire [11:0] InterpOut
 );
+
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
@@ -32,6 +36,8 @@ module DDS_Top (
   wire [31:0] wInit2;
   wire [31:0] wOut1;
   wire [31:0] wOut2;
+  wire wAddress;
+  wire wFreqChng;
 
   //----------------------------------------//
   // Module Instantiation
@@ -101,6 +107,16 @@ module DDS_Top (
       .Mode(wMode),
       .Enable(wEnable),
       .InterpOut(InterpOut)
+  );
+
+  Rotary_Encoder m_rotary_endcoder (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .Rot_A(Ext_Rot_A),
+      .Rot_B(Ext_Rot_B),
+      .C(Ext_Btn_Rot_C),
+      .Address(wAddress),
+      .FreqChng(wFreqChng)
   );
   //----------------------------------------//
 endmodule

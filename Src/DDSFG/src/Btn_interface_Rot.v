@@ -15,12 +15,27 @@ module Btn_Interface_Rot_C (
     input  wire ExtBtn,
     output wire IntBtn
 );
-  
+
+  localparam delay = 25'd24000 - 1;
+
   wire wIntBtn;
+  reg [24:0] rCnt;
   reg [2:0] rDout;
 
-  assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0) ? 1'd1 : 1'd0;
+  assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
   assign IntBtn  = wIntBtn;
+
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
+    if (!RESETn) begin
+      rCnt <= 25'd0;
+    end else begin
+      if (rCnt == 25'd0) begin
+        rCnt <= (wIntBtn == 1'b1) ? 25'd1 : 25'd0;
+      end else begin
+        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
+      end
+    end
+  end
 
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rDout
     if (!RESETn) begin

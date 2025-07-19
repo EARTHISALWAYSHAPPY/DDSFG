@@ -88,12 +88,13 @@ module Osc_Top (
   //----------------------------------------//
 endmodule
 /*
-define : a = 2cos(B) , c = -1
-         [ fs = 24 MHz] from Clk_Div(24 Mhz Phase 0 degree) 
-         [ Ts = 1/fs ]
-         [ f = Freq. Need!!!! Ex. (10kHz , 100kHz ) ]
-         [ B = 2*pi*f*Ts ]  
 
+         [ fs = 24 MHz] from Clk_Div(24 Mhz Phase 0 degree) 
+         [ Ts = 1/fs]
+         [ f = Freq. Need!!!! Ex(10kHz , 100kHz )]
+         [ B = 2*pi*f*Ts]  
+
+define : a = 2cos(B) , c = -1
 y[n] = 2cos(B)y[n-1] - y[n-2]
 y[n] = ay[n-1] + c*y[n-2]
 
@@ -105,4 +106,5 @@ out --> [ Z⁻¹ ] --> Out1 --> [ Z⁻¹ ] --> Out2 --> + --> out
                   [ Out_1a ]                      |
                       |                           |
                       |_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+
 */

@@ -1,5 +1,5 @@
 //----------------------------------------//
-// Filename     : Btn_Interface_Rot_c.v
+// Filename     : Btn_Interface_Rot_C.v
 // Description  : Btn_Interface module for DDSFG.
 // Company      : KMITL
 // Project      : DDSFG
@@ -15,34 +15,49 @@ module Btn_Interface_Rot_C (
     input  wire ExtBtn,
     output wire IntBtn
 );
+//----------------------------------------//
+// Parameter Declaration
+//----------------------------------------//
+    localparam delay = 25'd24000 - 1;
 
-  localparam delay = 25'd24000 - 1;
+//----------------------------------------//
+// Signal Declaration
+//----------------------------------------//
+    wire        wIntBtn;
+    reg  [24:0] rCnt;
+    reg  [2:0]  rDout;
 
-  wire wIntBtn;
-  reg [24:0] rCnt;
-  reg [2:0] rDout;
+//----------------------------------------//
+// Output Declaration
+//----------------------------------------//
+    assign wIntBtn = (rDout[2] == 1'b1 && rDout[1] == 1'b0 && rCnt == 25'd0) ? 1'b1 : 1'b0;
+    assign IntBtn  = wIntBtn;
 
-  assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
-  assign IntBtn  = wIntBtn;
+//----------------------------------------//
+// Process Declaration
+//----------------------------------------//
 
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
-    if (!RESETn) begin
-      rCnt <= 25'd0;
-    end else begin
-      if (rCnt == 25'd0) begin
-        rCnt <= (wIntBtn == 1'b1) ? 25'd1 : 25'd0;
-      end else begin
-        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
-      end
+    // Counter for debounce
+    always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
+        if (!RESETn) begin
+            rCnt <= 25'd0;
+        end else begin
+            if (rCnt == 25'd0) begin
+                rCnt <= (wIntBtn == 1'b1) ? 25'd1 : 25'd0;
+            end else begin
+                rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
+            end
+        end
     end
-  end
 
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDout
-    if (!RESETn) begin
-      rDout <= 3'b111;
-    end else begin
-      rDout <= {rDout[1], rDout[0], ExtBtn};
+    // Button shift register
+    always @(posedge Fg_Clk or negedge RESETn) begin : u_rDout
+        if (!RESETn) begin
+            rDout <= 3'b111;
+        end else begin
+            rDout <= {rDout[1], rDout[0], ExtBtn};
+        end
     end
-  end
 
+//----------------------------------------//
 endmodule

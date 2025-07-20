@@ -46,9 +46,9 @@ module SampCtrl (
   // Initial Ready Process
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rBegin_Ready
     if (!RESETn) begin
-      Begin_Ready <= 1'b1;
+      Begin_Ready <= 1'b0;
     end else begin
-      Begin_Ready <= (rCnt_Ready == 7'd79) ? 1'b0 : Begin_Ready;
+      Begin_Ready <= (rCnt_Ready == 7'd79) ? 1'b1 : Begin_Ready;
     end
   end
 
@@ -57,7 +57,7 @@ module SampCtrl (
     if (!RESETn) begin
       rCnt_Ready <= 7'd0;
     end else begin
-      if (Begin_Ready == 1'b1) begin
+      if (Begin_Ready == 1'b0) begin
         rCnt_Ready <= (rCnt_Ready == 7'd79) ? 7'd0 : rCnt_Ready + 7'd1;
       end
     end

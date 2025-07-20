@@ -10,22 +10,22 @@
 // Remark       : Creation File
 //----------------------------------------//
 module Interpolator (
-    input  wire               Fg_Clk,
-    input  wire               RESETn,
-    input  wire signed [31:0] Out1,
-    input  wire signed [31:0] Out2,
-    input  wire        [ 2:0] Mode,
-    input  wire               Enable,
-    output wire        [11:0] InterpOut
+    input  wire        Fg_Clk,
+    input  wire        RESETn,
+    input  wire [31:0] Out1,
+    input  wire [31:0] Out2,
+    input  wire [ 2:0] Mode,
+    input  wire        Enable,
+    output wire [11:0] InterpOut
 );
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
-  reg               Enable_delay;
-  reg signed [31:0] Const;
-  reg        [63:0] delta;
-  reg        [31:0] Output;
-  reg        [11:0] rInterpOut;
+  reg        Enable_delay;
+  reg [31:0] Const;
+  reg [63:0] delta;
+  reg [31:0] Output;
+  reg [11:0] rInterpOut;
 
   //----------------------------------------//
   // Output Declaration
@@ -74,7 +74,7 @@ module Interpolator (
 
   // Delta cal , interpolation output
   always @(*) begin : u_InterpComb
-    delta      <= (Out1 - Out2) * Const;
+    delta      <= ($signed(Out1) - $signed(Out2)) * $signed(Const);
     rInterpOut <= Output[29:18];
   end
 

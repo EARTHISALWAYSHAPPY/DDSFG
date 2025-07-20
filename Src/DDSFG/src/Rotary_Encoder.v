@@ -52,7 +52,7 @@ module Rotary_Encoder (
 
   reg  [10:0] rCnt_Rot;
   reg  [ 1:0] rMode_step;
-  reg  [10:0] rStep;
+  reg  [ 6:0] rStep;
 
   reg  [ 1:0] State;
   reg         CW;
@@ -131,7 +131,7 @@ module Rotary_Encoder (
   // Step of Counting
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rStep
     if (!RESETn) begin
-      rStep <= 7'd0;
+      rStep <= 7'd1;
     end else begin
       case (rMode_step)
         2'd0:    rStep <= 7'd1;
@@ -157,11 +157,11 @@ module Rotary_Encoder (
         end
         State_CW: begin
           CW <= 1'b1;
-          State <= (A_Fall) ? idle : State;
+          State <= (A_Fall) ? State_idle : State;
         end
         State_CCW: begin
-          CCW <= 1'b1;
-          State <= (B_Fall) ? idle : State;
+          CCW   <= 1'b1;
+          State <= (B_Fall) ? State_idle : State;
         end
       endcase
     end

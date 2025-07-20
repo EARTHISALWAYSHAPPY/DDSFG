@@ -8,132 +8,96 @@ module Signal_Gen (
 );
   initial begin  // มั่วค่ามา test only!!!!
     Ext_RESETn = 1;
-    ExtBtn     = 1;
+    ExtBtn = 1;
+    Ext_Rot_A = 1;
+    Ext_Rot_B = 1;
+    Ext_Btn_Rot_C = 1;
 
-    #10000;
+    // Reset
+    #240000;
     Ext_RESETn = 0;
     #5;
     Ext_RESETn = 1;
-    #1000;
+    #240000;
 
-    // Ext_Btn_Rot_C = 1;  // button rotary
-    // #2400000;
-    // Ext_Btn_Rot_C = 0;
-    // #500;
-    // Ext_Btn_Rot_C = 1;
-    // #2400000;
-    // Ext_Btn_Rot_C = 1;  // button rotary
-    // #2400000;
-    // Ext_Btn_Rot_C = 0;
-    // #500;
-    // Ext_Btn_Rot_C = 1;
-    // #2400000;
-    // Ext_Btn_Rot_C = 1;  // button rotary
-    // #2400000;
-    // Ext_Btn_Rot_C = 0;
-    // #500;
-    // Ext_Btn_Rot_C = 1;
-    // #2400000;
-    // Ext_Btn_Rot_C = 1;  // button rotary
-    // #2400000;
-    // Ext_Btn_Rot_C = 0;
-    // #500;
-    // Ext_Btn_Rot_C = 1;
-    // #2400000;
-    // Ext_Btn_Rot_C = 1;  // button rotary
-    // #2400000;
-    // Ext_Btn_Rot_C = 0;
-    // #500;
-    // Ext_Btn_Rot_C = 1;
-    // #2400000;
+    CW(25);
+    CW(25);
 
-    ExtBtn = 1;  // button func. gen
+    #24000;
+    Btn_C(500);
     #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
+    Btn_C(500);
+    #24000;
 
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-    Ext_RESETn = 0;
-    #5;
-    Ext_RESETn = 1;
-    #10000;
+    CW(25);
 
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
+    repeat (6) CCW(25);
 
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400;
-
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-
-    ExtBtn = 1;  
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 1;  
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 1;  
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 1;  
-    #2400000;
-    ExtBtn = 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
-    ExtBtn = 1;  
-    #2400000;
-    ExtBtn= 0;
-    #500;
-    ExtBtn = 1;
-    #2400000;
   end
+
+  task CW;
+    input integer delay_ns;
+    begin
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 1;
+      #delay_ns;
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 0;
+      #delay_ns;
+      Ext_Rot_A = 0;
+      Ext_Rot_B = 0;
+      #delay_ns;
+      Ext_Rot_A = 0;
+      Ext_Rot_B = 1;
+      #delay_ns;
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 1;
+      #delay_ns;
+    end
+  endtask
+
+  // Rotate CCW: 00 → 10 → 11 → 01 → 00
+  task CCW;
+    input integer delay_ns;
+    begin
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 1;
+      #delay_ns;
+      Ext_Rot_A = 0;
+      Ext_Rot_B = 1;
+      #delay_ns;
+      Ext_Rot_A = 0;
+      Ext_Rot_B = 0;
+      #delay_ns;
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 0;
+      #delay_ns;
+      Ext_Rot_A = 1;
+      Ext_Rot_B = 1;
+      #delay_ns;
+    end
+  endtask
+
+  // Button C
+  task Btn_C;
+    input integer press_time;
+    begin
+      Ext_Btn_Rot_C = 0;
+      #press_time;
+      Ext_Btn_Rot_C = 1;
+      #press_time;
+    end
+  endtask
+
+  // Button gen
+  task Func_Btn;
+    input integer press_time;
+    begin
+      ExtBtn = 0;
+      #press_time;
+      ExtBtn = 1;
+      #press_time;
+    end
+  endtask
 
 endmodule

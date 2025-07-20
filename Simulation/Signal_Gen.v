@@ -16,93 +16,124 @@ module Signal_Gen (
     Ext_RESETn = 1;
     #1000;
 
-    Ext_Btn_Rot_C = 1;  // button rotary
+    // Ext_Btn_Rot_C = 1;  // button rotary
+    // #2400000;
+    // Ext_Btn_Rot_C = 0;
+    // #500;
+    // Ext_Btn_Rot_C = 1;
+    // #2400000;
+    // Ext_Btn_Rot_C = 1;  // button rotary
+    // #2400000;
+    // Ext_Btn_Rot_C = 0;
+    // #500;
+    // Ext_Btn_Rot_C = 1;
+    // #2400000;
+    // Ext_Btn_Rot_C = 1;  // button rotary
+    // #2400000;
+    // Ext_Btn_Rot_C = 0;
+    // #500;
+    // Ext_Btn_Rot_C = 1;
+    // #2400000;
+    // Ext_Btn_Rot_C = 1;  // button rotary
+    // #2400000;
+    // Ext_Btn_Rot_C = 0;
+    // #500;
+    // Ext_Btn_Rot_C = 1;
+    // #2400000;
+    // Ext_Btn_Rot_C = 1;  // button rotary
+    // #2400000;
+    // Ext_Btn_Rot_C = 0;
+    // #500;
+    // Ext_Btn_Rot_C = 1;
+    // #2400000;
+
+    ExtBtn = 1;  // button func. gen
     #2400000;
-    Ext_Btn_Rot_C = 0;
+    ExtBtn = 0;
     #500;
-    Ext_Btn_Rot_C = 1;
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 1;  // button rotary
+
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 0;
+    ExtBtn = 0;
     #500;
-    Ext_Btn_Rot_C = 1;
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 1;  // button rotary
+    Ext_RESETn = 0;
+    #5;
+    Ext_RESETn = 1;
+    #10000;
+
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 0;
+    ExtBtn = 0;
     #500;
-    Ext_Btn_Rot_C = 1;
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 1;  // button rotary
+
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 0;
+    ExtBtn = 0;
     #500;
-    Ext_Btn_Rot_C = 1;
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 1;  // button rotary
+
+    ExtBtn = 1;
     #2400000;
-    Ext_Btn_Rot_C = 0;
+    ExtBtn = 0;
     #500;
-    Ext_Btn_Rot_C = 1;
+    ExtBtn = 1;
+    #2400;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400;
+
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
     #2400000;
 
-    // ExtBtn = 1;  // button func. gen
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
 
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
-    // Ext_RESETn = 0;
-    // #5;
-    // Ext_RESETn = 1;
-    // #10000;
-
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
-
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
-
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400;
-
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
-
-    // ExtBtn = 1;
-    // #2400000;
-    // ExtBtn = 0;
-    // #500;
-    // ExtBtn = 1;
-    // #2400000;
+    ExtBtn = 1;  
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 1;  
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 1;  
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 1;  
+    #2400000;
+    ExtBtn = 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
+    ExtBtn = 1;  
+    #2400000;
+    ExtBtn= 0;
+    #500;
+    ExtBtn = 1;
+    #2400000;
   end
 
 endmodule

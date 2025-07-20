@@ -20,18 +20,18 @@ module Signal_Gen (
     Ext_RESETn = 1;
     #240000;
 
-    CW(25);
-    CW(25);
+    CW(50);
+    CW(50);
 
     #24000;
     Btn_C(500);
     #2400000;
     Btn_C(500);
-    #24000;
+    #240;
 
-    CW(25);
+    CW(50);
 
-    repeat (6) CCW(25);
+    repeat (6) CCW(50);
 
   end
 

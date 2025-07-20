@@ -156,16 +156,12 @@ module Rotary_Encoder (
           State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
         end
         State_CW: begin
-          if (A_Fall) begin
-            CW <= 1'b1;
-            State <= State_idle;
-          end
+          CW <= 1'b1;
+          State <= (A_Fall) ? idle : State;
         end
         State_CCW: begin
-          if (B_Fall) begin
-            CCW   <= 1'b1;
-            State <= State_idle;
-          end
+          CCW <= 1'b1;
+          State <= (B_Fall) ? idle : State;
         end
       endcase
     end

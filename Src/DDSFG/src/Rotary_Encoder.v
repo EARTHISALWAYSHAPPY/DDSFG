@@ -15,17 +15,18 @@ module Rotary_Encoder (
     input  wire        Rot_A,
     input  wire        Rot_B,
     input  wire        C,
-    output wire        Address,
-    output wire [10:0] FreqChng
+    output wire [10:0] Address,
+    output wire        FreqChng
 );
 
   //----------------------------------------//
   // Parameter Declaration
   //----------------------------------------//
 
-  //`define SIM 
+  //`define SIM // Uncomment if Simulate
+
 `ifdef SIM
-  localparam Onehundred_ms = 22'd240 - 1;
+  localparam Onehundred_ms = 22'd24 - 1;
 `else
   localparam Onehundred_ms = 22'd2400000 - 1;
 `endif
@@ -58,13 +59,19 @@ module Rotary_Encoder (
   reg         CW;
   reg         CCW;
 
+  reg  [11:0] rAddress;
+
+  reg         rFreqChng;
   //----------------------------------------//
   // Assignments
   //----------------------------------------//
 
   assign A_Fall = (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0) ? 1'b1 : 1'b0;
   assign B_Fall = (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0) ? 1'b1 : 1'b0;
-  assign Rot_C  = wRot_C;
+  assign Rot_C = wRot_C;
+
+  assign Address = rAddress;  //<------------ wait LUT
+  assign FreqChng = rFreqChng;
 
   //----------------------------------------//
   // Submodule Instantiation
@@ -143,17 +150,19 @@ module Rotary_Encoder (
   end
 
   //State machine for up/down
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_State
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_State_and_rCnt_Rot
     if (!RESETn) begin
       State <= State_idle;  // <-- begin start idle state
+      rCnt_Rot <= 11'd0;
       CW <= 1'b0;
       CCW <= 1'b0;
     end else begin
       case (State)
         State_idle: begin
+
+          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
           CW <= 1'b0;
           CCW <= 1'b0;
-          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
         end
         State_CW: begin
           CW <= 1'b1;
@@ -164,19 +173,33 @@ module Rotary_Encoder (
           State <= (B_Fall) ? State_idle : State;
         end
       endcase
+      if (CW) begin
+        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
+        CW <= 1'b0;
+      end else if (CCW) begin
+        rCnt_Rot <= (rCnt_Rot < rStep) ? 11'd0 : rCnt_Rot - rStep;
+        CCW <= 1'b0;
+      end
     end
   end
 
-  //up/down counting
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Rot
+  // add rCnt_Rot to rAddress
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rAddress
     if (!RESETn) begin
-      rCnt_Rot <= 11'd0;
+      rAddress <= 11'd0;
     end else begin
-      if (CW) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
-      end else if (CCW) begin
-        rCnt_Rot <= (rCnt_Rot < rStep) ? 11'd0 : rCnt_Rot - rStep;
+      if (rDelay) begin
+        rAddress <= rCnt_Rot;
       end
+    end
+  end
+
+  // Compare to toggle rFreqChng
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFreqChng
+    if (!RESETn) begin
+      rFreqChng <= 1'b0;
+    end else begin
+      rFreqChng <= ((rAddress != rCnt_Rot) && (rDelay)) ? 1'b1 : 1'b0;
     end
   end
 

@@ -24,7 +24,6 @@ module Rotary_Encoder (
   //----------------------------------------//
 
   //`define SIM // Uncomment if Simulate
-
 `ifdef SIM
   localparam Onehundred_ms = 22'd24 - 1;
 `else
@@ -39,50 +38,34 @@ module Rotary_Encoder (
   // Signal Declaration
   //----------------------------------------//
 
-  wire        wRot_C;
-
   reg  [ 2:0] rFlop_Rot_A;
   reg  [ 2:0] rFlop_Rot_B;
-
   wire        A_Fall;
   wire        B_Fall;
-  wire        Rot_C;
-
   reg  [21:0] rCnt_Delay;
   reg         rDelay;
-
   reg  [10:0] rCnt_Rot;
   reg  [ 1:0] rMode_step;
   reg  [ 6:0] rStep;
-
   reg  [ 1:0] State;
   reg         CW;
   reg         CCW;
-
   reg  [11:0] rAddress;
-
   reg         rFreqChng;
+
   //----------------------------------------//
   // Assignments
   //----------------------------------------//
 
-  assign A_Fall = (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0) ? 1'b1 : 1'b0;
-  assign B_Fall = (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0) ? 1'b1 : 1'b0;
-  assign Rot_C = wRot_C;
-
-  assign Address = rAddress;  //<------------ wait LUT
+  assign A_Fall   = (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0) ? 1'b1 : 1'b0;
+  assign B_Fall   = (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0) ? 1'b1 : 1'b0;
+  assign Address  = rAddress;  //<------------ wait LUT
   assign FreqChng = rFreqChng;
 
   //----------------------------------------//
   // Submodule Instantiation
   //----------------------------------------//
 
-  Btn_Interface_Rot_C m_btn_interface_rot_c (
-      .Fg_Clk(Fg_Clk),
-      .RESETn(RESETn),
-      .ExtBtn(C),
-      .IntBtn(wRot_C)
-  );
 
   //----------------------------------------//
   // Sequential Logic
@@ -129,7 +112,7 @@ module Rotary_Encoder (
     if (!RESETn) begin
       rMode_step <= 2'd0;
     end else begin
-      if (Rot_C) begin
+      if (C) begin
         rMode_step <= (rMode_step < 2'd2) ? rMode_step + 2'd1 : 2'd0;
       end
     end

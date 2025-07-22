@@ -36,6 +36,7 @@ module DDS_Top (
   wire [31:0] wInit2;
   wire [31:0] wOut1;
   wire [31:0] wOut2;
+  wire wRot_C;
   wire wAddress;
   wire wFreqChng;
 
@@ -109,12 +110,19 @@ module DDS_Top (
       .InterpOut(InterpOut)
   );
 
+  Btn_Interface m_btn_interface_rot_c (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .ExtBtn(Ext_Btn_Rot_C),
+      .IntBtn(wRot_C)
+  );
+
   Rotary_Encoder m_rotary_endcoder (
       .Fg_Clk(wFg_Clk),
       .RESETn(wFg_RESETn),
       .Rot_A(Ext_Rot_A),
       .Rot_B(Ext_Rot_B),
-      .C(Ext_Btn_Rot_C),
+      .C(wRot_C),
       .Address(wAddress),
       .FreqChng(wFreqChng)
   );

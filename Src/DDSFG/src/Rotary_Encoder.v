@@ -23,8 +23,7 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  `define SIM // Uncomment if Simulate
-
+  //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd24 - 1;
 `else
@@ -137,7 +136,6 @@ module Rotary_Encoder (
   always @(posedge Fg_Clk or negedge RESETn) begin : u_State_and_rCnt_Rot
     if (!RESETn) begin
       State <= State_idle;  // <-- begin start idle state
-      rCnt_Rot <= 11'd0;
       CW <= 1'b0;
       CCW <= 1'b0;
     end else begin
@@ -156,6 +154,14 @@ module Rotary_Encoder (
           State <= (B_Fall) ? State_idle : State;
         end
       endcase
+    end
+  end
+
+  //For rCnt_Rot
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Rot
+    if (!RESETn) begin
+      rCnt_Rot <= 11'd0;
+    end else begin
       if (CW) begin
         rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
         CW <= 1'b0;

@@ -23,7 +23,8 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  //`define SIM // Uncomment if Simulate
+  `define SIM // Uncomment if Simulate
+
 `ifdef SIM
   localparam Onehundred_ms = 22'd24 - 1;
 `else
@@ -142,7 +143,6 @@ module Rotary_Encoder (
     end else begin
       case (State)
         State_idle: begin
-
           State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
           CW <= 1'b0;
           CCW <= 1'b0;

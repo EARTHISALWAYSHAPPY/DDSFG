@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Clk_Div
 
-} {} {}} D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Btn_Interface
-
-Top level modules:
-	Btn_Interface
-
 } {} {}} D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DDS_Top
@@ -53,13 +46,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ResetGen_Module
-
-} {} {}} D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Interpolator
-
-Top level modules:
-	Interpolator
 
 } {} {}} D:/Work/ElecEng/Y3/T1/Project/DDSFG/Simulation/Signal_Gen.v {1 {vlog -work work -stats=none D:/Work/ElecEng/Y3/T1/Project/DDSFG/Simulation/Signal_Gen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

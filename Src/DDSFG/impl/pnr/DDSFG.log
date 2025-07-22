@@ -1,5 +1,5 @@
-Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"
-Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg"
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
 Processing netlist completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -19,10 +19,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\pnr\DDSFG.power.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\pnr\DDSFG.pin.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
-Mon Jul 21 16:07:34 2025
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.power.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.pin.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.tr.html" completed
+Tue Jul 22 21:07:09 2025
 

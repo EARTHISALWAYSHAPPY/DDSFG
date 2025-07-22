@@ -1,54 +1,30 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Interpolator.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Btn_Interface.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Clk_div.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Osc_top.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\ResetGen_Module.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\SampCtrl.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\gowin_rpll\Pll_Top.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Btn_interface_Rot.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v'
-Compiling module 'DDS_Top'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":12)
-Compiling module 'ResetGen_Module'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\ResetGen_Module.v":12)
-Compiling module 'Pll_Top'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\gowin_rpll\Pll_Top.v":10)
-Compiling module 'Clk_Div'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Clk_div.v":12)
-Compiling module 'Btn_Interface'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Btn_Interface.v":12)
-Compiling module 'SampCtrl'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\SampCtrl.v":12)
-Compiling module 'Osc_Top'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Osc_top.v":12)
-Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Interpolator.v":12)
-Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":12)
-Compiling module 'Btn_Interface_Rot_C'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Btn_interface_Rot.v":12)
-WARN  (EX3670) : Actual bit length 1 differs from formal bit length 11 for port 'Address'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":118)
-WARN  (EX3670) : Actual bit length 1 differs from formal bit length 11 for port 'FreqChng'("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":119)
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Btn_Interface.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v'
+Compiling module 'DDS_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":12)
+Compiling module 'ResetGen_Module'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v":12)
+Compiling module 'Pll_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v":10)
+Compiling module 'Clk_Div'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v":12)
+Compiling module 'Btn_Interface'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Btn_Interface.v":12)
+Compiling module 'SampCtrl'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v":12)
+Compiling module 'Osc_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v":12)
+Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v":12)
+Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v":12)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v":62)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 11 for port 'Address'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":126)
 NOTE  (EX0101) : Current top module is "DDS_Top"
-WARN  (EX0211) : The output port "Address[10]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[9]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[8]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[7]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[6]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[5]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[4]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[3]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[2]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[1]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "Address[0]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":18)
-WARN  (EX0211) : The output port "FreqChng[10]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[9]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[8]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[7]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[6]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[5]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[4]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[3]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[2]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[1]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
-WARN  (EX0211) : The output port "FreqChng[0]" of module "Rotary_Encoder" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":19)
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input Ext_Rot_A is unused("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":16)
-WARN  (CV0016) : Input Ext_Rot_B is unused("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":17)
-WARN  (CV0016) : Input Ext_Btn_Rot_C is unused("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":18)
+WARN  (CV0016) : Input Ext_Rot_A is unused("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":16)
+WARN  (CV0016) : Input Ext_Rot_B is unused("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":17)
+WARN  (CV0016) : Input Ext_Btn_Rot_C is unused("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":18)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -64,8 +40,8 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "Rotary_Encoder" instantiated to "m_rotary_endcoder" is swept in optimizing("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\DDS_Top.v":120)
-WARN  (NL0002) : The module "Btn_Interface_Rot_C" instantiated to "m_btn_interface_rot_c" is swept in optimizing("D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\src\Rotary_Encoder.v":81)
-[95%] Generate netlist file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
-[100%] Generate report file "D:\Work\ElecEng\Y3\T1\Project\Proj._DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG_syn.rpt.html" completed
+WARN  (NL0002) : The module "Btn_Interface" instantiated to "m_btn_interface_rot_c" is swept in optimizing("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":118)
+WARN  (NL0002) : The module "Rotary_Encoder" instantiated to "m_rotary_endcoder" is swept in optimizing("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":128)
+[95%] Generate netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+[100%] Generate report file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG_syn.rpt.html" completed
 GowinSynthesis finish

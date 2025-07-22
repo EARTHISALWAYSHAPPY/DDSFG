@@ -108,7 +108,7 @@ module Rotary_Encoder (
   end
 
   // Mode selector by button press (C)
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
     if (!RESETn) begin
       rMode_step <= 2'd0;
     end else begin
@@ -136,11 +136,13 @@ module Rotary_Encoder (
   always @(posedge Fg_Clk or negedge RESETn) begin : u_State_and_rCnt_Rot
     if (!RESETn) begin
       State <= State_idle;  // <-- begin start idle state
+      rCnt_Rot <= 11'd0;
       CW <= 1'b0;
       CCW <= 1'b0;
     end else begin
       case (State)
         State_idle: begin
+
           State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
           CW <= 1'b0;
           CCW <= 1'b0;
@@ -154,14 +156,6 @@ module Rotary_Encoder (
           State <= (B_Fall) ? State_idle : State;
         end
       endcase
-    end
-  end
-
-  //For rCnt_Rot
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Rot
-    if (!RESETn) begin
-      rCnt_Rot <= 11'd0;
-    end else begin
       if (CW) begin
         rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
         CW <= 1'b0;

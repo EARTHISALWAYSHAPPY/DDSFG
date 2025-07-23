@@ -20,27 +20,30 @@ module Lookup_Table (
     output wire [31:0] Cos2x
 );
 
-//----------------------------------------//
-// Internal Signal
-//----------------------------------------//
-  reg [47:0] Coefficient;
-
-//----------------------------------------//
-// Output Assignment
-//----------------------------------------//
+  //----------------------------------------//
+  // Internal Signal
+  //----------------------------------------//
+  reg  [47:0] Coefficient;
+  wire [47:0] wCoefficient;
+  //----------------------------------------//
+  // Output Assignment
+  //----------------------------------------//
+  assign Coefficient = wCoefficient;
   assign Sin1x = {4'b0000, Coefficient[47:24], 4'b0000};
   assign Cos2x = {6'b001111, Coefficient[23:0], 2'b00};
 
-//----------------------------------------//
-// ROM Coefficient Instantiation
-//----------------------------------------//
+  //----------------------------------------//
+  // ROM Coefficient Instantiation
+  //----------------------------------------//
   romcoef_module m_romcoef (
-      .dout  (Coefficient),   // output [47:0] dout
-      .clk   (Fg_Clk),        // input clk
-      .oce   (1'b1),          // input oce (1 = pipeline)
-      .ce    (1'b1),          // input ce  (1 = awaken chip)
-      .reset (~RESETn),       // input reset
-      .ad    (Address)        // input [10:0] ad
+      .dout (Coefficient_wire),  // output [47:0] dout
+      .clk  (Fg_Clk),            // input clk
+      .oce  (1'b1),              // input oce (1 = pipeline)
+      .ce   (1'b1),              // input ce  (1 = awaken chip)
+      .reset(~RESETn),           // input reset
+      .ad   (Address)            // input [10:0] ad
   );
+
+
 
 endmodule

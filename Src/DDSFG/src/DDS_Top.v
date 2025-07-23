@@ -110,6 +110,7 @@ module DDS_Top (
       .InterpOut(InterpOut)
   );
 
+  //  Button Interface For C Button in Rotary Encoder
   Btn_Interface m_btn_interface_rot_c (
       .Fg_Clk(wFg_Clk),
       .RESETn(wFg_RESETn),
@@ -117,6 +118,7 @@ module DDS_Top (
       .IntBtn(wRot_C)
   );
 
+  // Rotary Encoder Module
   Rotary_Encoder m_rotary_endcoder (
       .Fg_Clk(wFg_Clk),
       .RESETn(wFg_RESETn),

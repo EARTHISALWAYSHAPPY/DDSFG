@@ -1,84 +1,92 @@
 [
  {
-  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
   "InstLine" : 12,
   "InstName" : "DDS_Top",
-  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
   "ModuleLine" : 12,
   "ModuleName" : "DDS_Top",
   "SubInsts" : [
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 48,
     "InstName" : "m_resetgen",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/ResetGen_Module.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/ResetGen_Module.v",
     "ModuleLine" : 12,
     "ModuleName" : "ResetGen_Module"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 57,
     "InstName" : "m_pll",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/gowin_rpll/Pll_Top.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
     "ModuleLine" : 10,
     "ModuleName" : "Pll_Top"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 65,
     "InstName" : "m_clk_div",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_div.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Clk_div.v",
     "ModuleLine" : 12,
     "ModuleName" : "Clk_Div"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 73,
     "InstName" : "m_btn_interface",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v",
     "ModuleLine" : 12,
     "ModuleName" : "Btn_Interface"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 81,
     "InstName" : "m_sampctrl",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/SampCtrl.v",
     "ModuleLine" : 12,
     "ModuleName" : "SampCtrl"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 91,
     "InstName" : "m_osc_top",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Osc_top.v",
     "ModuleLine" : 12,
     "ModuleName" : "Osc_Top"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 103,
     "InstName" : "m_interpolator",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Interpolator.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v",
     "ModuleLine" : 12,
     "ModuleName" : "Interpolator"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 113,
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstLine" : 114,
     "InstName" : "m_btn_interface_rot_c",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v",
     "ModuleLine" : 12,
     "ModuleName" : "Btn_Interface"
    },
    {
-    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 120,
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstLine" : 122,
     "InstName" : "m_rotary_endcoder",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Rotary_Encoder.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_Encoder.v",
     "ModuleLine" : 12,
     "ModuleName" : "Rotary_Encoder"
    }
   ]
+ },
+ {
+  "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_prom/romcoef_module.v",
+  "InstLine" : 10,
+  "InstName" : "romcoef_module",
+  "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_prom/romcoef_module.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "romcoef_module"
  }
 ]

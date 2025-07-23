@@ -13,6 +13,7 @@
         <File path="src/ResetGen_Module.v" type="file.verilog" enable="1"/>
         <File path="src/Rotary_Encoder.v" type="file.verilog" enable="1"/>
         <File path="src/SampCtrl.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_prom/romcoef_module.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/Pll_Top.v" type="file.verilog" enable="1"/>
     </FileList>
 </Project>

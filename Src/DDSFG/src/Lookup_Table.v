@@ -1,3 +1,15 @@
+//----------------------------------------//
+// Filename     : Lookup_Table.v
+// Description  : Lookup Table for DDSFG.
+// Company      : KMITL
+// Project      : DDSFG
+//----------------------------------------//
+// Version      : 00.01
+// Date         : 19.07.2025
+// Author       : Kunanon Wanyen
+// Remark       : Creation File
+//----------------------------------------//
+
 module Lookup_Table (
     input  wire        Fg_Clk,
     input  wire        RESETn,
@@ -8,17 +20,27 @@ module Lookup_Table (
     output wire [31:0] Cos2x
 );
 
+//----------------------------------------//
+// Internal Signal
+//----------------------------------------//
   reg [47:0] Coefficient;
+
+//----------------------------------------//
+// Output Assignment
+//----------------------------------------//
   assign Sin1x = {4'b0000, Coefficient[47:24], 4'b0000};
   assign Cos2x = {6'b001111, Coefficient[23:0], 2'b00};
 
+//----------------------------------------//
+// ROM Coefficient Instantiation
+//----------------------------------------//
   romcoef_module m_romcoef (
-      .dout(Coefficient),  //output [47:0] dout
-      .clk(Fg_Clk),  //input clk
-      .oce(1'b1),  //input oce (1 = pipeline)
-      .ce(1'b1),  //input ce (1 = Awaken Chip)
-      .reset(~RESETn),  //input reset
-      .ad(Address)  //input [10:0] ad
+      .dout  (Coefficient),   // output [47:0] dout
+      .clk   (Fg_Clk),        // input clk
+      .oce   (1'b1),          // input oce (1 = pipeline)
+      .ce    (1'b1),          // input ce  (1 = awaken chip)
+      .reset (~RESETn),       // input reset
+      .ad    (Address)        // input [10:0] ad
   );
 
 endmodule

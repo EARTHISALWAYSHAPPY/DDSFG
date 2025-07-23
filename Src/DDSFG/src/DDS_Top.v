@@ -128,5 +128,14 @@ module DDS_Top (
       .Address(wAddress),
       .FreqChng(wFreqChng)
   );
+
+  //LookUp Table Module 
+  Lookup_Table m_lookup_table (
+      .Fg_Clk (wFg_Clk),
+      .RESETn (wFg_RESETn),
+      .Address(wAddress),
+      .Sin1x  (wInit1),
+      .Cos2x  (wInit2)
+  );
   //----------------------------------------//
 endmodule

@@ -93,8 +93,8 @@ module DDS_Top (
       .RESETn(wFg_RESETn),
       .Enable(wEnable),
       .Ready (wReady),
-      .Init1 (32'd96878045),    //wait interpolator
-      .Init2 (32'd1054193702),
+      .Init1 (wInit1),      //wait interpolator
+      .Init2 (wInit2),
       .Out1  (wOut1),
       .Out2  (wOut2)
   );

@@ -10,35 +10,35 @@
 // Remark       : Creation File
 //----------------------------------------//
 module DDS_Top (
-    input wire Ext_Clk,
-    input wire Ext_RESETn,
-    input wire ExtBtn,
-    input wire Ext_Rot_A,
-    input wire Ext_Rot_B,
-    input wire Ext_Btn_Rot_C,
-    output wire Dac_Clk,
+    input  wire        Ext_Clk,
+    input  wire        Ext_RESETn,
+    input  wire        ExtBtn,
+    input  wire        Ext_Rot_A,
+    input  wire        Ext_Rot_B,
+    input  wire        Ext_Btn_Rot_C,
+    output wire        Dac_Clk,
     output wire [11:0] InterpOut
 );
 
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
-  wire wPll_RESETn;
-  wire wPll_Clk;
-  wire wPll_Lock;
-  wire wFg_RESETn;
-  wire wFg_Clk;
-  wire wIntBtn;
-  wire wReady;
-  wire wEnable;
-  wire [2:0] wMode;
+  wire        wPll_RESETn;
+  wire        wPll_Clk;
+  wire        wPll_Lock;
+  wire        wFg_RESETn;
+  wire        wFg_Clk;
+  wire        wIntBtn;
+  wire        wReady;
+  wire        wEnable;
+  wire [ 2:0] wMode;
   wire [31:0] wInit1;
   wire [31:0] wInit2;
   wire [31:0] wOut1;
   wire [31:0] wOut2;
-  wire wRot_C;
-  wire wAddress;
-  wire wFreqChng;
+  wire        wRot_C;
+  wire [10:0] wAddress;
+  wire        wFreqChng;
 
   //----------------------------------------//
   // Module Instantiation
@@ -101,12 +101,12 @@ module DDS_Top (
 
   // Interpolator Module 
   Interpolator m_interpolator (
-      .Fg_Clk(wFg_Clk),
-      .RESETn(wFg_RESETn),
-      .Out1(wOut1),
-      .Out2(wOut2),
-      .Mode(wMode),
-      .Enable(wEnable),
+      .Fg_Clk   (wFg_Clk),
+      .RESETn   (wFg_RESETn),
+      .Out1     (wOut1),
+      .Out2     (wOut2),
+      .Mode     (wMode),
+      .Enable   (wEnable),
       .InterpOut(InterpOut)
   );
 
@@ -120,12 +120,12 @@ module DDS_Top (
 
   // Rotary Encoder Module
   Rotary_Encoder m_rotary_endcoder (
-      .Fg_Clk(wFg_Clk),
-      .RESETn(wFg_RESETn),
-      .Rot_A(Ext_Rot_A),
-      .Rot_B(Ext_Rot_B),
-      .C(wRot_C),
-      .Address(wAddress),
+      .Fg_Clk  (wFg_Clk),
+      .RESETn  (wFg_RESETn),
+      .Rot_A   (Ext_Rot_A),
+      .Rot_B   (Ext_Rot_B),
+      .C       (wRot_C),
+      .Address (wAddress),
       .FreqChng(wFreqChng)
   );
 
@@ -134,7 +134,9 @@ module DDS_Top (
       .Fg_Clk (wFg_Clk),
       .RESETn (wFg_RESETn),
       .Address(wAddress),
-      .Sin1x  (wInit1),
+      .Out1   (wOut1),
+      .Out1   (wOut1),
+      .Out2   (wOut2),
       .Cos2x  (wInit2)
   );
   //----------------------------------------//

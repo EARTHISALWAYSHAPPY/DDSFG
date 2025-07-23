@@ -50,7 +50,7 @@ module Rotary_Encoder (
   reg  [ 1:0] State;
   reg         CW;
   reg         CCW;
-  reg  [11:0] rAddress;
+  reg  [10:0] rAddress;
   reg         rFreqChng;
 
   //----------------------------------------//

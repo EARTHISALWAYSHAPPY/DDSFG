@@ -14,8 +14,8 @@ module Lookup_Table (
     input  wire        Fg_Clk,
     input  wire        RESETn,
     input  wire [10:0] Address,
-    input  wire [31:0] Out1,
-    input  wire [31:0] Out2,
+    // input  wire [31:0] Out1,
+    // input  wire [31:0] Out2,
     output wire [31:0] Sin1x,
     output wire [31:0] Cos2x
 );

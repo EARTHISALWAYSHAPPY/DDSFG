@@ -134,9 +134,9 @@ module DDS_Top (
       .Fg_Clk (wFg_Clk),
       .RESETn (wFg_RESETn),
       .Address(wAddress),
-      .Out1   (wOut1),
-      .Out1   (wOut1),
-      .Out2   (wOut2),
+      //   .Out1   (wOut1),
+      //   .Out2  (wOut2),
+      .Sin1x  (wInit1),
       .Cos2x  (wInit2)
   );
   //----------------------------------------//

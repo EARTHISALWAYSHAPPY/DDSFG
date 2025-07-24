@@ -74,8 +74,8 @@ module Interpolator (
 
   // Delta cal , interpolation output
   always @(*) begin : u_InterpComb
-    delta      <= ($signed(Out1) - $signed(Out2)) * $signed(Const);
-    rInterpOut <= Output[29:18];
+    delta      = ($signed(Out1) - $signed(Out2)) * $signed(Const);
+    rInterpOut = Output[29:18];
   end
 
   //----------------------------------------//

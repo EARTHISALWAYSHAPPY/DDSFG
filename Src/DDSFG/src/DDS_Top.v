@@ -92,11 +92,13 @@ module DDS_Top (
       .Fg_Clk(wFg_Clk),
       .RESETn(wFg_RESETn),
       .Enable(wEnable),
-      .Ready (wReady),
-      .Init1 (wInit1),      //wait interpolator
-      .Init2 (wInit2),
-      .Out1  (wOut1),
-      .Out2  (wOut2)
+      .Ready(wReady),
+      .Init1(wInit1),
+      .Init2(wInit2),
+      .FreqChng(wFreqChng),
+      .Mode(wMode),  // for Zero_Cross Check origin point!! (Mode 0-3 [31:22]: 10 bits , Mode 4 [31:23] : 9 Bits)
+      .Out1(wOut1),
+      .Out2(wOut2)
   );
 
   // Interpolator Module 

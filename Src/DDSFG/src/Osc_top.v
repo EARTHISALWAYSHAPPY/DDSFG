@@ -14,8 +14,10 @@ module Osc_Top (
     input  wire        RESETn,
     input  wire        Enable,
     input  wire        Ready,
-    input  wire [31:0] Init1,   // sin(b)
-    input  wire [31:0] Init2,   // 2cos(b)
+    input  wire [31:0] Init1,     // sin(b)
+    input  wire [31:0] Init2,     // 2cos(b)
+    input  wire        FreqChng,
+    input  wire [ 2:0] Mode,
     output wire [31:0] Out1,
     output wire [31:0] Out2
 );
@@ -29,6 +31,10 @@ module Osc_Top (
   reg [31:0] Out;
   reg [31:0] rOut1;
   reg [31:0] rOut2;
+  reg        Zero_Cross;
+  reg        Update_Wait;
+  reg        Do_Update;
+  reg        Dir;  // 0 = up , 1 = down
 
   //----------------------------------------//
   // Output Declaration
@@ -42,16 +48,16 @@ module Osc_Top (
 
   // c = a * Out1
   always @(*) begin : for_combination_from_Formula
-    c <= $signed(a) * $signed(Out1);
+    c = $signed(a) * $signed(Out1);
   end
 
   always @(*) begin : u_Out1_a
-    Out1_a <= c[60:29];
+    Out1_a = c[60:29];
   end
 
   // Out = Out1_a - Out2 = Out1_a + c*Out2
   always @(*) begin : u_Out
-    Out <= Out1_a - Out2;
+    Out = Out1_a - Out2;
   end
 
   // a = 2cos(B)
@@ -83,6 +89,34 @@ module Osc_Top (
     end else if (Enable) begin
       rOut2 <= Out1;
     end
+  end
+
+  // Update_wait for Change Freq. 
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_Update_Wait
+    if (!RESETn) begin
+      Update_Wait <= 1'b0;
+    end else begin
+      Update_Wait <= (FreqChng) ? 1'b1 : (Zero_Cross) ? 1'b0 : Update_Wait;
+    end
+  end
+
+  // toggle Zero for check origin point of sine wave
+  always @(*) begin : u_Zero
+    if (Mode != 3'd4) begin  // for mode 0-3 : check 10 bits 
+      Zero_Cross = (rOut1[31:22] == 10'b0000000000 || rOut1[31:22] == 10'b1111111111) ? 1'b1 : 1'b0;
+    end else begin  // for mode 4 : check 9 bits
+      Zero_Cross = (rOut1[31:23] == 9'b0000000000 || rOut1[31:23] == 10'b1111111111) ? 1'b1 : 1'b0;
+    end
+  end
+
+  //Direction of sine wave 
+  always @(*) begin : u_Dir
+    Dir = ~rOut2[31];
+  end
+
+  // toggle Do_Update for change Freq.
+  always @(*) begin : u_Do_Update
+    Do_Update = (Zero_Cross && Update_Wait) ? 1'b1 : 1'b0;
   end
 
   //----------------------------------------//

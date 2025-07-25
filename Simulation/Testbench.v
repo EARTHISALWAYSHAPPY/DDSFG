@@ -7,7 +7,7 @@ module Testbench ();
   wire Ext_Rot_B;
   wire Ext_Btn_Rot_C;
   wire Dac_Clk;
-  wire [11:0] InterpOut;
+  wire [11:0] DDS_Out;
 
   RCC m_rcc (.Ext_Clk(Ext_Clk));
 
@@ -27,7 +27,7 @@ module Testbench ();
       .Ext_Rot_B    (Ext_Rot_B),
       .Ext_Btn_Rot_C(Ext_Btn_Rot_C),
       .Dac_Clk      (Dac_Clk),
-      .InterpOut    (InterpOut)
+      .DDS_Out      (DDS_Out)
   );
 
 endmodule

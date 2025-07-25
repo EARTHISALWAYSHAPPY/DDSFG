@@ -17,7 +17,7 @@ module DDS_Top (
     input  wire        Ext_Rot_B,
     input  wire        Ext_Btn_Rot_C,
     output wire        Dac_Clk,
-    output wire [11:0] InterpOut
+    output wire [11:0] DDS_Out
 );
 
   //----------------------------------------//
@@ -109,7 +109,7 @@ module DDS_Top (
       .Out2     (wOut2),
       .Mode     (wMode),
       .Enable   (wEnable),
-      .InterpOut(InterpOut)
+      .InterpOut(DDS_Out)      //<----
   );
 
   //  Button Interface For C Button in Rotary Encoder
@@ -127,6 +127,7 @@ module DDS_Top (
       .Rot_A   (Ext_Rot_A),
       .Rot_B   (Ext_Rot_B),
       .C       (wRot_C),
+      .Mode    (wMode),
       .Address (wAddress),
       .FreqChng(wFreqChng)
   );

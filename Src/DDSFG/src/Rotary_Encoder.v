@@ -15,6 +15,7 @@ module Rotary_Encoder (
     input  wire        Rot_A,
     input  wire        Rot_B,
     input  wire        C,
+    input  wire [ 2:0] Mode,
     output wire [10:0] Address,
     output wire        FreqChng
 );
@@ -23,7 +24,7 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  // `define SIM // Uncomment if Simulate
+  //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
 `else
@@ -156,11 +157,10 @@ module Rotary_Encoder (
         end
       endcase
       if (CW) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
-        CW <= 1'b0;
+        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot <= rCnt_Rot + rStep;
       end else if (CCW) begin
-        rCnt_Rot <= (rCnt_Rot < rStep) ? 11'd0 : rCnt_Rot - rStep;
-        CCW <= 1'b0;
+        rCnt_Rot <= (Mode < 3'd4 && rCnt_Rot < rStep) ?  11'd0 :
+                    (Mode == 3'd4 && rCnt_Rot <= 11'd800) ?  11'd800 : rCnt_Rot - rStep;
       end
     end
   end
@@ -171,6 +171,7 @@ module Rotary_Encoder (
       rAddress <= 11'd0;
     end else begin
       if (rDelay) begin
+        //rAddress <= (Mode == 3'd4 && rAddress <= 11'd800) ? 11'd800 : rCnt_Rot;
         rAddress <= rCnt_Rot;
       end
     end
@@ -187,3 +188,11 @@ module Rotary_Encoder (
 
   //----------------------------------------//
 endmodule
+/*
+// Note...........
+Mode 0 : 100k - 1000k Hz
+Mode 1 : 10k  - 100k  Hz
+Mode 2 : 1k   - 10k   Hz
+Mode 3 : 1k   - 100   Hz
+Mode 4 : 50   - 100   Hz (50 is address 800)
+*/

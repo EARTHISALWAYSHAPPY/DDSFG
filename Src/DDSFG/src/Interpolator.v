@@ -25,12 +25,15 @@ module Interpolator (
   reg [31:0] Const;
   reg [63:0] delta;
   reg [31:0] Output;
-  reg [11:0] rInterpOut;
+  reg [11:0] rInterpOut_Unsigned;  // use this value in DAC!!!
+  reg [11:0] rInterpOut_Signed;
 
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
-  assign InterpOut = rInterpOut;
+
+  assign rInterpOut_Unsigned = {~rInterpOut_Signed[11], rInterpOut_Signed[10:0]};
+  assign InterpOut = rInterpOut_Unsigned;
 
   //----------------------------------------//
   // Process Declaration
@@ -74,8 +77,8 @@ module Interpolator (
 
   // Delta cal , interpolation output
   always @(*) begin : u_InterpComb
-    delta      = ($signed(Out1) - $signed(Out2)) * $signed(Const);
-    rInterpOut = Output[29:18];
+    delta             = ($signed(Out1) - $signed(Out2)) * $signed(Const);
+    rInterpOut_Signed = Output[29:18];
   end
 
   //----------------------------------------//

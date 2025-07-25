@@ -16,7 +16,7 @@ module Interpolator (
     input  wire [31:0] Out2,
     input  wire [ 2:0] Mode,
     input  wire        Enable,
-    output wire [11:0] InterpOut
+    output wire [11:0] InterpOut  // <-- Unsigned Value to DAC
 );
   //----------------------------------------//
   // Signal Declaration
@@ -25,15 +25,13 @@ module Interpolator (
   reg [31:0] Const;
   reg [63:0] delta;
   reg [31:0] Output;
-  reg [11:0] rInterpOut_Unsigned;  // use this value in DAC!!!
-  reg [11:0] rInterpOut_Signed;
+  reg [11:0] rInterpOut_Signed;  // Signed
 
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
 
-  assign rInterpOut_Unsigned = {~rInterpOut_Signed[11], rInterpOut_Signed[10:0]};
-  assign InterpOut = rInterpOut_Unsigned;
+  assign InterpOut = {~rInterpOut_Signed[11], rInterpOut_Signed[10:0]};
 
   //----------------------------------------//
   // Process Declaration

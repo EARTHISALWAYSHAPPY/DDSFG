@@ -18,6 +18,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Lookup_Table.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
    "Type" : "verilog"
   },
@@ -39,10 +43,6 @@
   },
   {
    "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/gowin_rpll/Pll_Top.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Lookup_Table.v",
    "Type" : "verilog"
   }
  ],

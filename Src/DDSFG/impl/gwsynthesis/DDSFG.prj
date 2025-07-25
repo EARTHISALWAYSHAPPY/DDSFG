@@ -8,13 +8,13 @@
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Lookup_Table.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_prom\romcoef_module.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Lookup_Table.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

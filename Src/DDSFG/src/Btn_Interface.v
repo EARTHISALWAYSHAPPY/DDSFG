@@ -19,9 +19,9 @@ module Btn_Interface (
   // Constant Declaration
   //----------------------------------------//
 
-  //`define SIM // Uncomment if Simulate
+  `define SIM // Uncomment if Simulate
 `ifdef SIM
-  localparam delay = 22'd240 - 1;
+  localparam delay = 22'd24 - 1;
 `else
   localparam delay = 22'd2400000 - 1;
 `endif

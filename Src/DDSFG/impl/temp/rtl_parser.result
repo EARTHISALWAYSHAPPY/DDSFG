@@ -57,7 +57,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 103,
+    "InstLine" : 105,
     "InstName" : "m_interpolator",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Interpolator.v",
     "ModuleLine" : 12,
@@ -65,7 +65,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 114,
+    "InstLine" : 116,
     "InstName" : "m_btn_interface_rot_c",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v",
     "ModuleLine" : 12,
@@ -73,7 +73,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 122,
+    "InstLine" : 124,
     "InstName" : "m_rotary_endcoder",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Rotary_Encoder.v",
     "ModuleLine" : 12,
@@ -81,15 +81,15 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 133,
+    "InstLine" : 136,
     "InstName" : "m_lookup_table",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Lookup_Table.v",
-    "ModuleLine" : 1,
+    "ModuleLine" : 13,
     "ModuleName" : "Lookup_Table",
     "SubInsts" : [
      {
       "InstFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Lookup_Table.v",
-      "InstLine" : 15,
+      "InstLine" : 38,
       "InstName" : "m_romcoef",
       "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/gowin_prom/romcoef_module.v",
       "ModuleLine" : 10,

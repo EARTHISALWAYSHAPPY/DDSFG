@@ -34,7 +34,7 @@ module Osc_Top (
   reg        Zero_Cross;
   reg        Update_Wait;
   reg        Do_Update;
-  reg        Dir;  // 0 = up , 1 = down
+  reg        Dir;  // 1 = up , 0 = down
   reg [31:0] Sine;
 
   //----------------------------------------//
@@ -112,8 +112,8 @@ module Osc_Top (
 
   //Direction of sine wave 
   always @(*) begin : u_Dir
-    Dir  = ~rOut2[31];
-    Sine = (Dir) ? ~Init1 + 1 : Init1;
+    Dir  = rOut2[31];  // 1 = up , 0 = down
+    Sine = (Dir) ? Init1 : ~Init1 + 1;
   end
 
   // toggle Do_Update for change Freq.

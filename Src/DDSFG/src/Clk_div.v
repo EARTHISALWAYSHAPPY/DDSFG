@@ -9,21 +9,25 @@
 // Author       : Kunanon Wanyen
 // Remark       : Creation File
 //----------------------------------------//
+
 module Clk_Div (
     input  wire Pll_Clk,
     input  wire RESETn,
     output wire Fg_Clk,
     output wire Dac_Clk
 );
+
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
+
   reg rFg_Clk;
   reg rDac_Clk;
 
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
+
   assign Fg_Clk  = rFg_Clk;
   assign Dac_Clk = rDac_Clk;
 

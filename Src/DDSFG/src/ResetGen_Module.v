@@ -9,6 +9,7 @@
 // Author       : T. Sirus
 // Remark       : New Creation
 //----------------------------------------//
+
 module ResetGen_Module(
     input   wire    CLK,
 
@@ -19,13 +20,17 @@ module ResetGen_Module(
 
     output  wire    FgRESETn
 );
+
 //----------------------------------------//
 // Constant Declaration
 //----------------------------------------//
+
     localparam cExtIgnore = 23'd12000;
 //----------------------------------------//
+
 // Signal Declaration
 //----------------------------------------//
+
     reg [3:0]   rStartupCnt = 4'd0;
     reg [3:0]   rHoldCnt = 4'd0;
     reg [22:0]  rExtIgnoreCnt = 23'd0;
@@ -33,6 +38,7 @@ module ResetGen_Module(
     reg rPllRESETn;
 
     reg rFgRESETn;
+
 //----------------------------------------//
 // Output Declaration
 //----------------------------------------//
@@ -42,6 +48,7 @@ module ResetGen_Module(
 //----------------------------------------//
 // Process Declaration
 //----------------------------------------//
+
     always @(posedge CLK) begin : u_rStartupCnt
         rStartupCnt <= (rStartupCnt < 15) ? rStartupCnt + 4'd1 : rStartupCnt; 
     end

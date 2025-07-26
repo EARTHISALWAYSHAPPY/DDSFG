@@ -127,7 +127,7 @@ module DDS_Top (
       .Rot_A   (Ext_Rot_A),
       .Rot_B   (Ext_Rot_B),
       .C       (wRot_C),
-      .Mode    (wMode),
+      .Mode    (wMode),       // <-- for chek Mode 4 minimun address 800
       .Address (wAddress),
       .FreqChng(wFreqChng)
   );

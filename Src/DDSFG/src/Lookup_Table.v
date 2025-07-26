@@ -23,18 +23,21 @@ module Lookup_Table (
   //----------------------------------------//
   // Internal Signal
   //----------------------------------------//
+
   reg  [47:0] Coefficient;
   wire [47:0] wCoefficient;
 
   //----------------------------------------//
   // Output Assignment
   //----------------------------------------//
+
   assign Sin1x = {4'b0000, Coefficient[47:24], 4'b0000};
   assign Cos2x = {6'b001111, Coefficient[23:0], 2'b00};
 
   //----------------------------------------//
   // ROM Coefficient Instantiation
   //----------------------------------------//
+
   romcoef_module m_romcoef (
       .dout (wCoefficient),  // output [47:0] dout
       .clk  (Fg_Clk),        // input clk
@@ -47,6 +50,7 @@ module Lookup_Table (
   //----------------------------------------//
   // Coefficient Register Update
   //----------------------------------------//
+  
   always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) Coefficient <= 48'd0;
     else Coefficient <= wCoefficient;

@@ -19,7 +19,7 @@ module Btn_Interface (
   // Constant Declaration
   //----------------------------------------//
 
-  `define SIM // Uncomment if Simulate
+  //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam delay = 22'd24 - 1;
 `else
@@ -29,6 +29,7 @@ module Btn_Interface (
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
+
   wire wIntBtn;
   reg [24:0] rCnt;
   reg [2:0] rDout;
@@ -36,6 +37,7 @@ module Btn_Interface (
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
+
   assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
   assign IntBtn  = wIntBtn;
 
@@ -43,6 +45,7 @@ module Btn_Interface (
   // Process Declaration
   //----------------------------------------//
 
+  //debounce button
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
     if (!RESETn) begin
       rCnt <= 25'd0;
@@ -55,6 +58,7 @@ module Btn_Interface (
     end
   end
 
+  // D filpflop for 2 flop Sync.
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rDout
     if (!RESETn) begin
       rDout <= 3'b111;

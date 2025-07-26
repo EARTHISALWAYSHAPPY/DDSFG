@@ -9,6 +9,7 @@
 // Author       : Kunanon Wanyen
 // Remark       : Creation File
 //----------------------------------------//
+
 module Interpolator (
     input  wire        Fg_Clk,
     input  wire        RESETn,
@@ -18,9 +19,11 @@ module Interpolator (
     input  wire        Enable,
     output wire [11:0] InterpOut  // <-- Unsigned Value to DAC
 );
+
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
+  
   reg        Enable_delay;
   reg [31:0] Const;
   reg [63:0] delta;

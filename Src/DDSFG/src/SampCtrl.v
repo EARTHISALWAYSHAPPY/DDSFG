@@ -20,16 +20,14 @@ module SampCtrl (
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
+  
   reg Begin_Ready;
   reg rReady;
   reg [6:0] rCnt_Ready;
-
   reg [2:0] rMode;
-
   reg [13:0] rGen_signal;
   reg [13:0] rCnt_Enable;
   reg rEnable;
-
   reg rPulse_in;
 
   //----------------------------------------//

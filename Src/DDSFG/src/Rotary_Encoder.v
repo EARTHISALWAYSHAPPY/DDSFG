@@ -188,6 +188,7 @@ module Rotary_Encoder (
 
   //----------------------------------------//
 endmodule
+
 /*
 // Note...........
 Mode 0 : 100k - 1000k Hz

@@ -1,1 +1,5 @@
 *.v linguist-language=Verilog
+
+*.fs linguist-detectable=false
+*.fsx linguist-detectable=false
+*.html linguist-detectable=false

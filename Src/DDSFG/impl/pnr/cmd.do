@@ -1,7 +1,9 @@
--d D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg
+-d D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-UV9QN88PC6/I5
--cfg D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\device.cfg
+-cst D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst
+-cfg D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\device.cfg
+-sdc D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.sdc
 -bit
 -tr
 -ph

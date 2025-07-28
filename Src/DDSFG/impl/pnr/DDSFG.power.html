@@ -61,19 +61,19 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
+<td>D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>---</td>
+<td>D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
-<td>---</td>
+<td>D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.sdc</td>
 </tr>
 <tr>
 <td class="label">Tool Version</td>
-<td>V1.9.11.02 (64-bit)</td>
+<td>V1.9.11.01 (64-bit)</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -89,7 +89,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Jul 26 04:02:24 2025
+<td>Mon Jul 28 15:05:29 2025
 </td>
 </tr>
 <tr>
@@ -161,15 +161,15 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>42.462</td>
+<td>49.656</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
-<td>38.530</td>
+<td>38.548</td>
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>3.932</td>
+<td>11.109</td>
 </tr>
 <tr>
 <td class="label">Psram Power (mW)</td>
@@ -180,7 +180,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>26.497</td>
+<td>26.652</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -188,7 +188,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>83.503</td>
+<td>83.348</td>
 </tr>
 </table>
 <h2><a name="Supply_Summary">Supply Information:</a></h2>
@@ -203,23 +203,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>3.300</td>
-<td>1.149</td>
+<td>3.254</td>
 <td>8.400</td>
-<td>31.512</td>
+<td>38.457</td>
 </tr>
 <tr>
 <td>VCCX</td>
 <td>3.300</td>
-<td>0.027</td>
+<td>0.073</td>
 <td>3.200</td>
-<td>10.651</td>
+<td>10.801</td>
 </tr>
 <tr>
 <td>VCCIO18</td>
 <td>1.800</td>
-<td>0.027</td>
-<td>0.139</td>
-<td>0.299</td>
+<td>0.073</td>
+<td>0.149</td>
+<td>0.398</td>
 </tr>
 </table>
 <h1><a name="Detail">Power Details</a></h1>
@@ -233,21 +233,33 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.016</td>
+<td>0.278</td>
 <td>NA</td>
-<td>3.431</td>
+<td>3.063</td>
 </tr>
 <tr>
 <td>IO</td>
-<td>1.400
-<td>1.170
-<td>2.425
+<td>1.869
+<td>1.256
+<td>4.441
+</tr>
+<tr>
+<td>BSRAM</td>
+<td>1.359
+<td>NA</td>
+<td>NA</td>
 </tr>
 <tr>
 <td>PLL</td>
 <td>3.682
 <td>NA</td>
 <td>NA</td>
+</tr>
+<tr>
+<td>DSP</td>
+<td>5.168
+<td>NA</td>
+<td>0.355
 </tr>
 </table>
 <h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
@@ -259,12 +271,36 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>DDS_Top</td>
-<td>3.698</td>
-<td>3.698(3.697)</td>
+<td>10.487</td>
+<td>10.487(10.487)</td>
+<tr>
+<td>DDS_Top/m_btn_interface/</td>
+<td>0.012</td>
+<td>0.012(0.000)</td>
+<tr>
+<td>DDS_Top/m_btn_interface_rot_c/</td>
+<td>0.011</td>
+<td>0.011(0.000)</td>
 <tr>
 <td>DDS_Top/m_clk_div/</td>
-<td>0.001</td>
-<td>0.001(0.000)</td>
+<td>0.002</td>
+<td>0.002(0.000)</td>
+<tr>
+<td>DDS_Top/m_interpolator/</td>
+<td>0.096</td>
+<td>0.096(0.000)</td>
+<tr>
+<td>DDS_Top/m_lookup_table/</td>
+<td>1.364</td>
+<td>1.364(1.359)</td>
+<tr>
+<td>DDS_Top/m_lookup_table/m_romcoef/</td>
+<td>1.359</td>
+<td>1.359(0.000)</td>
+<tr>
+<td>DDS_Top/m_osc_top/</td>
+<td>5.237</td>
+<td>5.237(0.000)</td>
 <tr>
 <td>DDS_Top/m_pll/</td>
 <td>3.682</td>
@@ -273,6 +309,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>DDS_Top/m_resetgen/</td>
 <td>0.015</td>
 <td>0.015(0.000)</td>
+<tr>
+<td>DDS_Top/m_rotary_endcoder/</td>
+<td>0.052</td>
+<td>0.052(0.000)</td>
+<tr>
+<td>DDS_Top/m_sampctrl/</td>
+<td>0.017</td>
+<td>0.017(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -282,14 +326,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>Ext_Clk</td>
-<td>27.000</td>
-<td>3.698</td>
+<td>CLK_24M</td>
+<td>24.000</td>
+<td>6.794</td>
 </tr>
 <tr>
-<td>m_pll/rpll_inst/CLKOUT.default_gen_clk</td>
-<td>48.000</td>
+<td>CLK_27M</td>
+<td>27.000</td>
+<td>3.699</td>
+</tr>
+<tr>
+<td>CLK_PLL</td>
+<td>48.001</td>
 <td>0.003</td>
+</tr>
+<tr>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
 </tr>
 </table>
 </div><!-- content -->

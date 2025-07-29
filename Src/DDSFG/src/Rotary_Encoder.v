@@ -24,7 +24,7 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
- // `define SIM // Uncomment if Simulate
+  // `define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd24 - 1;
 `else
@@ -157,7 +157,7 @@ module Rotary_Encoder (
         end
       endcase
       if (CW) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 : rCnt_Rot + rStep;
+        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 - 1 : rCnt_Rot + rStep;
       end else if (CCW) begin
         rCnt_Rot <= (Mode < 3'd4 && rCnt_Rot < rStep) ?  11'd0 :
                     (Mode == 3'd4 && rCnt_Rot <= 11'd800) ?  11'd800 : rCnt_Rot - rStep;

@@ -24,16 +24,22 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  // `define SIM // Uncomment if Simulate
+  `define SIM // Uncomment if Simulate
 `ifdef SIM
-  localparam Onehundred_ms = 22'd24 - 1;
+  localparam Onehundred_ms = 22'd240 - 1;
+  localparam Debounce = 14'd12000 - 1;
 `else
-  localparam Onehundred_ms = 22'd2400000 - 1;
+  localparam Onehundred_ms = 22'd2400000 - 1;  // 100 ms
+  localparam Debounce = 14'd12000 - 1;  // 0.5ms
 `endif
 
   localparam State_idle = 3'd0;
   localparam State_CW = 3'd1;
   localparam State_CCW = 3'd2;
+
+  localparam Step_Min = 11'd0;
+  localparam Step_Min_Mode4 = 11'd800;
+  localparam Step_Max = 11'd1800;
 
   //----------------------------------------//
   // Signal Declaration
@@ -53,6 +59,7 @@ module Rotary_Encoder (
   reg         CCW;
   reg  [10:0] rAddress;
   reg         rFreqChng;
+  reg  [13:0] rCnt_Debounce;
 
   //----------------------------------------//
   // Assignments
@@ -108,6 +115,19 @@ module Rotary_Encoder (
     end
   end
 
+  //Debounce Rotary
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Debounce
+    if (!RESETn) begin
+      rCnt_Debounce <= 14'd0;
+    end else begin
+      if (rCnt_Debounce == 14'd0) begin
+        rCnt_Debounce <= (A_Fall || B_Fall) ? 14'd1 : 14'd0;
+      end else begin
+        rCnt_Debounce <= (rCnt_Debounce < Debounce) ? rCnt_Debounce + 14'd1 : 14'd0;
+      end
+    end
+  end
+
   // Mode selector by button press (C)
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
     if (!RESETn) begin
@@ -143,7 +163,9 @@ module Rotary_Encoder (
     end else begin
       case (State)
         State_idle: begin
-          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
+          State <= (A_Fall && rCnt_Debounce == 14'd0) ? State_CCW : 
+          (B_Fall && rCnt_Debounce == 14'd0) ? State_CW : 
+          State_idle;
           CW <= 1'b0;
           CCW <= 1'b0;
         end
@@ -157,10 +179,10 @@ module Rotary_Encoder (
         end
       endcase
       if (CW) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= 11'd1800) ? 11'd1800 - 1 : rCnt_Rot + rStep;
+        rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
       end else if (CCW) begin
-        rCnt_Rot <= (Mode < 3'd4 && rCnt_Rot < rStep) ?  11'd0 :
-                    (Mode == 3'd4 && rCnt_Rot <= 11'd800) ?  11'd800 : rCnt_Rot - rStep;
+        rCnt_Rot <= (Mode < 3'd4 && rCnt_Rot < rStep) ?  Step_Min :
+                    (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4: rCnt_Rot - rStep;
       end
     end
   end

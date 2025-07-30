@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="DDS_Top" Lut="1" T_Register="343(0)" T_Alu="134(0)" T_Lut="521(1)" T_MULT36X36="2(0)" T_Bsram="6(0)">
+<Module name="DDS_Top" Lut="1" T_Register="349(0)" T_Alu="134(0)" T_Lut="491(1)" T_MULT36X36="2(0)" T_Bsram="6(0)">
  <SubModule name="m_resetgen" Register="33" Lut="60" T_Register="33(33)" T_Lut="60(60)"/>
  <SubModule name="m_pll"/>
  <SubModule name="m_clk_div" Register="2" Lut="4" T_Register="2(2)" T_Lut="4(4)"/>
- <SubModule name="m_btn_interface" Register="25" Lut="59" T_Register="25(25)" T_Lut="59(59)"/>
- <SubModule name="m_sampctrl" Register="35" Alu="3" Lut="65" T_Register="35(35)" T_Alu="3(3)" T_Lut="65(65)"/>
- <SubModule name="m_osc_top" Register="65" Alu="32" Lut="111" MULT36X36="1" T_Register="65(65)" T_Alu="32(32)" T_Lut="111(111)" T_MULT36X36="1(1)"/>
+ <SubModule name="m_btn_interface" Register="28" Lut="41" T_Register="28(28)" T_Lut="41(41)"/>
+ <SubModule name="m_sampctrl" Register="35" Alu="3" Lut="75" T_Register="35(35)" T_Alu="3(3)" T_Lut="75(75)"/>
+ <SubModule name="m_osc_top" Register="65" Alu="32" Lut="109" MULT36X36="1" T_Register="65(65)" T_Alu="32(32)" T_Lut="109(109)" T_MULT36X36="1(1)"/>
  <SubModule name="m_interpolator" Register="37" Alu="63" Lut="37" MULT36X36="1" T_Register="37(37)" T_Alu="63(63)" T_Lut="37(37)" T_MULT36X36="1(1)"/>
- <SubModule name="m_btn_interface_rot_c" Register="25" Lut="60" T_Register="25(25)" T_Lut="60(60)"/>
- <SubModule name="m_rotary_endcoder" Register="73" Alu="36" Lut="124" T_Register="73(73)" T_Alu="36(36)" T_Lut="124(124)"/>
+ <SubModule name="m_btn_interface_rot_c" Register="28" Lut="48" T_Register="28(28)" T_Lut="48(48)"/>
+ <SubModule name="m_rotary_endcoder" Register="73" Alu="36" Lut="116" T_Register="73(73)" T_Alu="36(36)" T_Lut="116(116)"/>
  <SubModule name="m_lookup_table" Register="48" T_Register="48(48)" T_Bsram="6(0)">
   <SubModule name="m_romcoef" Bsram="6" T_Bsram="6(6)"/>
  </SubModule>

@@ -2,47 +2,47 @@
  "Device" : "GW1NR-9C",
  "Files" : [
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Btn_Interface.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Clk_div.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Clk_div.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/DDS_Top.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Interpolator.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Lookup_Table.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Lookup_Table.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Osc_top.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Osc_top.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/ResetGen_Module.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/ResetGen_Module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/Rotary_Encoder.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_Encoder.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/SampCtrl.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/SampCtrl.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/gowin_prom/romcoef_module.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_prom/romcoef_module.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/src/gowin_rpll/Pll_Top.v",
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
    "Type" : "verilog"
   }
  ],
@@ -50,7 +50,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Src/DDSFG/impl/temp/rtl_parser.result",
+ "ResultFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/impl/temp/rtl_parser.result",
  "Top" : "",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"

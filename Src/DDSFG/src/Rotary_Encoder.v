@@ -24,7 +24,7 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  `define SIM // Uncomment if Simulate
+  //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
   localparam Debounce = 14'd12000 - 1;
@@ -33,9 +33,10 @@ module Rotary_Encoder (
   localparam Debounce = 14'd12000 - 1;  // 0.5ms
 `endif
 
-  localparam State_idle = 3'd0;
-  localparam State_CW = 3'd1;
-  localparam State_CCW = 3'd2;
+  localparam State_idle = 2'd0;
+  localparam State_CW = 2'd1;
+  localparam State_CCW = 2'd2;
+  localparam State_Debounce = 2'd3;
 
   localparam Step_Min = 11'd0;
   localparam Step_Min_Mode4 = 11'd800;
@@ -55,8 +56,6 @@ module Rotary_Encoder (
   reg  [ 1:0] rMode_step;
   reg  [ 6:0] rStep;
   reg  [ 1:0] State;
-  reg         CW;
-  reg         CCW;
   reg  [10:0] rAddress;
   reg         rFreqChng;
   reg  [13:0] rCnt_Debounce;
@@ -115,19 +114,6 @@ module Rotary_Encoder (
     end
   end
 
-  //Debounce Rotary
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Debounce
-    if (!RESETn) begin
-      rCnt_Debounce <= 14'd0;
-    end else begin
-      if (rCnt_Debounce == 14'd0) begin
-        rCnt_Debounce <= (A_Fall || B_Fall) ? 14'd1 : 14'd0;
-      end else begin
-        rCnt_Debounce <= (rCnt_Debounce < Debounce) ? rCnt_Debounce + 14'd1 : 14'd0;
-      end
-    end
-  end
-
   // Mode selector by button press (C)
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
     if (!RESETn) begin
@@ -158,32 +144,31 @@ module Rotary_Encoder (
     if (!RESETn) begin
       State <= State_idle;  // <-- begin start idle state
       rCnt_Rot <= 11'd0;
-      CW <= 1'b0;
-      CCW <= 1'b0;
+      rCnt_Debounce <= 14'd0;
     end else begin
       case (State)
         State_idle: begin
-          State <= (A_Fall && rCnt_Debounce == 14'd0) ? State_CCW : 
-          (B_Fall && rCnt_Debounce == 14'd0) ? State_CW : 
-          State_idle;
-          CW <= 1'b0;
-          CCW <= 1'b0;
+          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
         end
         State_CW: begin
-          CW <= 1'b1;
-          State <= (A_Fall) ? State_idle : State;
+          State <= State_Debounce;
+          rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
         end
         State_CCW: begin
-          CCW   <= 1'b1;
-          State <= (B_Fall) ? State_idle : State;
+          State <= State_Debounce;
+          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min :
+                     (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4: rCnt_Rot - rStep;
         end
+        State_Debounce: begin
+          if ((rCnt_Debounce == Debounce) && ~A_Fall && ~B_Fall) begin
+            State <= State_idle;
+            rCnt_Debounce <= 14'd0;
+          end else begin
+            rCnt_Debounce <= (rCnt_Debounce < Debounce) ? rCnt_Debounce + 14'd1 : rCnt_Debounce;
+          end
+        end
+        default: State <= State_idle;
       endcase
-      if (CW) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-      end else if (CCW) begin
-        rCnt_Rot <= (Mode < 3'd4 && rCnt_Rot < rStep) ?  Step_Min :
-                    (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4: rCnt_Rot - rStep;
-      end
     end
   end
 

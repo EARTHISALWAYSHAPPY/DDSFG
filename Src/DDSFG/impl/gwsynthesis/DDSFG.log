@@ -1,27 +1,27 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Btn_Interface.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Lookup_Table.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_prom\romcoef_module.v'
-Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v'
-Compiling module 'DDS_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v":12)
-Compiling module 'ResetGen_Module'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v":13)
-Compiling module 'Pll_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v":10)
-Compiling module 'Clk_Div'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v":13)
-Compiling module 'Btn_Interface'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Btn_Interface.v":12)
-Compiling module 'SampCtrl'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v":12)
-Compiling module 'Osc_Top'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v":12)
-Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v":13)
-Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v":12)
-Compiling module 'Lookup_Table'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Lookup_Table.v":13)
-Compiling module 'romcoef_module'("D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_prom\romcoef_module.v":10)
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Btn_Interface.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Clk_div.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDS_Top.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Interpolator.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Osc_top.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\ResetGen_Module.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_Encoder.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\SampCtrl.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_prom\romcoef_module.v'
+Analyzing Verilog file 'D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_rpll\Pll_Top.v'
+Compiling module 'DDS_Top'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDS_Top.v":12)
+Compiling module 'ResetGen_Module'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\ResetGen_Module.v":13)
+Compiling module 'Pll_Top'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_rpll\Pll_Top.v":10)
+Compiling module 'Clk_Div'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Clk_div.v":13)
+Compiling module 'Btn_Interface'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Btn_Interface.v":12)
+Compiling module 'SampCtrl'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\SampCtrl.v":12)
+Compiling module 'Osc_Top'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Osc_top.v":12)
+Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Interpolator.v":13)
+Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_Encoder.v":12)
+Compiling module 'Lookup_Table'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v":13)
+Compiling module 'romcoef_module'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_prom\romcoef_module.v":10)
 NOTE  (EX0101) : Current top module is "DDS_Top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
@@ -39,6 +39,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
-[100%] Generate report file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG_syn.rpt.html" completed
+[95%] Generate netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+[100%] Generate report file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG_syn.rpt.html" completed
 GowinSynthesis finish

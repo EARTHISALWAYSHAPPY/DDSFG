@@ -19,7 +19,8 @@ module Btn_Interface (
   // Constant Declaration
   //----------------------------------------//
 
-  //`define SIM // Uncomment if Simulate
+  `define SIM // Uncomment if Simulate
+
 `ifdef SIM
   localparam delay = 22'd24 - 1;
 `else
@@ -30,7 +31,6 @@ module Btn_Interface (
   // Signal Declaration
   //----------------------------------------//
 
-  wire wIntBtn;
   reg [24:0] rCnt;
   reg [2:0] rDout;
 
@@ -38,8 +38,7 @@ module Btn_Interface (
   // Output Declaration
   //----------------------------------------//
 
-  assign wIntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == 25'd0) ? 1'd1 : 1'd0;
-  assign IntBtn  = wIntBtn;
+  assign IntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == delay) ? 1'd1 : 1'd0;
 
   //----------------------------------------//
   // Process Declaration
@@ -50,10 +49,10 @@ module Btn_Interface (
     if (!RESETn) begin
       rCnt <= 25'd0;
     end else begin
-      if (rCnt == 25'd0) begin
-        rCnt <= (wIntBtn == 1'b1) ? 25'd1 : 25'd0;
+      if (rCnt == delay && IntBtn) begin
+        rCnt <= 25'd0;
       end else begin
-        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : 25'd0;
+        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : rCnt;
       end
     end
   end

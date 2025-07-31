@@ -26,17 +26,19 @@ module Rotary_Encoder (
 
   //`define SIM // Uncomment if Simulate
 `ifdef SIM
-  localparam Onehundred_ms = 22'd240 - 1;
-  localparam Debounce = 14'd1200 - 1;
+  localparam Onehundred_ms = 22'd2400 - 1;
+  localparam Debounce_A_B = 14'd120 - 1;
+  localparam Debounce_State = 14'd240 - 1;
 `else
   localparam Onehundred_ms = 22'd2400000 - 1;  // 100 ms
-  localparam Debounce = 14'd12000 - 1;  // 0.5ms
+  localparam Debounce_A_B = 14'd12000 - 1;  // 0.5 ms
+  localparam Debounce_State = 14'd2400 - 1;  // 0.1ms 
 `endif
 
-  localparam State_idle = 2'd0;
+  localparam State_Idle = 2'd0;
   localparam State_CW = 2'd1;
   localparam State_CCW = 2'd2;
-  localparam State_Debounce = 2'd3;
+  localparam State_GoTo_Idle = 2'd3;
 
   localparam Step_Min = 11'd0;
   localparam Step_Min_Mode4 = 11'd800;
@@ -46,30 +48,27 @@ module Rotary_Encoder (
   // Signal Declaration
   //----------------------------------------//
 
-  reg  [ 2:0] rFlop_Rot_A;
-  reg  [ 2:0] rFlop_Rot_B;
-  wire        A_Fall;
-  wire        B_Fall;
-  reg  [21:0] rCnt_Delay;
-  reg         rDelay;
-  reg  [10:0] rCnt_Rot;
-  reg  [ 1:0] rMode_step;
-  reg  [ 6:0] rStep;
-  reg  [ 1:0] State;
-  reg  [10:0] rAddress;
-  reg         rFreqChng;
-  reg  [13:0] rCnt_Debounce_State;
-
-  reg  [13:0] rCnt_Debounce_A;
-  reg  [13:0] rCnt_Debounce_B;
+  reg [ 2:0] rFlop_Rot_A;
+  reg [ 2:0] rFlop_Rot_B;
+  reg        A_Fall;
+  reg        B_Fall;
+  reg [21:0] rCnt_Delay;
+  reg        rDelay;
+  reg [10:0] rCnt_Rot;
+  reg [ 1:0] rMode_step;
+  reg [10:0] rStep;
+  reg [ 1:0] State;
+  reg [10:0] rAddress;
+  reg        rFreqChng;
+  reg [13:0] rCnt_Debounce_A;
+  reg [13:0] rCnt_Debounce_B;
+  reg [13:0] rCnt_Debounce_State;
 
   //----------------------------------------//
   // Assignments
   //----------------------------------------//
 
-  assign A_Fall   = (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0 && rCnt_Debounce_A == Debounce) ? 1'b1 : 1'b0;
-  assign B_Fall = (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0 && rCnt_Debounce_B == Debounce) ? 1'b1 : 1'b0;
-  assign Address = rAddress;  //<------------ wait LUT
+  assign Address  = rAddress;  //<------------ wait LUT
   assign FreqChng = rFreqChng;
 
   //----------------------------------------//
@@ -99,15 +98,16 @@ module Rotary_Encoder (
     end
   end
 
+
   //debounce button A
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Debounce_A
     if (!RESETn) begin
       rCnt_Debounce_A <= 14'd0;
     end else begin
-      if (rCnt_Debounce_A == Debounce && A_Fall) begin
+      if (rCnt_Debounce_A == Debounce_A_B && A_Fall) begin
         rCnt_Debounce_A <= 14'd0;
       end else begin
-        rCnt_Debounce_A <= (rCnt_Debounce_A < Debounce) ? rCnt_Debounce_A + 14'd1 : rCnt_Debounce_A;
+        rCnt_Debounce_A <= (rCnt_Debounce_A < Debounce_A_B) ? rCnt_Debounce_A + 14'd1 : rCnt_Debounce_A;
       end
     end
   end
@@ -117,12 +117,18 @@ module Rotary_Encoder (
     if (!RESETn) begin
       rCnt_Debounce_B <= 14'd0;
     end else begin
-      if (rCnt_Debounce_B == Debounce && B_Fall) begin
+      if (rCnt_Debounce_B == Debounce_A_B && B_Fall) begin
         rCnt_Debounce_B <= 14'd0;
       end else begin
-        rCnt_Debounce_B <= (rCnt_Debounce_B < Debounce) ? rCnt_Debounce_B + 14'd1 : rCnt_Debounce_B;
+        rCnt_Debounce_B <= (rCnt_Debounce_B < Debounce_A_B) ? rCnt_Debounce_B + 14'd1 : rCnt_Debounce_B;
       end
     end
+  end
+
+  //Combination A_Fall B_Fall
+  always @(*) begin
+    A_Fall <= (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0 && rCnt_Debounce_A == Debounce_A_B) ? 1'b1 : 1'b0;
+    B_Fall <= (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0 && rCnt_Debounce_B == Debounce_A_B) ? 1'b1 : 1'b0;
   end
 
   // Delay Counter (100 ms)
@@ -160,10 +166,10 @@ module Rotary_Encoder (
       rStep <= 7'd1;
     end else begin
       case (rMode_step)
-        2'd0:    rStep <= 7'd1;
-        2'd1:    rStep <= 7'd10;
-        2'd2:    rStep <= 7'd100;
-        default: rStep <= 7'd1;
+        2'd0:    rStep <= 11'd1;
+        2'd1:    rStep <= 11'd10;
+        2'd2:    rStep <= 11'd100;
+        default: rStep <= 11'd1;
       endcase
     end
   end
@@ -171,35 +177,42 @@ module Rotary_Encoder (
   //State machine for up/down
   always @(posedge Fg_Clk or negedge RESETn) begin : u_State_and_rCnt_Rot
     if (!RESETn) begin
-      State <= State_idle;  // <-- begin start idle state
+      State <= State_Idle;  // <-- begin start idle state
       rCnt_Rot <= 11'd0;
       rCnt_Debounce_State <= 14'd0;
     end else begin
       case (State)
-        State_idle: begin
-          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_idle;
+        State_Idle: begin
+          State <= (A_Fall) ? State_CCW : (B_Fall) ? State_CW : State_Idle;
         end
         State_CW: begin
-          State <= State_Debounce;
+          State <= State_GoTo_Idle;
           rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
         end
         State_CCW: begin
-          State <= State_Debounce;
-          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min :
-                     (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4: rCnt_Rot - rStep;
+          State <= State_GoTo_Idle;
+          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
+                      rCnt_Rot - rStep;
         end
-        State_Debounce: begin
-          if ((rCnt_Debounce_State == Debounce) && (A_Fall == 0) && (B_Fall == 0)) begin
-            State <= State_idle;
-            rCnt_Debounce_State <= 14'd0;
-          end else begin
-            rCnt_Debounce_State <= (rCnt_Debounce_State < Debounce) ? rCnt_Debounce_State + 14'd1 : rCnt_Debounce_State;
-          end
+        State_GoTo_Idle: begin
+          State <= State_Idle;
+
+          // if not have debounce not work use that
+
+          // if (rCnt_Debounce_State == Debounce_State) begin
+          //   State <= State_Idle;
+          //   rCnt_Debounce_State <= 14'd0;
+          // end else begin
+          //   rCnt_Debounce_State <=(rCnt_Debounce_State < Debounce_State)?rCnt_Debounce_State + 14'd1:rCnt_Debounce_State ;
+          // end
         end
-        default: State <= State_idle;
+        default: State <= State_Idle;
       endcase
     end
   end
+
+
 
   // add rCnt_Rot to rAddress
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rAddress

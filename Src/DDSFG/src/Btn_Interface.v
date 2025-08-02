@@ -31,12 +31,13 @@ module Btn_Interface (
   //----------------------------------------//
 
   reg [24:0] rCnt;
-  reg [2:0] rDout;
+  reg [ 2:0] rDout;
 
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
 
+  // Check negedge of Button
   assign IntBtn = (rDout[2] == 1'd1 && rDout[1] == 1'd0 && rCnt == delay) ? 1'd1 : 1'd0;
 
   //----------------------------------------//

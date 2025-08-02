@@ -1,7 +1,7 @@
-Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg"
-Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
 Processing netlist completed
-Reading constraint file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDSFG.cst"
+Reading constraint file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -20,10 +20,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.power.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.pin.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.tr.html" completed
-Thu Jul 31 01:49:50 2025
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.power.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.pin.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
+Sat Aug  2 08:42:34 2025
 

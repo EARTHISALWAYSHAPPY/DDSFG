@@ -195,13 +195,13 @@ module Rotary_Encoder (
           end
         end
 
-        State_CW: begin
+        State_CW: begin // Up Count
           rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
           State <= State_Debounce;
           rCnt_Debounce_State <= 14'd0;
         end
 
-        State_CCW: begin
+        State_CCW: begin // Down Count
           rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
                       (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
                       rCnt_Rot - rStep;
@@ -218,7 +218,7 @@ module Rotary_Encoder (
           end
         end
 
-        State_Waitsteady: begin  // Wait for signal from Filter metastable to Steady logic high (no take action to Rotary)
+        State_Waitsteady: begin  // Wait for signal from Filter Metastable Phase to Steady logic high (no take action to Rotary)
           State <= (Steady_A && Steady_B) ? State_Idle : State_Waitsteady;
         end
         default: State <= State_Idle;

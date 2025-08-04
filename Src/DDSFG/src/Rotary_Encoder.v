@@ -17,7 +17,9 @@ module Rotary_Encoder (
     input  wire        C,
     input  wire [ 2:0] Mode,
     output wire [10:0] Address,
-    output wire        FreqChng
+    output wire        FreqChng,
+    output wire [ 1:0] Mode_Step  // for debug
+
 );
 
   //----------------------------------------//
@@ -32,7 +34,7 @@ module Rotary_Encoder (
 `else
   localparam Onehundred_ms = 22'd2400000 - 1;  // 100 ms
   localparam Debounce_A_B = 14'd12000 - 1;  // 0.5 ms
-  localparam Debounce_State = 14'd12000 - 1;  // 0.5ms 
+  localparam Debounce_State = 14'd2400 - 1;  // 0.1ms 
 `endif
 
   localparam State_Idle = 3'd0;
@@ -71,8 +73,9 @@ module Rotary_Encoder (
   // Assignments
   //----------------------------------------//
 
-  assign Address  = rAddress;  //<------------ wait LUT
-  assign FreqChng = rFreqChng;
+  assign Mode_Step = rMode_step;
+  assign Address   = rAddress;  //<------------ wait LUT
+  assign FreqChng  = rFreqChng;
 
   //----------------------------------------//
   // Submodule Instantiation
@@ -197,33 +200,33 @@ module Rotary_Encoder (
         end
 
         State_CW: begin  // Up Count
-          rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-          State <= State_Debounce;
-          rCnt_Debounce_State <= 14'd0;
-          // if (A_Fall) begin
-          //   rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-          //   State <= State_Debounce;
-          //   rCnt_Debounce_State <= 14'd0;
-          // end else begin
-          //   State <= State_CW;
-          // end
+          // rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+          // State <= State_Debounce;
+          // rCnt_Debounce_State <= 14'd0;
+          if (A_Fall) begin
+            rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+            State <= State_Debounce;
+            rCnt_Debounce_State <= 14'd0;
+          end else begin
+            State <= State_CW;
+          end
         end
 
         State_CCW: begin  // Down Count
-          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
-                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
-                      rCnt_Rot - rStep;
-          State <= State_Debounce;
-          rCnt_Debounce_State <= 14'd0;
-          // if (B_Fall) begin
-          //   rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+          // rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
           //             (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
           //             rCnt_Rot - rStep;
-          //   State <= State_Debounce;
-          //   rCnt_Debounce_State <= 14'd0;
-          // end else begin
-          //   State <= State_CCW;
-          // end
+          // State <= State_Debounce;
+          // rCnt_Debounce_State <= 14'd0;
+          if (B_Fall) begin
+            rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
+                      rCnt_Rot - rStep;
+            State <= State_Debounce;
+            rCnt_Debounce_State <= 14'd0;
+          end else begin
+            State <= State_CCW;
+          end
         end
 
         State_Debounce: begin
@@ -237,7 +240,6 @@ module Rotary_Encoder (
 
         State_Waitsteady: begin  // Wait for signal from Filter Metastable Phase to Steady logic high (no take action to Rotary)
           State <= (Steady_A && Steady_B) ? State_Idle : State_Waitsteady;
-          //State <= (~A_Fall && ~B_Fall) ? State_Idle : State_Waitsteady;
         end
         default: State <= State_Idle;
       endcase
@@ -273,6 +275,6 @@ endmodule
 Mode 0 : 100k - 1000k Hz
 Mode 1 : 10k  - 100k  Hz
 Mode 2 : 1k   - 10k   Hz
-Mode 3 : 1k   - 100   Hz
+Mode 3 : 100  - 1K   Hz
 Mode 4 : 50   - 100   Hz (50 is address 800)
 */

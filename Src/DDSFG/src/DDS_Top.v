@@ -17,7 +17,9 @@ module DDS_Top (
     input  wire        Ext_Rot_B,
     input  wire        Ext_Btn_Rot_C,
     output wire        Dac_Clk,
-    output wire [11:0] DDS_Out
+    output wire [11:0] DDS_Out,
+    output wire [ 2:0] LED_Mode,       // for debug
+    output wire [ 1:0] LED_Mode_Step   // for debug
 );
 
   //----------------------------------------//
@@ -39,6 +41,7 @@ module DDS_Top (
   wire        wRot_C;
   wire [10:0] wAddress;
   wire        wFreqChng;
+  wire [ 1:0] wMode_Step;  // for debug
 
   //----------------------------------------//
   // Module Instantiation
@@ -122,14 +125,15 @@ module DDS_Top (
 
   // Rotary Encoder Module
   Rotary_Encoder m_rotary_endcoder (
-      .Fg_Clk  (wFg_Clk),
-      .RESETn  (wFg_RESETn),
-      .Rot_A   (Ext_Rot_A),
-      .Rot_B   (Ext_Rot_B),
-      .C       (wRot_C),
-      .Mode    (wMode),       // <-- for chek Mode 4 minimun address 800
-      .Address (wAddress),
-      .FreqChng(wFreqChng)
+      .Fg_Clk   (wFg_Clk),
+      .RESETn   (wFg_RESETn),
+      .Rot_A    (Ext_Rot_A),
+      .Rot_B    (Ext_Rot_B),
+      .C        (wRot_C),
+      .Mode     (wMode),       // <-- for chek Mode 4 minimun address 800
+      .Address  (wAddress),
+      .FreqChng (wFreqChng),
+      .Mode_Step(wMode_Step)   // for debug
   );
 
   //LookUp Table Module 
@@ -141,6 +145,16 @@ module DDS_Top (
       //   .Out2  (wOut2),
       .Sin1x  (wInit1),
       .Cos2x  (wInit2)
+  );
+
+  //Led for Debug Only!!!!
+  LED_Debug m_led_debug (
+      .Fg_Clk(wFg_Clk),
+      .RESETn(wFg_RESETn),
+      .Mode(wMode),
+      .Mode_Step(wMode_Step),
+      .LED_Mode(LED_Mode),
+      .LED_Mode_Step(LED_Mode_Step)
   );
   //----------------------------------------//
 endmodule

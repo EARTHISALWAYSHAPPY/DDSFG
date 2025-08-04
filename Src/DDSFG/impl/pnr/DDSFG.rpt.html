@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Aug  2 08:42:34 2025
+<td>Mon Aug  4 18:28:50 2025
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.051s, Elapsed time = 0h 0m 0.051s
-   Placement Phase 1: CPU time = 0h 0m 0.058s, Elapsed time = 0h 0m 0.058s
-   Placement Phase 2: CPU time = 0h 0m 0.051s, Elapsed time = 0h 0m 0.051s
-   Placement Phase 3: CPU time = 0h 0m 0.572s, Elapsed time = 0h 0m 0.571s
-   Total Placement: CPU time = 0h 0m 0.732s, Elapsed time = 0h 0m 0.731s
+   Placement Phase 0: CPU time = 0h 0m 0.058s, Elapsed time = 0h 0m 0.058s
+   Placement Phase 1: CPU time = 0h 0m 0.067s, Elapsed time = 0h 0m 0.067s
+   Placement Phase 2: CPU time = 0h 0m 0.052s, Elapsed time = 0h 0m 0.052s
+   Placement Phase 3: CPU time = 0h 0m 0.58s, Elapsed time = 0h 0m 0.58s
+   Total Placement: CPU time = 0h 0m 0.757s, Elapsed time = 0h 0m 0.757s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.117s, Elapsed time = 0h 0m 0.116s
-   Routing Phase 2: CPU time = 0h 0m 0.303s, Elapsed time = 0h 0m 0.304s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
+   Routing Phase 1: CPU time = 0h 0m 0.123s, Elapsed time = 0h 0m 0.123s
+   Routing Phase 2: CPU time = 0h 0m 0.325s, Elapsed time = 0h 0m 0.325s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.42s, Elapsed time = 0h 0m 0.42s
+   Total Routing: CPU time = 0h 0m 0.449s, Elapsed time = 0h 0m 0.448s
 Generate output files:
-   CPU time = 0h 0m 0.813s, Elapsed time = 0h 0m 0.812s
+   CPU time = 0h 0m 0.813s, Elapsed time = 0h 0m 0.813s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 288MB</td>
+<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 280MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>646/8640</td>
-<td>8%</td>
+<td>722/8640</td>
+<td>9%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>646(502 LUT, 144 ALU, 0 ROM16)</td>
+<td>722(577 LUT, 145 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>349/6693</td>
+<td>381/6693</td>
 <td>6%</td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>345/6480</td>
+<td>372/6480</td>
 <td>6%</td>
 </tr>
 <tr>
@@ -164,22 +164,22 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as FF</td>
-<td>4/213</td>
-<td>2%</td>
+<td>9/213</td>
+<td>5%</td>
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>408/4320</td>
-<td>10%</td>
+<td>437/4320</td>
+<td>11%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
-<td>19/71</td>
-<td>27%</td>
+<td>24/71</td>
+<td>34%</td>
 </tr>
 <tr>
 <td class="label">I/O Buf</td>
-<td>19</td>
+<td>24</td>
 <td>-</td>
 </tr>
 <tr>
@@ -189,7 +189,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label"> &nbsp &nbsp --Output Buf</td>
-<td>13</td>
+<td>18</td>
 <td>-</td>
 </tr>
 <tr>
@@ -215,7 +215,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 1</td>
-<td>4/25</td><td>16%</td>
+<td>9/25</td><td>36%</td>
 </tr>
 <tr>
 <td class="label">bank 2</td>
@@ -667,6 +667,101 @@ Generate output files:
 <td>NA</td>
 <td>1.8</td>
 </tr>
+<tr>
+<td class="label">LED_Mode[0]</td>
+<td>-</td>
+<td>72/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOT39[B]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">LED_Mode[1]</td>
+<td>-</td>
+<td>71/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOT41[A]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">LED_Mode[2]</td>
+<td>-</td>
+<td>70/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOT41[B]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">LED_Mode_Step[0]</td>
+<td>-</td>
+<td>74/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOT38[B]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">LED_Mode_Step[1]</td>
+<td>-</td>
+<td>75/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOT38[A]</td>
+<td>-</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
 </table>
 <br/>
 <h2><a name="All_Package_Pins">All Package Pins:</a></h2>
@@ -911,35 +1006,35 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">75/1</td>
-<td>-</td>
-<td>in</td>
+<td>LED_Mode_Step[1]</td>
+<td>out</td>
 <td>IOT38[A]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">74/1</td>
-<td>-</td>
-<td>in</td>
+<td>LED_Mode_Step[0]</td>
+<td>out</td>
 <td>IOT38[B]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -962,52 +1057,52 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">72/1</td>
-<td>-</td>
-<td>in</td>
+<td>LED_Mode[0]</td>
+<td>out</td>
 <td>IOT39[B]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">71/1</td>
-<td>-</td>
-<td>in</td>
+<td>LED_Mode[1]</td>
+<td>out</td>
 <td>IOT41[A]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">70/1</td>
-<td>-</td>
-<td>in</td>
+<td>LED_Mode[2]</td>
+<td>out</td>
 <td>IOT41[B]</td>
 <td>-</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>

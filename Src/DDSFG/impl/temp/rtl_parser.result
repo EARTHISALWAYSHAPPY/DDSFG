@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 48,
+    "InstLine" : 51,
     "InstName" : "m_resetgen",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/ResetGen_Module.v",
     "ModuleLine" : 13,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 57,
+    "InstLine" : 60,
     "InstName" : "m_pll",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_rpll/Pll_Top.v",
     "ModuleLine" : 10,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 65,
+    "InstLine" : 68,
     "InstName" : "m_clk_div",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Clk_div.v",
     "ModuleLine" : 13,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 73,
+    "InstLine" : 76,
     "InstName" : "m_btn_interface",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v",
     "ModuleLine" : 12,
@@ -41,7 +41,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 81,
+    "InstLine" : 84,
     "InstName" : "m_sampctrl",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/SampCtrl.v",
     "ModuleLine" : 12,
@@ -49,7 +49,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 91,
+    "InstLine" : 94,
     "InstName" : "m_osc_top",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Osc_top.v",
     "ModuleLine" : 12,
@@ -57,7 +57,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 105,
+    "InstLine" : 108,
     "InstName" : "m_interpolator",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v",
     "ModuleLine" : 13,
@@ -65,7 +65,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 116,
+    "InstLine" : 119,
     "InstName" : "m_btn_interface_rot_c",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v",
     "ModuleLine" : 12,
@@ -73,7 +73,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 124,
+    "InstLine" : 127,
     "InstName" : "m_rotary_endcoder",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_Encoder.v",
     "ModuleLine" : 12,
@@ -81,7 +81,7 @@
    },
    {
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
-    "InstLine" : 136,
+    "InstLine" : 140,
     "InstName" : "m_lookup_table",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Lookup_Table.v",
     "ModuleLine" : 13,
@@ -96,6 +96,14 @@
       "ModuleName" : "romcoef_module"
      }
     ]
+   },
+   {
+    "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
+    "InstLine" : 151,
+    "InstName" : "m_led_debug",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/LED_Debug.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "LED_Debug"
    }
   ]
  }

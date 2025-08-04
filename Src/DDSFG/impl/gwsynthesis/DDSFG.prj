@@ -8,6 +8,7 @@
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Clk_div.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDS_Top.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Interpolator.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\LED_Debug.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Osc_top.v" type="verilog"/>
         <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\ResetGen_Module.v" type="verilog"/>

@@ -18,6 +18,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/LED_Debug.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Lookup_Table.v",
    "Type" : "verilog"
   },

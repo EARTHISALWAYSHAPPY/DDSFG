@@ -200,9 +200,6 @@ module Rotary_Encoder (
         end
 
         State_CW: begin  // Up Count
-          // rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-          // State <= State_Debounce;
-          // rCnt_Debounce_State <= 14'd0;
           if (A_Fall) begin
             rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
             State <= State_Debounce;
@@ -213,11 +210,6 @@ module Rotary_Encoder (
         end
 
         State_CCW: begin  // Down Count
-          // rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
-          //             (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
-          //             rCnt_Rot - rStep;
-          // State <= State_Debounce;
-          // rCnt_Debounce_State <= 14'd0;
           if (B_Fall) begin
             rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
                       (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 

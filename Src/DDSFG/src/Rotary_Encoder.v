@@ -69,6 +69,10 @@ module Rotary_Encoder (
   reg [13:0] rCnt_Debounce_B;
   reg [13:0] rCnt_Debounce_State;
 
+  // reg [ 1:0] Step_Enable;
+  // reg        Direction;
+  // reg        Enable;
+
   //----------------------------------------//
   // Assignments
   //----------------------------------------//
@@ -137,6 +141,9 @@ module Rotary_Encoder (
     B_Fall <= (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0 && rCnt_Debounce_B == Debounce_A_B) ? 1'b1 : 1'b0;
     Steady_A <= (rFlop_Rot_A[2] == 1'b1 && rCnt_Debounce_A[1] == 1'b1) ? 1'b1 : 1'b0;
     Steady_B <= (rFlop_Rot_B[2] == 1'b1 && rCnt_Debounce_B[1] == 1'b1) ? 1'b1 : 1'b0;
+
+    Enable <= rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
+    Direction <= rFlop_Rot_A[2] ^ rFlop_Rot_B[2];
   end
 
   // Delay Counter (100 ms)
@@ -238,6 +245,23 @@ module Rotary_Encoder (
     end
   end
 
+  // always @(posedge Fg_Clk or negedge RESETn) begin
+  //   if (!RESETn) begin
+  //     Step_Enable <= 2'd0;
+  //     rCnt_Rot <= 11'd0;
+  //   end else if (Enable) begin
+  //     Step_Enable <= Step_Enable + 2'd1;
+  //     if (Step_Enable == 2'd3) begin
+  //       if (Direction) begin
+  //         rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+  //       end else begin
+  //         rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+  //                     (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
+  //                     rCnt_Rot - rStep;
+  //       end
+  //     end
+  //   end
+  // end
 
   // add rCnt_Rot to rAddress
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rAddress
@@ -245,7 +269,8 @@ module Rotary_Encoder (
       rAddress <= 11'd0;
     end else begin
       if (rDelay) begin
-        rAddress <= rCnt_Rot;
+        //rAddress <= rCnt_Rot;
+        rAddress <= (Mode == 3'd4 && rCnt_Rot < Step_Min_Mode4) ? Step_Min_Mode4 : rCnt_Rot;
       end
     end
   end

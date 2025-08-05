@@ -16,5 +16,17 @@
 #---------------------------------------------------------------------------
 #Directory path of (Notebook)
 
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_prom/romcoef_module.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/gowin_rpll/PLL_Top.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Btn_Interface.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Clk_div.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Interpolator.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/LED_Debug.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Lookup_Table.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Osc_top.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/ResetGen_Module.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_Encoder.v
+D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/SampCtrl.v
 
 #---------------------------------------------------------------------------

@@ -23,7 +23,7 @@ Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\s
 Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_Encoder.v":12)
 Compiling module 'Lookup_Table'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v":13)
 Compiling module 'romcoef_module'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_prom\romcoef_module.v":10)
-Compiling module 'LED_Debug'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\LED_Debug.v":1)
+Compiling module 'LED_Debug'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\LED_Debug.v":12)
 NOTE  (EX0101) : Current top module is "DDS_Top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

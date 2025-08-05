@@ -4,11 +4,12 @@ vlog -f Simulation.f
 #---------------------------------------------------------------------------
 #Directory path of (PC)
 
-vsim -gui work.Testbench -L D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Modelsim/GowinLibrary
+#vsim -gui work.Testbench -L D:/Work/ElecEng/Y3/T1/Project_DDSFG/DDSFG_git/DDSFG/Simulation/Modelsim/GowinLibrary
+
 
 #---------------------------------------------------------------------------
 #Directory path of (Notebook)
-
+vsim -gui work.Testbench -L D:/Work/ElecEng/Y3/T1/Project/DDSFG/Simulation/Modelsim/GowinLibrary
 
 #---------------------------------------------------------------------------
 

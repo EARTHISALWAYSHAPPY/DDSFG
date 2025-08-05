@@ -102,7 +102,7 @@
     "InstLine" : 151,
     "InstName" : "m_led_debug",
     "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/LED_Debug.v",
-    "ModuleLine" : 1,
+    "ModuleLine" : 12,
     "ModuleName" : "LED_Debug"
    }
   ]

@@ -4,6 +4,8 @@
 -cst D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst
 -cfg D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\device.cfg
 -sdc D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.sdc
+-gao D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gao\gao.v
+-gao_crc 0000010011110001
 -bit
 -tr
 -ph

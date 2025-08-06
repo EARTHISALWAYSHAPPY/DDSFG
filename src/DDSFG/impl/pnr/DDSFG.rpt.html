@@ -36,6 +36,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <li><a href="#Resource" style=" font-size: 16px;">Resource</a>
 <ul>
 <li><a href="#Resource_Usage_Summary" style=" font-size: 14px;">Resource Usage Summary</a></li>
+<li><a href="#Gao_Resource_Usage_Summary" style=" font-size: 14px;">GAO Resource Usage Summary</a></li>
 <li><a href="#I/O_Bank_Usage_Summary" style=" font-size: 14px;">I/O Bank Usage Summary</a></li>
 <li><a href="#Global_Clock_Usage_Summary" style=" font-size: 14px;">Clock Resource Usage Summary</a></li>
 <li><a href="#Global_Clock_Signals" style=" font-size: 14px;">Global Clock Signals</a></li>
@@ -56,6 +57,10 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Design File</td>
 <td>D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg</td>
+</tr>
+<tr>
+<td class="label">Gao Design File</td>
+<td>D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gao\gao.v</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
@@ -83,7 +88,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Wed Aug  6 15:49:38 2025
+<td>Wed Aug  6 16:15:09 2025
 </td>
 </tr>
 <tr>
@@ -98,23 +103,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td class="label">Place & Route Process</td>
 <td>Running placement:
    Placement Phase 0: CPU time = 0h 0m 0.058s, Elapsed time = 0h 0m 0.058s
-   Placement Phase 1: CPU time = 0h 0m 0.061s, Elapsed time = 0h 0m 0.06s
-   Placement Phase 2: CPU time = 0h 0m 0.053s, Elapsed time = 0h 0m 0.053s
-   Placement Phase 3: CPU time = 0h 0m 0.585s, Elapsed time = 0h 0m 0.585s
-   Total Placement: CPU time = 0h 0m 0.757s, Elapsed time = 0h 0m 0.756s
+   Placement Phase 1: CPU time = 0h 0m 0.061s, Elapsed time = 0h 0m 0.061s
+   Placement Phase 2: CPU time = 0h 0m 0.052s, Elapsed time = 0h 0m 0.052s
+   Placement Phase 3: CPU time = 0h 0m 0.579s, Elapsed time = 0h 0m 0.579s
+   Placement Phase GAO : CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.03s
+   Total Placement: CPU time = 0h 0m 0.781s, Elapsed time = 0h 0m 0.78s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.126s, Elapsed time = 0h 0m 0.126s
-   Routing Phase 2: CPU time = 0h 0m 0.313s, Elapsed time = 0h 0m 0.313s
-   Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.439s, Elapsed time = 0h 0m 0.439s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
+   Routing Phase 1: CPU time = 0h 0m 0.129s, Elapsed time = 0h 0m 0.129s
+   Routing Phase 2: CPU time = 0h 0m 0.36s, Elapsed time = 0h 0m 0.36s
+   Routing Phase 3: CPU time = 0h 0m 0.438s, Elapsed time = 0h 0m 0.439s
+   Total Routing: CPU time = 0h 0m 0.928s, Elapsed time = 0h 0m 0.928s
 Generate output files:
-   CPU time = 0h 0m 0.838s, Elapsed time = 0h 0m 0.838s
+   CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 436MB</td>
+<td>CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 338MB</td>
 </tr>
 </table>
 <br/>
@@ -169,7 +175,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>438/4320</td>
+<td>446/4320</td>
 <td>11%</td>
 </tr>
 <tr>
@@ -205,6 +211,52 @@ Generate output files:
 <tr>
 <td class="label">DSP</td>
 <td>2 MULT36X36<br/></td><td>40%</td>
+</tr>
+</table>
+<h2><a name="Gao_Resource_Usage_Summary">GAO Resource Usage Summary:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label"><b>Resource</b></td>
+<td><b>Usage</b></td>
+</tr>
+<td class="label">Logic</td>
+<td>455</td>
+</tr>
+<tr>
+<td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
+<td>455(442 LUT, 13 ALU, 0 ROM16)</td>
+</tr>
+<tr>
+<td class="label">&nbsp &nbsp --SSRAM(RAM16)</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="label">Register</td>
+<td>326</td>
+</tr>
+<tr>
+<td class="label">I/O Port</td>
+<td>16</td>
+</tr>
+<tr>
+<td class="label">I/O Buf</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="label"> &nbsp &nbsp --Input Buf</td>
+<td>3</td>
+</tr>
+<tr>
+<td class="label"> &nbsp &nbsp --Output Buf</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label"> &nbsp &nbsp --Inout Buf</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="label">BSRAM</td>
+<td>1</td>
 </tr>
 </table>
 <h2><a name="I/O_Bank_Usage_Summary">I/O Bank Usage Summary:</a></h2>
@@ -1703,7 +1755,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">5/3</td>
-<td>-</td>
+<td>tms_pad_i</td>
 <td>in</td>
 <td>IOL11[A]</td>
 <td>TMS</td>
@@ -1720,7 +1772,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">6/3</td>
-<td>-</td>
+<td>tck_pad_i</td>
 <td>in</td>
 <td>IOL11[B]</td>
 <td>TCK</td>
@@ -1737,7 +1789,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">7/3</td>
-<td>-</td>
+<td>tdi_pad_i</td>
 <td>in</td>
 <td>IOL12[B]</td>
 <td>TDI</td>
@@ -1754,7 +1806,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">8/3</td>
-<td>-</td>
+<td>tdo_pad_o</td>
 <td>out</td>
 <td>IOL13[A]</td>
 <td>TDO</td>

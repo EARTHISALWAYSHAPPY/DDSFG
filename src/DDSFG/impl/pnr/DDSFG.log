@@ -1,6 +1,8 @@
 Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"
 Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
 Processing netlist completed
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gao\gao.v" completed
+Processing netlist completed
 Reading constraint file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst"
 Physical Constraint parsed completed
 Running placement......
@@ -25,5 +27,5 @@ Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.pin.
 Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
 Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
 Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
-Wed Aug  6 15:49:38 2025
+Wed Aug  6 16:15:10 2025
 

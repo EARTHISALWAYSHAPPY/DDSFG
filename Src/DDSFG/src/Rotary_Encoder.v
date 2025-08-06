@@ -245,6 +245,8 @@ module Rotary_Encoder (
     end
   end
 
+
+  // Test 
   // always @(posedge Fg_Clk or negedge RESETn) begin
   //   if (!RESETn) begin
   //     Step_Enable <= 2'd0;

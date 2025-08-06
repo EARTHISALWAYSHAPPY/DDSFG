@@ -19,7 +19,6 @@ module Rotary_Encoder (
     output wire [10:0] Address,
     output wire        FreqChng,
     output wire [ 1:0] Mode_Step  // for debug
-
 );
 
   //----------------------------------------//
@@ -29,19 +28,9 @@ module Rotary_Encoder (
   //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
-  localparam Debounce_A_B = 14'd12 - 1;
-  localparam Debounce_State = 14'd24 - 1;
 `else
   localparam Onehundred_ms = 22'd2400000 - 1;  // 100 ms
-  localparam Debounce_A_B = 14'd12000 - 1;  // 0.5 ms
-  localparam Debounce_State = 14'd2400 - 1;  // 0.1ms 
 `endif
-
-  localparam State_Idle = 3'd0;
-  localparam State_CW = 3'd1;
-  localparam State_CCW = 3'd2;
-  localparam State_Debounce = 3'd3;
-  localparam State_Waitsteady = 3'd4;
 
   localparam Step_Min = 11'd0;
   localparam Step_Min_Mode4 = 11'd800;
@@ -68,6 +57,10 @@ module Rotary_Encoder (
   reg [13:0] rCnt_Debounce_A;
   reg [13:0] rCnt_Debounce_B;
   reg [13:0] rCnt_Debounce_State;
+
+  reg [ 1:0] Step_Enable;
+  reg        Direction;
+  reg        Enable;
 
   //----------------------------------------//
   // Assignments
@@ -104,40 +97,10 @@ module Rotary_Encoder (
     end
   end
 
-  //debounce button A
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Debounce_A
-    if (!RESETn) begin
-      rCnt_Debounce_A <= 14'd0;
-    end else begin
-      if (rCnt_Debounce_A == Debounce_A_B && A_Fall) begin
-        rCnt_Debounce_A <= 14'd0;
-      end else begin
-        rCnt_Debounce_A <= (rCnt_Debounce_A < Debounce_A_B) ? rCnt_Debounce_A + 14'd1 : rCnt_Debounce_A;
-      end
-    end
-  end
-
-  //debounce button B
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Debounce_B
-    if (!RESETn) begin
-      rCnt_Debounce_B <= 14'd0;
-    end else begin
-      if (rCnt_Debounce_B == Debounce_A_B && B_Fall) begin
-        rCnt_Debounce_B <= 14'd0;
-      end else begin
-        rCnt_Debounce_B <= (rCnt_Debounce_B < Debounce_A_B) ? rCnt_Debounce_B + 14'd1 : rCnt_Debounce_B;
-      end
-    end
-  end
-
   // Combination 
   always @(*) begin
-    // Check negedge of Button
-    A_Fall <= (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0 && rCnt_Debounce_A == Debounce_A_B) ? 1'b1 : 1'b0;
-    B_Fall <= (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0 && rCnt_Debounce_B == Debounce_A_B) ? 1'b1 : 1'b0;
-
-    Steady_A <= (rFlop_Rot_A[2] == 1'b1 && rCnt_Debounce_A[1] == 1'b1) ? 1'b1 : 1'b0;
-    Steady_B <= (rFlop_Rot_B[2] == 1'b1 && rCnt_Debounce_B[1] == 1'b1) ? 1'b1 : 1'b0;
+    Enable <= rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
+    Direction <= rFlop_Rot_A[2] ^ rFlop_Rot_B[1];
   end
 
   // Delay Counter (100 ms)
@@ -183,59 +146,27 @@ module Rotary_Encoder (
     end
   end
 
-  // State machine for up/down
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_State_and_rCnt_Rot
+  //Count Step_Enable
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_Step_Enable
     if (!RESETn) begin
-      State <= State_Idle;
-      rCnt_Rot <= 11'd0;
-      rCnt_Debounce_State <= 14'd0;
+      Step_Enable <= 2'd0;
     end else begin
-      case (State)
-        State_Idle: begin
-          //State <= (B_Fall) ? State_CW : (A_Fall) ? State_CCW : State_Idle;
-          if (B_Fall) begin
-            State <= State_CW;
-          end else if (A_Fall) begin
-            State <= State_CCW;
-          end
-        end
+      Step_Enable <= (Enable) ? Step_Enable + 2'd1 : Step_Enable;
+    end
+  end
 
-        State_CW: begin  // Up Count
-          if (A_Fall) begin
-            rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-            State <= State_Debounce;
-            rCnt_Debounce_State <= 14'd0;
-          end else begin
-            State <= State_CW;
-          end
-        end
-
-        State_CCW: begin  // Down Count
-          if (B_Fall) begin
-            rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
-                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
-                      rCnt_Rot - rStep;
-            State <= State_Debounce;
-            rCnt_Debounce_State <= 14'd0;
-          end else begin
-            State <= State_CCW;
-          end
-        end
-
-        State_Debounce: begin
-          if (rCnt_Debounce_State == Debounce_State) begin
-            State <= State_Waitsteady;
-            rCnt_Debounce_State <= 14'd0;
-          end else begin
-            rCnt_Debounce_State <= (rCnt_Debounce_State < Debounce_State) ? rCnt_Debounce_State + 14'd1 : rCnt_Debounce_State;
-          end
-        end
-
-        State_Waitsteady: begin  // Wait for signal from Filter Metastable Phase to Steady logic high (no take action to Rotary)
-          State <= (Steady_A && Steady_B) ? State_Idle : State_Waitsteady;
-        end
-        default: State <= State_Idle;
-      endcase
+  // rCnt_ Rot from XOR logic
+  always @(posedge Fg_Clk or negedge RESETn) begin
+    if (!RESETn) begin
+      rCnt_Rot <= 11'd0;
+    end else if (Step_Enable == 2'd3) begin
+      if (Direction) begin
+        rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+      end else begin
+        rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+                    (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
+                    rCnt_Rot - rStep;
+      end
     end
   end
 

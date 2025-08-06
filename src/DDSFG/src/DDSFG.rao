@@ -1,0 +1,51 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Lite</Mode>
+    <AoCore_Lite index="0" sample_clock="m_osc_top/Fg_Clk" trig_type="0" capture_amount="1024" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="DDS_Top">
+        <SignalList>
+            <Signal capture_enable="true">wFg_Clk</Signal>
+            <Signal capture_enable="true">ExtBtn</Signal>
+            <Bus capture_enable="true" name="LED_Mode[2:0]">
+                <Signal>LED_Mode[2]</Signal>
+                <Signal>LED_Mode[1]</Signal>
+                <Signal>LED_Mode[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">Ext_Rot_A</Signal>
+            <Signal capture_enable="true">Ext_Rot_B</Signal>
+            <Signal capture_enable="true">Ext_Btn_Rot_C</Signal>
+            <Bus capture_enable="true" name="LED_Mode_Step[1:0]">
+                <Signal>LED_Mode_Step[1]</Signal>
+                <Signal>LED_Mode_Step[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="m_rotary_endcoder/Address[10:0]">
+                <Signal>m_rotary_endcoder/Address[10]</Signal>
+                <Signal>m_rotary_endcoder/Address[9]</Signal>
+                <Signal>m_rotary_endcoder/Address[8]</Signal>
+                <Signal>m_rotary_endcoder/Address[7]</Signal>
+                <Signal>m_rotary_endcoder/Address[6]</Signal>
+                <Signal>m_rotary_endcoder/Address[5]</Signal>
+                <Signal>m_rotary_endcoder/Address[4]</Signal>
+                <Signal>m_rotary_endcoder/Address[3]</Signal>
+                <Signal>m_rotary_endcoder/Address[2]</Signal>
+                <Signal>m_rotary_endcoder/Address[1]</Signal>
+                <Signal>m_rotary_endcoder/Address[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="DDS_Out[11:0]">
+                <Signal>DDS_Out[11]</Signal>
+                <Signal>DDS_Out[10]</Signal>
+                <Signal>DDS_Out[9]</Signal>
+                <Signal>DDS_Out[8]</Signal>
+                <Signal>DDS_Out[7]</Signal>
+                <Signal>DDS_Out[6]</Signal>
+                <Signal>DDS_Out[5]</Signal>
+                <Signal>DDS_Out[4]</Signal>
+                <Signal>DDS_Out[3]</Signal>
+                <Signal>DDS_Out[2]</Signal>
+                <Signal>DDS_Out[1]</Signal>
+                <Signal>DDS_Out[0]</Signal>
+            </Bus>
+        </SignalList>
+    </AoCore_Lite>
+    <GAO_ID>0000000011001100</GAO_ID>
+</GAO_CONFIG>

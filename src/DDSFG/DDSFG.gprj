@@ -19,5 +19,6 @@
         <File path="src/gowin_rpll/Pll_Top.v" type="file.verilog" enable="1"/>
         <File path="src/DDSFG.cst" type="file.cst" enable="1"/>
         <File path="src/DDSFG.sdc" type="file.sdc" enable="1"/>
+        <File path="src/DDSFG.rao" type="file.gao" enable="0"/>
     </FileList>
 </Project>

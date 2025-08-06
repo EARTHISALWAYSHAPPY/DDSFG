@@ -142,8 +142,8 @@ module Rotary_Encoder (
     Steady_A <= (rFlop_Rot_A[2] == 1'b1 && rCnt_Debounce_A[1] == 1'b1) ? 1'b1 : 1'b0;
     Steady_B <= (rFlop_Rot_B[2] == 1'b1 && rCnt_Debounce_B[1] == 1'b1) ? 1'b1 : 1'b0;
 
-    Enable <= rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
-    Direction <= rFlop_Rot_A[2] ^ rFlop_Rot_B[2];
+    //Enable <= rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
+    //Direction <= rFlop_Rot_A[2] ^ rFlop_Rot_B[2];
   end
 
   // Delay Counter (100 ms)

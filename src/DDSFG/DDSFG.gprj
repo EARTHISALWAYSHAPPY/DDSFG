@@ -13,8 +13,8 @@
         <File path="src/Lookup_Table.v" type="file.verilog" enable="1"/>
         <File path="src/Osc_top.v" type="file.verilog" enable="1"/>
         <File path="src/ResetGen_Module.v" type="file.verilog" enable="1"/>
-        <File path="src/Rotary_Encoder.v" type="file.verilog" enable="1"/>
-        <File path="src/Rotary_EncoderV2.v" type="file.verilog" enable="0"/>
+        <File path="src/Rotary_Encoder.v" type="file.verilog" enable="0"/>
+        <File path="src/Rotary_EncoderV2.v" type="file.verilog" enable="1"/>
         <File path="src/SampCtrl.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_prom/romcoef_module.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_rpll/Pll_Top.v" type="file.verilog" enable="1"/>

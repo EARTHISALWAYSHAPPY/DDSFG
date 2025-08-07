@@ -25,7 +25,6 @@ module Rotary_Encoder (
   // Parameter Declaration
   //----------------------------------------//
 
-  //`define SIM // Uncomment if Simulate
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
 `else
@@ -67,20 +66,15 @@ module Rotary_Encoder (
   //----------------------------------------//
 
   assign Mode_Step = rMode_step;
-  assign Address   = rAddress;  //<------------ wait LUT
+  assign Address   = rAddress;
   assign FreqChng  = rFreqChng;
-
-  //----------------------------------------//
-  // Submodule Instantiation
-  //----------------------------------------//
-
 
   //----------------------------------------//
   // Sequential Logic
   //----------------------------------------//
 
   // Sync Rot_A with 2-flop
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFlop_Rot_A
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rFlop_Rot_A <= 3'b111;
     end else begin
@@ -89,7 +83,7 @@ module Rotary_Encoder (
   end
 
   // Sync Rot_B with 2-flop
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFlop_Rot_B
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rFlop_Rot_B <= 3'b111;
     end else begin
@@ -97,14 +91,14 @@ module Rotary_Encoder (
     end
   end
 
-  // Combination 
+  // Combination Logic
   always @(*) begin
-    Enable <= rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
-    Direction <= rFlop_Rot_A[2] ^ rFlop_Rot_B[1];
+    Enable    = rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
+    Direction = rFlop_Rot_A[2] ^ rFlop_Rot_B[1];
   end
 
   // Delay Counter (100 ms)
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Delay
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rCnt_Delay <= 22'd0;
     end else begin
@@ -113,7 +107,7 @@ module Rotary_Encoder (
   end
 
   // Toggle delay pulse every 100 ms
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDelay
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rDelay <= 1'b0;
     end else begin
@@ -122,7 +116,7 @@ module Rotary_Encoder (
   end
 
   // Mode selector by button press (C)
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rMode_step <= 2'd0;
     end else begin
@@ -133,7 +127,7 @@ module Rotary_Encoder (
   end
 
   // Step of Counting
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rStep
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rStep <= 11'd1;
     end else begin
@@ -146,44 +140,40 @@ module Rotary_Encoder (
     end
   end
 
-  //Count Step_Enable
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_Step_Enable
-    if (!RESETn) begin
-      Step_Enable <= 2'd0;
-    end else begin
-      Step_Enable <= (Enable) ? Step_Enable + 2'd1 : Step_Enable;
-    end
-  end
-
-  // rCnt_ Rot from XOR logic
+  //Step_Enable + rCnt_Rot
   always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
+      Step_Enable <= 2'd0;
       rCnt_Rot <= 11'd0;
-    end else if (Step_Enable == 2'd3) begin
-      if (Direction) begin
-        rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+    end else if (Enable) begin
+      if (Step_Enable == 2'd3) begin
+        Step_Enable <= 2'd0;
+        if (Direction) begin
+          rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+        end else begin
+          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
+                      rCnt_Rot - rStep;
+        end
       end else begin
-        rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
-                    (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
-                    rCnt_Rot - rStep;
+        Step_Enable <= Step_Enable + 2'd1;
       end
     end
   end
 
-  // add rCnt_Rot to rAddress
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rAddress
+  // Update Address every 100ms
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rAddress <= 11'd0;
     end else begin
       if (rDelay) begin
-        //rAddress <= rCnt_Rot;
         rAddress <= (Mode == 3'd4 && rCnt_Rot < Step_Min_Mode4) ? Step_Min_Mode4 : rCnt_Rot;
       end
     end
   end
 
-  // Compare to toggle rFreqChng
-  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFreqChng
+  // Toggle FreqChng when address changes
+  always @(posedge Fg_Clk or negedge RESETn) begin
     if (!RESETn) begin
       rFreqChng <= 1'b0;
     end else begin
@@ -191,7 +181,6 @@ module Rotary_Encoder (
     end
   end
 
-  //----------------------------------------//
 endmodule
 
 /*
@@ -200,5 +189,5 @@ Mode 0 : 100k - 1000k Hz
 Mode 1 : 10k  - 100k  Hz
 Mode 2 : 1k   - 10k   Hz
 Mode 3 : 100  - 1K   Hz
-Mode 4 : 50   - 100   Hz (50 is address 800)
+Mode 4 : 50   - 100  Hz (50 is address 800)
 */

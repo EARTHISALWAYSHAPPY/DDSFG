@@ -24,7 +24,7 @@ module Rotary_Encoder (
   //----------------------------------------//
   // Parameter Declaration
   //----------------------------------------//
-
+  //`define SIM
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
 `else

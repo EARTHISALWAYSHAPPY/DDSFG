@@ -2658,7 +2658,7 @@ HOLD
 m_rotary_endcoder/rDelay_s0
 0.967
 1.300
-m_rotary_endcoder/rAddress_9_s0
+m_rotary_endcoder/rAddress_8_s0
 1.542
 =====
 HOLD
@@ -2668,7 +2668,7 @@ HOLD
 m_rotary_endcoder/rDelay_s0
 0.967
 1.300
-m_rotary_endcoder/rAddress_8_s0
+m_rotary_endcoder/rAddress_9_s0
 1.542
 =====
 HOLD

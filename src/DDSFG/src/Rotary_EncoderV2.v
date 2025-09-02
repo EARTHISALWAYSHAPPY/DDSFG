@@ -74,7 +74,7 @@ module Rotary_Encoder (
   //----------------------------------------//
 
   // Sync Rot_A with 2-flop
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFlop_Rot_A
     if (!RESETn) begin
       rFlop_Rot_A <= 3'b111;
     end else begin
@@ -83,7 +83,7 @@ module Rotary_Encoder (
   end
 
   // Sync Rot_B with 2-flop
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFlop_Rot_B
     if (!RESETn) begin
       rFlop_Rot_B <= 3'b111;
     end else begin
@@ -98,7 +98,7 @@ module Rotary_Encoder (
   end
 
   // Delay Counter (100 ms)
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt_Delay
     if (!RESETn) begin
       rCnt_Delay <= 22'd0;
     end else begin
@@ -107,7 +107,7 @@ module Rotary_Encoder (
   end
 
   // Toggle delay pulse every 100 ms
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDelay
     if (!RESETn) begin
       rDelay <= 1'b0;
     end else begin
@@ -116,7 +116,7 @@ module Rotary_Encoder (
   end
 
   // Mode selector by button press (C)
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
     if (!RESETn) begin
       rMode_step <= 2'd0;
     end else begin
@@ -127,7 +127,7 @@ module Rotary_Encoder (
   end
 
   // Step of Counting
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rStep
     if (!RESETn) begin
       rStep <= 11'd1;
     end else begin
@@ -141,7 +141,7 @@ module Rotary_Encoder (
   end
 
   //Step_Enable + rCnt_Rot
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_Step_Enable_rCnt_Rot
     if (!RESETn) begin
       Step_Enable <= 2'd0;
       rCnt_Rot <= 11'd0;
@@ -162,7 +162,7 @@ module Rotary_Encoder (
   end
 
   // Update Address every 100ms
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rAddress
     if (!RESETn) begin
       rAddress <= 11'd0;
     end else begin
@@ -173,7 +173,7 @@ module Rotary_Encoder (
   end
 
   // Toggle FreqChng when address changes
-  always @(posedge Fg_Clk or negedge RESETn) begin
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rFreqChng
     if (!RESETn) begin
       rFreqChng <= 1'b0;
     end else begin

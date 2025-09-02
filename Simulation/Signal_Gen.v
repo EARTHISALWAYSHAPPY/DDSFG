@@ -43,7 +43,8 @@ module Signal_Gen (
     repeat (1000) CCW(50);
     #24000;
 
-
+    #500_000;
+    $stop;
   end
 
   task CW;

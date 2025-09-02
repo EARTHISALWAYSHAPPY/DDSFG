@@ -133,8 +133,8 @@ module Rotary_Encoder (
   // Combination 
   always @(*) begin
     // Check negedge of Button
-    A_Fall   <= (rFlop_Rot_A[2] && rFlop_Rot_A[1] && rCnt_Debounce_A == Debounce_A_B) ? 1'b1 : 1'b0;
-    B_Fall   <= (rFlop_Rot_B[2] && rFlop_Rot_B[1] && rCnt_Debounce_B == Debounce_A_B) ? 1'b1 : 1'b0;
+    A_Fall   <= (rFlop_Rot_A[2] == 1'b1 && rFlop_Rot_A[1] == 1'b0 && rCnt_Debounce_A == Debounce_A_B) ? 1'b1 : 1'b0;
+    B_Fall   <= (rFlop_Rot_B[2] == 1'b1 && rFlop_Rot_B[1] == 1'b0 && rCnt_Debounce_B == Debounce_A_B) ? 1'b1 : 1'b0;
 
     Steady_A <= (rFlop_Rot_A[2] && rFlop_Rot_A[1]) ? 1'b1 : 1'b0;
     Steady_B <= (rFlop_Rot_B[2] && rFlop_Rot_B[1]) ? 1'b1 : 1'b0;

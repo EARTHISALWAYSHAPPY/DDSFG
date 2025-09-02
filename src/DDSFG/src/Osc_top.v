@@ -41,7 +41,7 @@ module Osc_Top (
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
-  
+
   assign Out1 = rOut1;
   assign Out2 = rOut2;
 
@@ -108,7 +108,7 @@ module Osc_Top (
     if (Mode != 3'd4) begin  // for mode 0-3 : check 10 bits 
       Zero_Cross = (rOut1[31:22] == 10'b0000000000 || rOut1[31:22] == 10'b1111111111) ? 1'b1 : 1'b0;
     end else begin  // for mode 4 : check 9 bits
-      Zero_Cross = (rOut1[31:23] == 9'b0000000000 || rOut1[31:23] == 10'b1111111111) ? 1'b1 : 1'b0;
+      Zero_Cross = (rOut1[31:23] == 9'b0000000000 || rOut1[31:23] == 9'b1111111111) ? 1'b1 : 1'b0;
     end
   end
 

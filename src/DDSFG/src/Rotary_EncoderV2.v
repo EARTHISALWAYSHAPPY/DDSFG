@@ -92,9 +92,11 @@ module Rotary_Encoder (
   end
 
   // Combination Logic
-  always @(*) begin
+  always @(*) begin : u_Enable_Direction
     Enable    = rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
     Direction = rFlop_Rot_A[2] ^ rFlop_Rot_B[1];
+
+    //Direction = rFlop_Rot_A[1] ^ rFlop_Rot_B[2]; // I think for EC11B15242AE
   end
 
   // Delay Counter (100 ms)

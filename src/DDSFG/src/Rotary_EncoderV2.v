@@ -41,21 +41,13 @@ module Rotary_Encoder (
 
   reg [ 2:0] rFlop_Rot_A;
   reg [ 2:0] rFlop_Rot_B;
-  reg        A_Fall;
-  reg        B_Fall;
-  reg        Steady_A;
-  reg        Steady_B;
   reg [21:0] rCnt_Delay;
   reg        rDelay;
   reg [10:0] rCnt_Rot;
   reg [ 1:0] rMode_step;
   reg [10:0] rStep;
-  reg [ 3:0] State;
   reg [10:0] rAddress;
   reg        rFreqChng;
-  reg [13:0] rCnt_Debounce_A;
-  reg [13:0] rCnt_Debounce_B;
-  reg [13:0] rCnt_Debounce_State;
 
   reg [ 1:0] Step_Enable;
   reg        Direction;

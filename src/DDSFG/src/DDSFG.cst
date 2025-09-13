@@ -1,7 +1,7 @@
-IO_LOC  "LED_Mode_Step[1]" 75;
+IO_LOC  "LED_Mode_Step[1]" 74;
 IO_PORT "LED_Mode_Step[1]" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
-IO_LOC  "LED_Mode_Step[0]" 74;
+IO_LOC  "LED_Mode_Step[0]" 75;
 IO_PORT "LED_Mode_Step[0]" DRIVE=8 IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
 IO_LOC  "LED_Mode[2]" 70;

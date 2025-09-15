@@ -1,9 +1,9 @@
-Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg"
-Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
+Reading netlist file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg" completed
 Processing netlist completed
-Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gao\gao.v" completed
+Parsing netlist file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gao\gao.v" completed
 Processing netlist completed
-Reading constraint file: "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDSFG.cst"
+Reading constraint file: "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -22,10 +22,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.power.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.pin.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
-Generate file "D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\DDSFG.tr.html" completed
-Sun Aug 10 16:31:34 2025
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.power.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.pin.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.html" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.rpt.txt" completed
+Generate file "D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\DDSFG.tr.html" completed
+Mon Sep 15 14:56:59 2025
 

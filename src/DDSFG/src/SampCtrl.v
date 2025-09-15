@@ -18,9 +18,15 @@ module SampCtrl (
     output wire [2:0] Mode
 );
   //----------------------------------------//
+  // Parameter Declaration
+  //----------------------------------------//
+
+  localparam Twentyfivehundred_ms = 23'd5000000 - 1;
+
+  //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
-  
+
   reg Begin_Ready;
   reg rReady;
   reg [6:0] rCnt_Ready;
@@ -30,6 +36,7 @@ module SampCtrl (
   reg rEnable;
   reg rPulse_in;
 
+  reg [22:0] rDebounce_Mode;
   //----------------------------------------//
   // Output Declaration
   //----------------------------------------//
@@ -74,12 +81,25 @@ module SampCtrl (
     end
   end
 
+  // Debounce Mode
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDebounce_Mode
+    if (!RESETn) begin
+      rDebounce_Mode <= 21'd0;
+    end else begin
+      if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0) && rDebounce_Mode == Twentyfivehundred_ms) begin
+        rDebounce_Mode <= 21'd0;
+      end else begin
+        rDebounce_Mode <= ( rDebounce_Mode < Twentyfivehundred_ms) ?  rDebounce_Mode + 23'd1 :  rDebounce_Mode;
+      end
+    end
+  end
+
   // Mode Ctrl
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode
     if (!RESETn) begin
       rMode <= 3'd0;
     end else begin
-      if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0)) begin
+      if ((rEnable && rPulse_in) || (IntBtn && rMode == 3'd0) && rDebounce_Mode == Twentyfivehundred_ms) begin
         rMode <= (rMode < 3'd4) ? rMode + 3'd1 : 3'd0;
       end
     end

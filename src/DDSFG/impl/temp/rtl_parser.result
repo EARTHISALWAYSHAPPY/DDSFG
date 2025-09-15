@@ -75,7 +75,7 @@
     "InstFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/DDS_Top.v",
     "InstLine" : 127,
     "InstName" : "m_rotary_endcoder",
-    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_Encoder.v",
+    "ModuleFile" : "D:/Work/ElecEng/Y3/T1/Project/DDSFG/src/DDSFG/src/Rotary_EncoderV2.v",
     "ModuleLine" : 12,
     "ModuleName" : "Rotary_Encoder"
    },

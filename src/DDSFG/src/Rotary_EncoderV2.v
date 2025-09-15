@@ -27,8 +27,12 @@ module Rotary_Encoder (
   //`define SIM
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
+  localparam Zerodotone_ms = 12'd24 - 1;
+  localparam Twentyfivehundred_ms = 23'd120 - 1;
 `else
   localparam Onehundred_ms = 22'd2400000 - 1;  // 100 ms
+  localparam Zerodotone_ms = 12'd2400 - 1;
+  localparam Twentyfivehundred_ms = 23'd5000000 - 1;
 `endif
 
   localparam Step_Min = 11'd0;
@@ -53,6 +57,8 @@ module Rotary_Encoder (
   reg        Direction;
   reg        Enable;
 
+  reg [22:0] rDebounce_Mode_steps;
+  reg [11:0] rDebounce_Step;
   //----------------------------------------//
   // Assignments
   //----------------------------------------//
@@ -86,9 +92,9 @@ module Rotary_Encoder (
   // Combination Logic
   always @(*) begin : u_Enable_Direction
     Enable    = rFlop_Rot_A[1] ^ rFlop_Rot_A[2] ^ rFlop_Rot_B[1] ^ rFlop_Rot_B[2];
-    Direction = rFlop_Rot_A[2] ^ rFlop_Rot_B[1];
 
-    //Direction = rFlop_Rot_A[1] ^ rFlop_Rot_B[2]; // I think for EC11B15242AE
+    //Direction = rFlop_Rot_A[1] ^ rFlop_Rot_B[2]; 
+    Direction = rFlop_Rot_A[2] ^ rFlop_Rot_B[1]; // I think for EC11B15242AE
   end
 
   // Delay Counter (100 ms)
@@ -109,12 +115,25 @@ module Rotary_Encoder (
     end
   end
 
+  // Debounce Mode Step
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDebounce_Mode_steps
+    if (!RESETn) begin
+      rDebounce_Mode_steps <= 23'd0;
+    end else begin
+      if (C && rDebounce_Mode_steps == Twentyfivehundred_ms) begin
+        rDebounce_Mode_steps <= 23'd0;
+      end else begin
+        rDebounce_Mode_steps <= (rDebounce_Mode_steps < Twentyfivehundred_ms) ? rDebounce_Mode_steps + 23'd1 : rDebounce_Mode_steps;
+      end
+    end
+  end
+
   // Mode selector by button press (C)
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rMode_Step_and_rStep
     if (!RESETn) begin
       rMode_step <= 2'd0;
     end else begin
-      if (C) begin
+      if (C && rDebounce_Mode_steps == Twentyfivehundred_ms) begin
         rMode_step <= (rMode_step < 2'd2) ? rMode_step + 2'd1 : 2'd0;
       end
     end
@@ -134,13 +153,26 @@ module Rotary_Encoder (
     end
   end
 
+  // Debounce Step
+  always @(posedge Fg_Clk or negedge RESETn) begin : u_rDebounce_Step
+    if (!RESETn) begin
+      rDebounce_Step <= 21'd0;
+    end else begin
+      if (Step_Enable == 2'd3 && rDebounce_Step == Zerodotone_ms) begin
+        rDebounce_Step <= 21'd0;
+      end else begin
+        rDebounce_Step <= (rDebounce_Step < Zerodotone_ms) ? rDebounce_Step + 12'd1 : rDebounce_Step;
+      end
+    end
+  end
+
   //Step_Enable + rCnt_Rot
   always @(posedge Fg_Clk or negedge RESETn) begin : u_Step_Enable_rCnt_Rot
     if (!RESETn) begin
       Step_Enable <= 2'd0;
       rCnt_Rot <= 11'd0;
     end else if (Enable) begin
-      if (Step_Enable == 2'd3) begin
+      if (Step_Enable == 2'd3 && rDebounce_Step == Zerodotone_ms) begin
         Step_Enable <= 2'd0;
         if (Direction) begin
           rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;

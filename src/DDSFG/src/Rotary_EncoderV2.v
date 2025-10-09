@@ -37,7 +37,7 @@ module Rotary_Encoder (
 
   localparam Step_Min = 11'd0;
   localparam Step_Min_Mode4 = 11'd800;
-  localparam Step_Max = 11'd1800;
+  localparam Step_Max = 11'd1800 - 1; // dont use 1800 because mode 1 not fine zero cross
 
   //----------------------------------------//
   // Signal Declaration

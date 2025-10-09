@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="DDS_Top" Lut="1" T_Register="398(0)" T_Alu="134(0)" T_Lut="650(1)" T_MULT36X36="2(0)" T_Bsram="6(0)">
- <SubModule name="m_resetgen" Register="33" Lut="60" T_Register="33(33)" T_Lut="60(60)"/>
+<Module name="DDS_Top" Lut="1" T_Register="398(0)" T_Alu="134(0)" T_Lut="642(1)" T_MULT36X36="2(0)" T_Bsram="6(0)">
+ <SubModule name="m_resetgen" Register="33" Lut="57" T_Register="33(33)" T_Lut="57(57)"/>
  <SubModule name="m_pll"/>
  <SubModule name="m_clk_div" Register="2" Lut="4" T_Register="2(2)" T_Lut="4(4)"/>
- <SubModule name="m_btn_interface" Register="28" Lut="49" T_Register="28(28)" T_Lut="49(49)"/>
- <SubModule name="m_sampctrl" Register="58" Alu="3" Lut="132" T_Register="58(58)" T_Alu="3(3)" T_Lut="132(132)"/>
- <SubModule name="m_osc_top" Register="65" Alu="32" Lut="119" MULT36X36="1" T_Register="65(65)" T_Alu="32(32)" T_Lut="119(119)" T_MULT36X36="1(1)"/>
+ <SubModule name="m_btn_interface" Register="28" Lut="50" T_Register="28(28)" T_Lut="50(50)"/>
+ <SubModule name="m_sampctrl" Register="58" Alu="3" Lut="131" T_Register="58(58)" T_Alu="3(3)" T_Lut="131(131)"/>
+ <SubModule name="m_osc_top" Register="65" Alu="32" Lut="120" MULT36X36="1" T_Register="65(65)" T_Alu="32(32)" T_Lut="120(120)" T_MULT36X36="1(1)"/>
  <SubModule name="m_interpolator" Register="37" Alu="63" Lut="37" MULT36X36="1" T_Register="37(37)" T_Alu="63(63)" T_Lut="37(37)" T_MULT36X36="1(1)"/>
- <SubModule name="m_btn_interface_rot_c" Register="28" Lut="50" T_Register="28(28)" T_Lut="50(50)"/>
- <SubModule name="m_rotary_endcoder" Register="94" Alu="36" Lut="198" T_Register="94(94)" T_Alu="36(36)" T_Lut="198(198)"/>
+ <SubModule name="m_btn_interface_rot_c" Register="28" Lut="46" T_Register="28(28)" T_Lut="46(46)"/>
+ <SubModule name="m_rotary_endcoder" Register="94" Alu="36" Lut="196" T_Register="94(94)" T_Alu="36(36)" T_Lut="196(196)"/>
  <SubModule name="m_lookup_table" Register="48" T_Register="48(48)" T_Bsram="6(0)">
   <SubModule name="m_romcoef" Bsram="6" T_Bsram="6(6)"/>
  </SubModule>

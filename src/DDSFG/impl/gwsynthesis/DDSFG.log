@@ -21,6 +21,7 @@ Compiling module 'SampCtrl'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\S
 Compiling module 'Osc_Top'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Osc_top.v":12)
 Compiling module 'Interpolator'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Interpolator.v":13)
 Compiling module 'Rotary_Encoder'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_EncoderV2.v":12)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_EncoderV2.v":178)
 Compiling module 'Lookup_Table'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v":13)
 Compiling module 'romcoef_module'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_prom\romcoef_module.v":10)
 Compiling module 'LED_Debug'("D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\LED_Debug.v":12)

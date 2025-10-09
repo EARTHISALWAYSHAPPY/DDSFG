@@ -4,24 +4,24 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-UV9QN88PC6/I5"/>
     <FileList>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Btn_Interface.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Clk_div.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDS_Top.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Interpolator.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\LED_Debug.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Lookup_Table.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Osc_top.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\ResetGen_Module.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\Rotary_EncoderV2.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\SampCtrl.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_prom\romcoef_module.v" type="verilog"/>
-        <File path="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\gowin_rpll\Pll_Top.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Btn_Interface.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Clk_div.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDS_Top.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Interpolator.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\LED_Debug.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Lookup_Table.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Osc_top.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\ResetGen_Module.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\Rotary_Encoder.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\SampCtrl.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_prom\romcoef_module.v" type="verilog"/>
+        <File path="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\gowin_rpll\Pll_Top.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
         <Option type="global_freq" value="50.000"/>
         <Option type="looplimit" value="2000"/>
-        <Option type="output_file" value="D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg"/>
+        <Option type="output_file" value="D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
         <Option type="vcc" value="3.3"/>

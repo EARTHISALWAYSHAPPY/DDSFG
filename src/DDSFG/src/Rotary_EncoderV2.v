@@ -37,7 +37,8 @@ module Rotary_Encoder (
 
   localparam Step_Min = 11'd0;
   localparam Step_Min_Mode4 = 11'd800;
-  localparam Step_Max = 11'd1800 - 1; // dont use 1800 because mode 1 not fine zero cross
+  localparam Step_Max = 11'd1800;
+  localparam Step_Max_Mode1 = 11'd1799;  // dont use 1800 because mode 1 not find zero cross
 
   //----------------------------------------//
   // Signal Declaration
@@ -175,11 +176,12 @@ module Rotary_Encoder (
       if (Step_Enable == 2'd3 && rDebounce_Step == Zerodotone_ms) begin
         Step_Enable <= 2'd0;
         if (Direction) begin
-          rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+          //rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
+          rCnt_Rot <= (Mode != 3'd1 && rCnt_Rot + rStep >= Step_Max) ? Step_Max : 
+                      (Mode != 3'd1 && rCnt_Rot + rStep >= Step_Max_Mode1) ? Step_Max_Mode1 : rCnt_Rot + rStep;
         end else begin
-          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
-                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : 
-                      rCnt_Rot - rStep;
+          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot <= rStep) ?  Step_Min : 
+                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : rCnt_Rot - rStep;
         end
       end else begin
         Step_Enable <= Step_Enable + 2'd1;

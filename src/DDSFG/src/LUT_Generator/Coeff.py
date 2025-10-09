@@ -1,6 +1,6 @@
 import math
 
-f = open("Cofficient.mi", "w")  # Create file
+f = open("Cofficient_2.mi", "w")  # Create file
 
 f.write("#File_format=Hex\n")
 f.write("#Address_depth=2048\n")

@@ -177,11 +177,11 @@ module Rotary_Encoder (
         Step_Enable <= 2'd0;
         if (Direction) begin
           //rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-          rCnt_Rot <= (Mode != 3'd1 && rCnt_Rot + rStep >= Step_Max) ? Step_Max : 
-                      (Mode != 3'd1 && rCnt_Rot + rStep >= Step_Max_Mode1) ? Step_Max_Mode1 : rCnt_Rot + rStep;
+          rCnt_Rot <= (Mode != 3'd1 && rCnt_Rot + rStep > Step_Max) ? Step_Max : 
+                      (Mode == 3'd1 && rCnt_Rot + rStep > Step_Max_Mode1) ? Step_Max_Mode1 : rCnt_Rot + rStep;
         end else begin
-          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot <= rStep) ?  Step_Min : 
-                      (Mode == 3'd4 && rCnt_Rot <= Step_Min_Mode4) ?  Step_Min_Mode4 : rCnt_Rot - rStep;
+          rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 
+                      (Mode == 3'd4 && rCnt_Rot < Step_Min_Mode4) ?  Step_Min_Mode4 : rCnt_Rot - rStep;
         end
       end else begin
         Step_Enable <= Step_Enable + 2'd1;

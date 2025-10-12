@@ -21,7 +21,13 @@ module SampCtrl (
   // Parameter Declaration
   //----------------------------------------//
 
+  //`define SIM // Uncomment if Simulate
+`ifdef SIM
+  localparam Twentyfivehundred_ms = 23'd500 - 1;
+`else
   localparam Twentyfivehundred_ms = 23'd5000000 - 1;
+`endif
+
 
   //----------------------------------------//
   // Signal Declaration

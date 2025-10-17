@@ -23,14 +23,14 @@ module Btn_Interface (
 `ifdef SIM
   localparam delay = 22'd24 - 1;
 `else
-  localparam delay = 22'd2400000 - 1;
+  localparam delay = 24'd12000000 - 1;
 `endif
 
   //----------------------------------------//
   // Signal Declaration
   //----------------------------------------//
 
-  reg [24:0] rCnt;
+  reg [23:0] rCnt;
   reg [ 2:0] rDout;
 
   //----------------------------------------//
@@ -47,12 +47,12 @@ module Btn_Interface (
   //debounce button
   always @(posedge Fg_Clk or negedge RESETn) begin : u_rCnt
     if (!RESETn) begin
-      rCnt <= 25'd0;
+      rCnt <= 24'd0;
     end else begin
       if (rCnt == delay && IntBtn) begin
-        rCnt <= 25'd0;
+        rCnt <= 24'd0;
       end else begin
-        rCnt <= (rCnt < delay) ? rCnt + 25'd1 : rCnt;
+        rCnt <= (rCnt < delay) ? rCnt + 24'd1 : rCnt;
       end
     end
   end

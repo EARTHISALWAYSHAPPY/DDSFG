@@ -24,7 +24,8 @@ module Rotary_Encoder (
   //----------------------------------------//
   // Parameter Declaration
   //----------------------------------------//
-  //`define SIM
+  //`define SIM 
+
 `ifdef SIM
   localparam Onehundred_ms = 22'd240 - 1;
   localparam Zerodotone_ms = 12'd24 - 1;
@@ -36,7 +37,7 @@ module Rotary_Encoder (
 `endif
 
   localparam Step_Min = 11'd0;
-  localparam Step_Min_Mode4 = 11'd800;
+  localparam Step_Min_Mode4 = 11'd801;
   localparam Step_Max = 11'd1800;
   localparam Step_Max_Mode1 = 11'd1799;  // dont use 1800 because mode 1 not find zero cross
 
@@ -177,7 +178,8 @@ module Rotary_Encoder (
         Step_Enable <= 2'd0;
         if (Direction) begin
           //rCnt_Rot <= (rCnt_Rot + rStep >= Step_Max) ? Step_Max : rCnt_Rot + rStep;
-          rCnt_Rot <= (Mode != 3'd1 && rCnt_Rot + rStep > Step_Max) ? Step_Max : 
+          rCnt_Rot <= (Mode == 3'd4 && rCnt_Rot < Step_Min_Mode4) ?  Step_Min_Mode4 :
+                      (Mode != 3'd1 && rCnt_Rot + rStep > Step_Max) ? Step_Max : 
                       (Mode == 3'd1 && rCnt_Rot + rStep > Step_Max_Mode1) ? Step_Max_Mode1 : rCnt_Rot + rStep;
         end else begin
           rCnt_Rot <= (Mode != 3'd4 && rCnt_Rot < rStep) ?  Step_Min : 

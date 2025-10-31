@@ -1,10 +1,10 @@
--d D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gwsynthesis\DDSFG.vg
+-d D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gwsynthesis\DDSFG.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-UV9QN88PC6/I5
--cst D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.cst
--cfg D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\pnr\device.cfg
--sdc D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\src\DDSFG.sdc
--gao D:\Work\ElecEng\Y3\T1\Project\DDSFG\src\DDSFG\impl\gao\gao.v
+-cst D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDSFG.cst
+-cfg D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\pnr\device.cfg
+-sdc D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\src\DDSFG.sdc
+-gao D:\Work\ElecEng\Y3\T1\Project_DDSFG\DDSFG_git\DDSFG\Src\DDSFG\impl\gao\gao.v
 -gao_crc 0000010011110001
 -bit
 -tr

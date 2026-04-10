@@ -15,9 +15,9 @@ The entire system is implemented on a **Tang Nano 9K FPGA** (Gowin GW1NR-9), wit
 Phase Accumulator → Phase-to-Amplitude (LUT) → DAC → Analog Output
 ```
 
-1. **Phase Accumulator** — A binary counter that increments by a Frequency Control Word (FCW) on every clock cycle. The FCW determines the output frequency: a larger FCW steps through the LUT faster, producing a higher frequency signal.
-
-2. **Phase-to-Amplitude LUT** — The upper bits of the phase accumulator index into a ROM table storing one complete cycle of a waveform (Sine, Square, Triangle, or Sawtooth). This maps a phase value to the corresponding amplitude value.
+1. **Phase Accumulator** — A binary counter that increments by a Frequency Control on every clock cycle.
+   
+2. **Phase-to-Amplitude LUT** — The upper bits of the phase accumulator index into a ROM table storing one complete cycle of a waveform. This maps a phase value to the corresponding amplitude value.
 
 3. **DAC (Digital-to-Analog Converter)** — Converts the digital amplitude values from the FPGA into a real analog voltage signal at the output.
 

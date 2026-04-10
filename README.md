@@ -21,14 +21,6 @@ Phase Accumulator → Phase-to-Amplitude (LUT) → DAC → Analog Output
 
 3. **DAC (Digital-to-Analog Converter)** — Converts the digital amplitude values from the FPGA into a real analog voltage signal at the output.
 
-Output frequency is determined by:
-
-```
-F_out = (FCW × F_clk) / 2^N
-```
-
-Where `N` is the bit-width of the phase accumulator and `F_clk` is the FPGA system clock frequency.
-
 ---
 
 ## Tech Stack
